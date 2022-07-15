@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700');
+body{
+font-family: Dosis, sans-serif;
+}
+
+
+.opciones{
+    width: 100%;
+    height: 100%;
+    background-color:#ffffff ;
+    
+    
+}
+
+
+.opciones-arriba{
+width: 100%;
+height: 50%;
+display:flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.opciones-divs1{
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    
+    margin:10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+    cursor:pointer;
+ }
+
+
+ .opciones-abajo{
+width: 100%;
+height: 50%;
+display:flex;
+justify-content: center;
+ }
+
+
+ 
+ .opciones-divs2{
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    margin:10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+    cursor:pointer;
+ }
+
+
+.fa-solid.fa-user-gear{
+    width: 100%;
+    
+    font-size: 80px;
+    color: #008037;
+    text-align: center;
+    
+}
+
+.fa-solid.fa-people-group{
+    width: 100%;
+    
+    font-size: 80px;
+    color: #008037;
+    text-align: center;
+    
+}
+
+.fa-solid.fa-box{
+    width: 100%;
+    
+    font-size: 80px;
+    color: #008037;
+    text-align: center;
+    
+}
+
+
+.fa-solid.fa-boxes-packing, .fa-solid.fa-clipboard-list, .fa-solid.fa-image{
+    
+        width: 100%;
+        
+        font-size: 80px;
+        color: #008037;
+        text-align: center;
+        
+    
+}
+
+
+
+.titulos{
+    text-align: center;
+    color:#008037;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.opciones-divs1:hover{
+    background-color: #e2f39d ;
+    width: 260px;
+    height: 260px;
+}
+
+
+.opciones-divs2:hover{
+    background-color: #e2f39d ;
+    width: 260px;
+    height: 260px;
+}
+
+
+
+
+
+@media (max-width: 880px) {
+
+
+    .opciones{
+        height: 100%;
+    }
+    .opciones-arriba{
+        flex-wrap: wrap;
+        margin-top: 156px;
+    }
+
+    .opciones-abajo{
+        flex-wrap: wrap;
+         }
+
+
+
+}
+
+
+
+
+/*  ------------------------vistaProductos----------------------------  */
+
+.cuerpo{
+    width: 100%;
+    height: calc(100vh - 156px);
+}
+
+
+.title-product{
+    font-size: 40px;
+    font-weight: 600;
+    color: #008037;
+    margin-top: 30px;
+    margin-left: 40px;
+
+}
+
+.form-productos{
+    width: 80%;
+    height: 100%;
+    background-color: #c9e265;
+    margin:auto;
+}
+
+
+.form-productos input{
+    width: 40%;
+    height: 50px;
+    border:0;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+    font-weight: 700;
+}

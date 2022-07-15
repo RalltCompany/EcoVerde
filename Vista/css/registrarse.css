@@ -1,0 +1,267 @@
+
+body{
+    background-color: white;
+}
+.body-form{
+    background-color: white;
+}
+
+
+.fa-solid.fa-circle-user{
+    color:#008037;
+    font-size:120px;
+    display: block;
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+
+.imagen-derecha{
+    width: 40%;
+    height: 100vh;
+    background-color:#c9e265 ;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.logo{
+    margin: auto;
+    width:90%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+.ladoform{
+    display: flex;
+    width: 60%;
+    height: 100vh;
+    float: left;
+    
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+
+
+.form-productos{
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    margin:auto;
+    box-sizing: border-box;
+    
+    
+}
+
+
+.form-productos input{
+    width: 90%;
+    height: 50px;
+    border:0;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+    font-weight: 700;
+    margin: auto;
+   font-size: 15px;
+
+}
+
+
+
+
+.contenedor-flex{
+    display: flex;
+    width: 100%;
+    height: 80%;
+
+}
+
+.botones {
+    position: relative;
+    bottom: 0;
+    
+    width: 70%;
+    margin:auto;
+   
+    margin-top: 50px;
+
+}
+
+.botones input{
+    width: 30%;
+    height: 50px;
+    margin-bottom: 0;
+    
+}
+
+.izquierda {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.derecha {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+
+.registrar{
+    background: #0080377c !important;
+    transition:.5s;
+    width: 20%;
+}
+
+
+.mensajeContra{
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(192, 79, 79, 0.5);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);;
+}
+
+.aparecer{
+    display:block !important;
+}
+
+
+ 
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}
+
+.registrar:hover{
+    background: #008037da !important;
+    cursor: pointer;
+}
+
+.derecha-divs{
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+}
+
+.izquierda-divs{
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+}
+
+.volver{
+    float: left !important;
+    position: absolute;
+    margin: 25px;
+    margin-top: 70px;
+}
+.volver i{text-align: left ; 
+    color:#008037; 
+    transition:.5s; 
+    font-size: 30px; }
+
+
+
+.volver i:hover{
+    font-size: 40px;
+}
+
+.subtitulo{
+    font-size: 20px;
+    font-weight: 700;
+     }
+
+
+
+     @media (max-width: 1000px) {
+
+        .imagen-derecha{
+            display: none;
+        }
+        
+        .ladoform{
+            width: 80%;
+            margin-left: 10%;
+            
+        }
+
+
+
+ }
+
+
+
+ @media (max-width: 700px) {
+
+ 
+    
+    .ladoform{
+        width: 100%;
+        margin-left: 0%;
+        
+    }
+    .form-productos{
+        width: 100%;
+        height: 170%;
+    }
+
+    .izquierda-divs{
+        height: 33.33%;
+        display: block;
+    }
+
+    .derecha-divs{
+        height: 33.33%;
+        display: block;
+    }
+
+    .derecha-divs input{
+       margin-top: 15%;
+    }
+    .contenedor-flex{
+        flex-wrap: wrap;
+        margin-bottom: 120%;
+    }
+
+    .izquierda{
+        display: block;
+        width: 100%;
+        height: 40%;
+    }
+
+    .derecha{
+        display: block;
+        margin-top: 90%;
+        height: 40%;
+        width: 100%;
+    }
+
+    .botones{
+        display: block;
+        
+        
+    }
+
+   
+
+    
+}

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700');
+table{
+    font-family: 'Dosis', sans-serif;
+    margin: 0;
+}
+.boton1{
+    margin-top: 10px;
+    height: 50px;
+    border: 0;
+    width: 15%;
+    background: #0080377c !important;
+    transition:.5s;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+    margin-bottom: 30px;
+}
+.boton2{
+    margin-top: 10px;
+    width: 15%;
+    border: 0;
+    background:rgba(248, 58, 58, 0.575) !important;
+    transition:.5s;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+    height: 50px;
+    margin-bottom: 30px;
+
+}
+
+.boton2:hover{
+    background:rgba(248, 58, 58, 0.938) !important;
+    cursor: pointer;
+}
+
+
+.boton1:hover{
+    background: #008037da !important;
+    cursor: pointer;
+}
+
+
+.img{
+    width: 50px;
+    height: 50px;
+}
+th{
+    color:white;
+}
+tr{
+    color: black;
+}
+.total{
+    width: 100%;
+    float: left;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    background-color: red;
+    color: white;
+}
+
+textarea{
+    float: right;
+    width: 60%;
+}
+
+#b{
+    width: 60px;
+    height: 30px;
+    font-size: medium;
+}
+
+h1{
+    text-align: center;
+    position: relative;
+}
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.notas{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+}
+
+
+.notas caption{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 8px 0px
+}
+.title-producto{
+ color:#008037;  
+ font-weight: 600;
+}
+
+.notas tr{
+    background-color:  #c9e265;
+    border: 1px solid #ddd;
+    font-weight:650;
+}
+
+.acep-pedido{
+    width: 35%;
+    padding: 10px 0;
+    margin: 0 32.5%;
+}
+.notas th, .notas td{
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+}
+
+.notas thead th{
+    text-transform: uppercase;
+    background-color:#008037;
+}
+
+.notas tbody tr:hover{
+    background-color:  #a5bc46;
+}
+
+.notas tbody td:hover{
+    background-color:  #99ac49;
+}
+
+
+@media screen and (max-width:600px){
+    .notas{
+        border: 0px;
+    }
+
+    .notas caption{
+        font-size: 22px;
+    }
+
+    .notas thead{
+        display: none;
+    }
+
+    .notas tr{
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+
+    .notas th, .notas td{
+        font-size: 12px;
+    }
+
+    .notas td{
+        display: block;
+        border-bottom: 1px solid #ddd;
+        text-align: right;
+    }
+
+    .notas td:last-child{
+        border-bottom: 0px;
+    }
+
+    .notas td::before{
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+}
+
+
+.volver{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color:#008037;
+    padding-left: 30px;
+}
+
+.volver i{color:#008037; transition:.5s}
+
+
+
+.volver i:hover{
+    font-size: 40px;
+}

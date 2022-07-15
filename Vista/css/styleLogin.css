@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700');
+
+body{
+    font-size: 15px;
+     font-family: 'Dosis', sans-serif;
+     line-height: 1.80857;
+        margin: 0;
+        
+}
+
+.imagen-derecha{
+    width: 40%;
+    height: 100vh;
+    background-color:#c9e265 ;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.logo{
+    margin: auto;
+    width:90%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+
+
+.mensajeMail{
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(192, 79, 79, 0.5);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);;
+}
+
+.mensajeEstado{
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(192, 79, 79, 0.5);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);;
+}
+
+.aparecer{
+    display:block !important;
+}
+
+
+.body-form{
+    display: flex;
+    width: 60%;
+    height: 100vh;
+    float: left;
+    
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000a3;
+    
+}
+
+.registrarse-texto{
+    display: block;
+    text-align: center;
+    font-size: 17px;
+}
+
+.registrarse{
+    text-decoration: none;
+    color:#008037;
+    font-weight: 700;
+}
+
+.registrarse:hover{
+    color:#008037
+}
+
+.form-login{
+    margin: auto;
+    width: 50%;
+    margin-top: 30%;
+    border-radius: 10px;
+    height: 360px;
+    background-color: azure;
+    font-size: 20px;
+
+}
+a{
+    width: 100%;
+    height: 60%;
+}
+.caja-login{
+    display: block;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 2rem;
+    border:0;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+}
+
+
+.subtitulo{
+    font-size: 20px;
+    font-weight: 700;
+    
+  }
+
+  .logo-responsive{
+    display: none;
+  }
+.titulo{
+   width: 100%;
+   font-size: 3rem;
+}
+
+label{
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.email-label{
+    margin-top: 10px;
+}
+
+.entrar-boton{
+    width: 100%;
+    height: 70px;
+    border:0;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius: 10px;
+    cursor:pointer;
+    transition: .5s;
+    margin-top: 5px;
+    font-weight: 600;
+    background-color: #c9e265;
+}
+
+.logo-responsive{
+    display: none;
+}
+
+
+
+.entrar-boton:hover{
+    
+    background-color: azure;
+}
+
+.img-fondo{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    
+}
+.fa-solid.fa-circle-user{
+    font-size:120px;
+    color:white;
+}
+
+
+
+.form-titulo{
+    text-align: center;
+    height: 80px;
+    position: absolute;
+    margin-top:8%;
+    width: 30%;
+    border-radius: 10px;
+    padding: 0;
+    
+}
+
+
+@media (max-width: 1000px) {
+
+.imagen-derecha{
+    display: none;
+}
+
+.body-form{
+    width: 100%;
+    
+}
+.form-login{
+    margin-top: 0;
+}
+.email-label{
+    margin-top: 50px;
+    display: block;
+}
+.form-login{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.titulo{
+    height: 100%;
+}
+.form-titulo{
+    display: none !important;
+}
+
+.logo-responsive-img{
+    display: relative !important;
+    width: 30%;
+}
+
+.entrar-boton{
+    position:absolute;
+    bottom:0
+}
+
+.logo-responsive{
+    width: 50%;
+    height: 30%;
+    margin-left: 25%;
+    display:inline;
+}
+
+.fa-solid.fa-circle-user{
+display: none !important;
+}
+
+
+}

@@ -1,0 +1,199 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700');
+body{
+font-family: Dosis, sans-serif;
+}
+
+
+
+.cuerpo{
+    width: 100%;
+    height: calc(100vh - 156px);
+}
+
+
+.title-product{
+    font-size: 40px;
+    font-weight: 600;
+    color: #008037;
+    margin-top: 20px;
+    margin-left: 40px;
+
+}
+
+.form-productos{
+    width: 80%;
+    height: 100%;
+    background-color: #ffffff;
+    margin:auto;
+    box-sizing: border-box;
+    
+    
+}
+
+
+.form-productos input{
+    width: 80%;
+    height: 50px;
+    border:0;
+    border-bottom: 3px solid #008037 ;
+    border-radius: 3px;
+    background: #ffffff00;
+    font-weight: 700;
+    margin: auto;
+   font-size: 20px;
+
+}
+
+select{
+    height: 50px;
+    width: 80%;
+    margin:auto;
+}
+
+
+.contenedor-flex{
+    display: flex;
+    width: 100%;
+    height: 80%;
+
+}
+
+.botones {
+    position: relative;
+    bottom: 0;
+    height: 10%;
+    width: 70%;
+    margin:auto;
+    display: flex;
+
+}
+
+.botones input{
+    width: 30%;
+    height: 50px;
+    margin-bottom: 0;
+    
+}
+
+.izquierda {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.derecha {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+
+.registrar{
+    background: #0080377c !important;
+    transition:.5s;
+}
+
+.modificar{
+    background: rgba(51, 51, 247, 0.438) !important;
+    transition:.5s;
+}
+
+.eliminar{
+    background:rgba(248, 58, 58, 0.575) !important;
+    transition:.5s;
+}
+
+
+.eliminar:hover{
+    background:rgba(248, 58, 58, 0.938) !important;
+    cursor: pointer;
+}
+
+.modificar:hover{
+    background: rgba(47, 47, 201, 0.952) !important;
+    cursor: pointer;
+}
+
+
+.registrar:hover{
+    background: #008037da !important;
+    cursor: pointer;
+}
+
+.derecha-divs{
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+}
+
+.izquierda-divs{
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+}
+
+.volver{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color:#008037;
+    padding-left: 30px;
+}
+
+.volver i{color:#008037; transition:.5s}
+
+
+
+.volver i:hover{
+    font-size: 40px;
+}
+@media (max-width: 820px) {
+    
+    .form-productos{
+        width: 100%;
+        height: 170%;
+    }
+
+    .izquierda-divs{
+        height: 33.33%;
+    }
+
+    .derecha-divs{
+        height: 33.33%;
+    }
+    .contenedor-flex{
+        flex-wrap: wrap;
+    }
+
+    .izquierda{
+        display: block;
+        width: 100%;
+        height: 40%;
+    }
+
+    .derecha{
+        display: block;
+        
+        height: 40%;
+        width: 100%;
+    }
+
+    .botones{
+        display: block;
+        margin-top: 100px;
+        
+    }
+
+    .botones input{
+        margin-top: 50px;
+        
+    }
+}
