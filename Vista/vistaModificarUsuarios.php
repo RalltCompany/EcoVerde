@@ -103,7 +103,7 @@
 
         <center>
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="../Controlador/controladorEliminarUsuario.php">Eliminar</a>
+        
         <a class="a" href="../Controlador/controladorModificarUsuario.php">Modificar</a>
         <a class="a" href="vistaUsuarios.php">Buscar</a>
         </center>

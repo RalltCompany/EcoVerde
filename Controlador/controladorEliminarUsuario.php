@@ -7,15 +7,15 @@
 	$usuario = new Usuario();
     $datosS = $usuario->getUsuario();
 
-    require_once("../Vista/vistaEliminarUsuario.php");
+
 
 	
 
-	if(isset($_POST['eli'])){
-		$ced = $_POST['ced'];
+	
+		$ced = $_GET['Cedula'];
 		$usuario->EliminarUsuario($ced);
-		echo("<meta http-equiv='refresh' content='0.1'>");
-	}
+		header("location:controladorRegistrarUsuario.php");
+	
 
 	
 

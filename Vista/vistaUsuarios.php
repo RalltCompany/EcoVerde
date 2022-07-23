@@ -33,6 +33,7 @@
  
 
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
+    
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -104,7 +105,6 @@
 
         <center>
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="../Controlador/controladorEliminarUsuario.php">Eliminar</a>
         <a class="a" href="../Controlador/controladorModificarUsuario.php">Modificar</a>
         <a class="a" href="vistaUsuarios.php">Buscar</a>
         </center>
@@ -122,7 +122,7 @@
                     <input type="text" name="apellido" placeholder="Apellido">
                     </div>
                 <div class="izquierda-divs">
-                <input type="number" name="cedula" placeholder="Cédula de identidad">
+                <input type="number" name="cedula" placeholder="Cédula de identidad"c>
                 </div>
                 <div class="izquierda-divs">
                 <input type="email" name="email" placeholder="Email">
@@ -189,13 +189,14 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Celular</th>
-                <th>Email</th>
+                <th class="celdaEmail">Email</th>
                 <th>Calle</th>
                 <th>Numero</th>
                 <th>Esquina</th>
                 <th>Barrio</th>
                 <th>Tipo</th>
                 <th>Estado</th>
+                <th class="celdaEliminar">Eliminar</th>
                 </tr>
     </thead>
     <?php echo "<tbody>";
@@ -214,6 +215,7 @@
                 <td data-label='Barrio'>".$dato["barrio"]."</td>
                 <td data-label='Tipo'>".$dato["tipo"]."</td>
                 <td data-label='Estado'>".$dato["estado"]."</td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["CI"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>

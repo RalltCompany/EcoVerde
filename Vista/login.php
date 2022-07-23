@@ -20,13 +20,13 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="../Vista/css/styleLogin.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -43,17 +43,16 @@
     
     </div>
     <img src="../images/img-login.jpg" alt="logo ecoverde" class="img-fondo">
-    <form action="../Controlador/controladorCliente.php" class="form-login" method="POST">
+    <form action="" class="form-login" method="POST">
       <a href="index.html"><img src="../images/logoresponsive.png" class="logo-responsive"></a>
       <label class="email-label">Email</label>
       <input type="mail" class="caja-login " name="mail">
 
-      <div class="mensajeMail <?php  echo $_GET['error'] ?>"> <span class="mensaje-error">El mail o la contraseña son incorrectos</span> </div>
-      <div class="mensajeEstado <?php echo $_GET['estado'] ?>"> <span class="mensaje-error">Su cuenta aún no ha sido aprobada</span> </div>
+      
       <label class="pass-label">Contraseña</label>
       <input type="password" name="pass" class="caja-login" >
       
-      <p class="registrarse-texto">¿No tienes una cuenta? <a href="registrarse.php" class="registrarse">Regístrate</a></p>
+      <p class="registrarse-texto">¿No tienes una cuenta? <a href="controladorRegistrarseCliente.php" class="registrarse">Regístrate</a></p>
       <input type="submit" value="ENTRAR" name="entrar" class="entrar-boton">
     </form>
     

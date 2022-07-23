@@ -20,15 +20,15 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
    
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/custom.css">
 
-    <link rel="stylesheet" href="css/registrarse.css">
+    <link rel="stylesheet" href="../Vista/css/registrarse.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -40,7 +40,7 @@
 
 <body>
     <div class="volver">
-        <a href="login.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        <a href="controladorLogin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
     </div>
   <div class="ladoform">
     
@@ -49,7 +49,7 @@
        
 
     </div>
-    <form action="../Controlador/controladorCliente.php" method="POST" class="form-productos" id="formRegister" >
+    <form action="" method="POST" class="form-productos" id="formRegister" >
         <div class="contenedor-flex">
             <div class="izquierda">
                 <div class="izquierda-divs">
@@ -61,18 +61,18 @@
             <div class="izquierda-divs">
             <input type="text" name="cedula" placeholder="Cédula de identidad" required>
             </div>
-            <div class="mensajeContra <?php  echo $_GET['errCed'] ?>"> <span class="mensaje-error">Ya te has registrado con esta CI. Inicia Sesión</span> </div>
+           
             
            
             <div class="izquierda-divs">
             <input type="email" name="email" placeholder="Email" required>
             </div>
-            <div class="mensajeContra <?php  echo $_GET['errMail'] ?>"> <span class="mensaje-error">El correo ya está registrado a una cuenta existente. Inicia sesión</span> </div>
+            
             <div class="izquierda-divs">
                 <input type="password" name="password" minlength="8" id="password" placeholder="Contraseña" required>
             </div>
              
-            <div class="mensajeContra <?php  echo $_GET['errContra'] ?>"> <span class="mensaje-error">Las contraseñas no coinciden</span> </div>
+            
             
                     <div class="izquierda-divs">
                 <input type="password" name="passwordVal" id="passwordVal" required placeholder="Confirmar contraseña">

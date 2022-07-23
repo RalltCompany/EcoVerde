@@ -133,7 +133,7 @@ Class Usuario{
     }
 
     public function RegistrarUsuarios($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio, $Tipo){
-        $Estado= "Pendiente";
+        $Estado= "Aceptado";
         $sql = "INSERT INTO usuario VALUES ('$Cedula', NULL, '$Nombre', '$Apellido', '$Celular', '$Email', '$Clave', '$Calle', '$Numero', '$Esquina', '$Barrio', '$Tipo', '$Estado')";
         
         
