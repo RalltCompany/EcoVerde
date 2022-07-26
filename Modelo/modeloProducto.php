@@ -1,5 +1,8 @@
 <?php
-Class Productos{
+Class Producto{
+
+    private $Producto; //Para array
+    private $db; //Para conexion
 
     private $Codigo;
     private $Nombre;
@@ -9,7 +12,7 @@ Class Productos{
     private $Disponibilidad;
     private $Mesdeplantado;
     private $Imagen;
-
+/*
     public function __construct($Codigo, $Nombre, $Familia, $Precio, $Propiedades, $Disponibilidad, $Mesdeplantado, $Imagen){
         $this -> Codigo=$Codigo;
         $this -> Nombre=$Nombre;
@@ -20,7 +23,17 @@ Class Productos{
         $this -> Mesdeplantado=$Mesdeplantado;
         $this -> Imagen=$Imagen;
     }
+*/
 
+public function __construct(){
+			
+    //Asignamos al atributo db el valor del metodo conexion() de la clase Conectar
+    //Conectar es la clase y conexion es el metodo
+    $this->db = Conectar::conexion();
+    //Determinamos que el atributo personas será un array
+    $this->Usuario = array();
+    
+}
     public function setCodigo($Codigo){
         $this -> Codigo=$Codigo;
     }
@@ -69,9 +82,34 @@ Class Productos{
     public function getImagen(){
         return $this -> Imagen;
     }
+
+
+    public function getProducto(){
+			
+        $sql = "SELECT * FROM producto ORDER BY Codigo";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Producto[]=$filas;
+        }
+        return $this->Producto;
+        
+    }
+
+
+    public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $imagen){
+        $sql = "INSERT INTO producto (CIU, nombre, precio, familia, disponibilidad, propiedades, mesdeplantado, imagen) VALUES 
+        ('$CIU', , '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$imagen')";
+        
+        
+        if($this->db->query($sql)){
+            return true;
+            
+        }else{
+            return false;
+        }
+
 }
 
-
-
-
+}
 ?>

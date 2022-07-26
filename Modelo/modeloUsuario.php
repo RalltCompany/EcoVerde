@@ -144,6 +144,7 @@ Class Usuario{
             return false;
         }
     }
+    
 
     public function EliminarUsuario($c){
 	
