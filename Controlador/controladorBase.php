@@ -10,7 +10,9 @@
 	// datos = $mascota->getMascotas();
 	 
 	//Llamada a la vista
-	require_once("vista/inicio.html");
+	require_once("vista/inicio.php");
+
+	
 
 	if(isset($_POST['guardar'])){
 		$nombre = $_POST['nom'];

@@ -9,8 +9,16 @@ $usuario= new Usuario();
 
 $credenciales=$usuario->getUsuario();
 
-$_SESSION['CI']=$credenciales[''];
 
+foreach($credenciales as $credencial){
+                     
+    $_SESSION['CI']=$_GET['ci'];
+    $_SESSION['TIPO']=$_GET['tipo'];
+    
+}
+
+
+header('location:../index.php');
 
 
 
