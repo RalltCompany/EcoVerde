@@ -28,6 +28,10 @@ require_once("../Vista/login.php");
             
           
 
+      }else{
+            header('location:../Controlador/controladorLogin.php?errlogin');
+            
+
       }
 
        }

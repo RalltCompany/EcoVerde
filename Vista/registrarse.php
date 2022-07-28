@@ -55,13 +55,13 @@
         <div class="contenedor-flex">
             <div class="izquierda">
                 <div class="izquierda-divs">
-            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="nombre" maxlength="30" placeholder="Nombre" required>
             </div>
             <div class="izquierda-divs">
-                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="text" name="apellido"  maxlength="30"  placeholder="Apellido" required>
                 </div>
             <div class="izquierda-divs">
-            <input type="text" name="cedula" placeholder="Cédula de identidad" required>
+            <input type="text" name="cedula" minlength="8" maxlength="8" placeholder="Cédula de identidad" required>
             </div>
            
             
@@ -70,11 +70,7 @@
             <input type="email" name="email" placeholder="Email" required>
             </div>
 
-            <?php
-            if(isset($_GET['errmail'])){
-                echo "<script>swal.fire('Ha ocurrido un error','El correo electronico que quieres utilizar, ya fue registrado');</script>";
-            }
-            ?>
+    
             
             <div class="izquierda-divs">
                 <input type="password" name="password" minlength="8" id="password" placeholder="Contraseña" required>
@@ -89,23 +85,63 @@
             </div>
         
 
+            <?php
+            if(isset($_GET['errmail'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'El correo electronico que quieres utilizar, ya fue registrado',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
 
+           
+
+            if(isset($_GET['errcedula'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'La cedula que quieres utilizar ya fue registrada',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
+        
+
+            if(isset($_GET['errclave'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'Las contraseñas ingresadas no coinciden',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
+
+
+
+
+            ?>
 
 
         <div class="derecha">
 
             <div class="derecha-divs">
-            <input type="text" name="calle" placeholder="Calle" required>
+            <input type="text" name="calle"  maxlength="30"  placeholder="Calle" required>
             </div>
             <div class="derecha-divs">
-                <input type="text" name="numero" placeholder="Numero de puerta" required>
+                <input type="text" name="numero"  maxlength="30" placeholder="Numero de puerta" required>
                 </div>
             
                 <div class="derecha-divs">
-                    <input type="text" name="esquina" placeholder="Esquina" required>
+                    <input type="text" name="esquina"  maxlength="30"  placeholder="Esquina" required>
                     </div>
                     <div class="derecha-divs">
-                        <input type="text" name="barrio" placeholder="Barrio" required>
+                        <input type="text" name="barrio"  maxlength="30"  placeholder="Barrio" required>
                         </div>
 
             <div class="derecha-divs">

@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -37,7 +38,34 @@
 
 
 <body>
-  
+<?php
+if(isset($_GET['registro'])){
+  echo "<script>
+  Swal.fire({
+    icon: 'success',
+    title: '¡Solicitud de registro enviada con exito!',
+    text: 'Un administrador aceptara su registro en la brevedad',
+    confirmButtonColor: '#008037', 
+    });
+    </script>";
+            }
+
+            
+
+
+            if(isset($_GET['errlogin'])){
+             echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'Ocurrió un error, verifique que sus datos esten correctos o intente mas tarde',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+          }
+
+
+?>
   <div class="body-form">
     <div class="form-titulo"><i class="fa-solid fa-circle-user"></i>
     

@@ -203,7 +203,7 @@
     
               foreach($datos as $dato) {
                 echo "<tr>
-                <td data-label='Cedula'>".$dato["CI"]."</td>
+                <td data-label='Cedula'>".$dato["ci"]."</td>
                 <td data-label='Cedula del Admin'>NULL</td>
                 <td data-label='Nombre'>".$dato["nombre"]."</td>
                 <td data-label='Apellido'>".$dato["apellido"]."</td>
@@ -215,7 +215,7 @@
                 <td data-label='Barrio'>".$dato["barrio"]."</td>
                 <td data-label='Tipo'>".$dato["tipo"]."</td>
                 <td data-label='Estado'>".$dato["estado"]."</td>
-                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["CI"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>
