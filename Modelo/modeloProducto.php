@@ -3,6 +3,7 @@ Class Producto{
 
     private $Producto; //Para array
     private $db; //Para conexion
+    private $us;
 
     private $Codigo;
     private $Nombre;
@@ -31,7 +32,8 @@ public function __construct(){
     //Conectar es la clase y conexion es el metodo
     $this->db = Conectar::conexion();
     //Determinamos que el atributo personas será un array
-    $this->Usuario = array();
+    $this->Producto = array();
+    $this->us = array();
     
 }
     public function setCodigo($Codigo){
@@ -97,9 +99,9 @@ public function __construct(){
     }
 
 
-    public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $imagen){
-        $sql = "INSERT INTO producto (nombre, precio, familia, disponibilidad, propiedades, mesdeplantado, imagen) VALUES 
-        ('$CIU', , '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$imagen')";
+    public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado){
+        $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen) VALUES 
+        ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '2022-07-06', 'dfsd')";
         
         
         if($this->db->query($sql)){
@@ -111,5 +113,17 @@ public function __construct(){
 
 }
 
-}
+    public function CedulaUs(){
+        $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador'";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+
+				$this->us[]=$filas;
+			}
+
+			return $this->us;
+			
+		}
+    }
 ?>

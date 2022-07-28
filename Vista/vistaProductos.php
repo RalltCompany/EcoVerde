@@ -99,7 +99,7 @@
 
     <div class="cuerpo">
 
-        <h2 class="title-product">Poductos</h2>
+        <h2 class="title-product">Productos</h2>
 
         <div class="men">
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
@@ -149,8 +149,13 @@
         </div>
 
         <div class="derecha-divs">
-            <select name="Codigo" id="" aria-placeholder="Codigo">
+            <select name="cedula" id="" aria-placeholder="Codigo">
               <option value="null">Cedula del Usuario</option>
+              <?php
+              foreach($cius as $ci){
+                echo "<option value=".$ci["ci"].">".$ci["nombre"]."</option>";
+              }
+              ?>
             </select>
         </div>
             </div>
@@ -175,10 +180,10 @@ foreach($datos as $dato){
     echo "<img src='../Vista/images/".$dato['imagen']."' width='80%'>
                 <p>Nombre: ".$dato["nombre"]."</p>
                 <p>Codigo: ".$dato["codigo"]."</p>
-                <p>Cedula del Usuario: 54491536</p>
-                <p>Precio: ".$dato["precio"]."</p>
+                <p>Cedula del Usuario: ".$dato["ciu"]."</p>
+                <p>Precio: $".$dato["precio"]." (KG)</p>
                 <p>Familia: ".$dato["familia"]."</p>
-                <p>Disponibilidad: ".$dato["disponibilidad"]."</p>
+                <p>Disponibilidad: ".$dato["disponibilidad"]."KG</p>
                 <p>Propiedades: ".$dato["propiedades"]."</p>
                 <p>Mes de plantado: ".$dato["mes_de_plantado"]."</p></tr>";
             }

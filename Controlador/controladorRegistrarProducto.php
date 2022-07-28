@@ -6,6 +6,7 @@
 	
 	$producto = new Producto();
     $datos = $producto->getProducto();
+    $cius = $producto->CedulaUs();
 
     require_once("../Vista/vistaProductos.php");
 
@@ -16,19 +17,21 @@
 
         if(((strpos($tipoI, "gif") || strpos($tipoI, "jpeg") || strpos($tipoI, "jpg")) || strpos($tipoI, "png"))){
 
-        $carpetaD=$_SERVER["DOCUMENT_ROOT"]. "EcoVerde/Vista/images/";
+        $carpetaD=$_SERVER["DOCUMENT_ROOT"]. "../Vista/images/";
         move_uploaded_file($_FILES["imagen"] ["tmp_name"], $carpetaD.$nombreI);
-
-        $cedula = $_POST['cedula'];
+    }else{
+        echo "Solo se pueden ingresar imagenes con extension png/jpe/jpeg/gif.";
+    }
+        $ciu = $_POST['cedula'];
 		$nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $familia = $_POST['familia'];
         $dispo = $_POST['disponibilidad'];
         $propi = $_POST['propiedades'];
         $mes = $_POST['mesplantado'];
-		$producto->RegistrarProductos($cedula, $nombre, $precio, $familia, $dispo, $propi, $mes, $nombreI);
+		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes);
 		echo("<meta http-equiv='refresh' content='0.1'>");
-        }
+        
         }
 	
 
