@@ -11,7 +11,7 @@ celular int(9) NOT NULL,
 email VARCHAR(30) NOT NULL,
 contraseña VARCHAR(32) NOT NULL,
 calle VARCHAR(30) NOT NULL,
-numero INT(30) NOT NULL,
+numero INT(9) NOT NULL,
 esquina VARCHAR(30) NOT NULL,
 barrio VARCHAR(30) NOT NULL,
 tipo enum("Cliente", "Administrador", "Gestor", "Reparto") NOT NULL,
@@ -35,14 +35,14 @@ FOREIGN KEY(ciu) REFERENCES Usuario(ci)
 
 CREATE TABLE Producto(
 codigo int(8) PRIMARY KEY AUTO_INCREMENT,  
-ciu int(8),
+ciu int(8) NOT NULL,
 nombre VARCHAR(30) NOT NULL,
-precio VARCHAR(30) NOT NULL,
+precio INT(9) NOT NULL,
 familia VARCHAR(30) NOT NULL,
 disponibilidad VARCHAR(30) NOT NULL,
 propiedades VARCHAR(50) NOT NULL,
 mes_de_plantado DATE NOT NULL,
-imagen LONGBLOB NOT NULL,
+imagen VARCHAR(50) NOT NULL,
 
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
 )ENGINE=INNODB;

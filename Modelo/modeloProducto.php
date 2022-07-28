@@ -98,7 +98,7 @@ public function __construct(){
 
 
     public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $imagen){
-        $sql = "INSERT INTO producto (CIU, nombre, precio, familia, disponibilidad, propiedades, mesdeplantado, imagen) VALUES 
+        $sql = "INSERT INTO producto (nombre, precio, familia, disponibilidad, propiedades, mesdeplantado, imagen) VALUES 
         ('$CIU', , '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$imagen')";
         
         

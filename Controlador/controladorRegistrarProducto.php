@@ -14,7 +14,7 @@
         $nombreI=$_FILES["imagen"] ["name"];
         $tipoI=$_FILES["imagen"] ["type"];
 
-        if($tipoI=="image/jpg" || $tipoI=="image/jpeg" || $tipoI=="image/png"){
+        if(((strpos($tipoI, "gif") || strpos($tipoI, "jpeg") || strpos($tipoI, "jpg")) || strpos($tipoI, "png"))){
 
         $carpetaD=$_SERVER["DOCUMENT_ROOT"]. "EcoVerde/Vista/images/";
         move_uploaded_file($_FILES["imagen"] ["tmp_name"], $carpetaD.$nombreI);

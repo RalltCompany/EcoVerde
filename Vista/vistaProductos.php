@@ -45,7 +45,7 @@
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
 
         <div class="volver">
-            <a href="MenuAdmin.html"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            <a href="../Vista/MenuAdmin.html"><i class="fa-solid fa-circle-chevron-left"></i></a>
         </div>
         <div class="container">
             <!-- Start Header Navigation -->
@@ -110,7 +110,7 @@
         <br>
 
         
-        <form action="" class="form-productos">
+        <form action="" enctype="multipart/form-data" class="form-productos">
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
@@ -145,22 +145,7 @@
             </div>
 
             <div class="derecha-divs">
-            <select name="mesplantado" id="" >
-                <option value="null" class="">Selecciona mes de plantado</option>
-                <option value="enero">Enero</option>
-                <option value="febrero">Febrero</option>
-                <option value="marzo">Marzo</option>
-                <option value="abril">Abril</option>
-                <option value="mayo">Mayo</option>
-                <option value="junio">Junio</option>
-                <option value="julio">Julio</option>
-                <option value="agosto">Agosto</option>
-                <option value="setiembre">Setiembre</option>
-                <option value="octubre">Octubre</option>
-                <option value="noviembre">Noviembre</option>
-                <option value="diciembre">Diciembre</option>
-
-            </select>
+            <input type="date" name="mesplantado" placeholder="Mes de plantado">
         </div>
 
         <div class="derecha-divs">
@@ -184,31 +169,19 @@
     </div>
 
     <div class='contenedor'>
-        <table>
-            <tr>
-                <td>Nombre</td>
-                <td>Codigo</td>
-                <td>Cedula del Usuario:</td>
-                <td>Precio</td>
-                <td>Familia</td>
-                <td>Disponibilidad</td>
-                <td>Propiedades</td>
-                <td>Mes de plantado</td>
-
-            </tr>
+        
 <?php
 foreach($datos as $dato){
-    echo "<tr>
-                <td>Nombre: ".$dato["nombre"]."</td>
-                <td>Codigo: ".$dato["Codigo"]."</td>
-                <td>Cedula del Usuario: ".$dato["CIU"]."</td>
-                <td>Precio: ".$dato["precio"]."</td>
-                <td>Familia: ".$dato["familia"]."</td>
-                <td>Disponibilidad: ".$dato["disponibilidad"]."</td>
-                <td>Propiedades: ".$dato["propiedades"]."</td>
-                <td>Mes de plantado: ".$dato["mes_de_plantado"]."</td></tr>";
+    echo "<img src='../Vista/images/".$dato['imagen']."' width='80%'>
+                <p>Nombre: ".$dato["nombre"]."</p>
+                <p>Codigo: ".$dato["codigo"]."</p>
+                <p>Cedula del Usuario: 54491536</p>
+                <p>Precio: ".$dato["precio"]."</p>
+                <p>Familia: ".$dato["familia"]."</p>
+                <p>Disponibilidad: ".$dato["disponibilidad"]."</p>
+                <p>Propiedades: ".$dato["propiedades"]."</p>
+                <p>Mes de plantado: ".$dato["mes_de_plantado"]."</p></tr>";
             }
-            "</table>";
             ?>
             
     </div>
