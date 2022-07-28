@@ -3,6 +3,8 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/validarRegistro.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -67,6 +69,12 @@
             <div class="izquierda-divs">
             <input type="email" name="email" placeholder="Email" required>
             </div>
+
+            <?php
+            if(isset($_GET['errmail'])){
+                echo "<script>swal.fire('Ha ocurrido un error','El correo electronico que quieres utilizar, ya fue registrado');</script>";
+            }
+            ?>
             
             <div class="izquierda-divs">
                 <input type="password" name="password" minlength="8" id="password" placeholder="Contraseña" required>
@@ -124,11 +132,11 @@
     <p class="subtitulo">Bienvenido al sitio web oficial de EcoVerde</p>
   </div>
   
-  
+ 
 </body>
 
 
-<script src="js/validarRegistro.js"></script>
+
 
 
 </html>

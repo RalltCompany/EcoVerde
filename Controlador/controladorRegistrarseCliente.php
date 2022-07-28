@@ -4,7 +4,7 @@ require_once("../db/db.php");
 require_once("../Modelo/modeloUsuario.php");
 
 require_once("../Vista/registrarse.php");
-
+$usuario=new Usuario();
 
 
 
@@ -20,22 +20,25 @@ require_once("../Vista/registrarse.php");
     $Numero = $_POST['numero'];
     $Esquina = $_POST['esquina'];
     $Barrio= $_POST['barrio'];
-    
-    $usuario=new Usuario();
-     
-    
 
-             if($usuario->RegistrarCliente($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio) ){
+      if($usuario->ComprobarEmail($Email)){
 
-                   header('location:../Controlador/controladorLogin.php');
-             }else{
-                   echo "no se pudo registrar";
-             }
+            
+            header('location:../Controlador/controladorRegistrarseCliente.php?errmail');
+      
+    }else{
 
+      $usuario->RegistrarCliente($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio);
+      header('location:../Controlador/controladorLogin.php');
+      
+    }
+   }
+            
          
-      }
+      
 
 
+    
 
       
      
