@@ -117,6 +117,15 @@ Class Usuario{
         
     }
 
+    public function getCredenciales($email){
+        $sql = "SELECT * FROM usuario WHERE email='$email'";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
+    }
 
     public function RegistrarCliente($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio ){
         $Tipo= "Cliente";

@@ -12,12 +12,16 @@ require_once("../Vista/login.php");
       if(isset($_POST['entrar'])){
 
          $Mail=$_POST['mail'];
-         $Clave=MD5($_POST['pass']);
+         $Clave=$_POST['pass'];
          $usuario=new Usuario();
 
          if($usuario->IniciarSesion($Mail, $Clave)){
         
-                  header('location:../index.php');
+                  $credenciales=$usuario->getCredenciales($Mail, $Clave);
+                  foreach($credenciales as $credencial){
+                        echo $credencial['ci'];
+                  }
+                 
             
           
 
