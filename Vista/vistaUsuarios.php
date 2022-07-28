@@ -103,11 +103,11 @@
     <div class="cuerpo">
         <h2 class="title-product">Usuarios</h2>
 
-        <center>
+        <div class="men">
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
         <a class="a" href="../Controlador/controladorModificarUsuario.php">Modificar</a>
         <a class="a" href="vistaUsuarios.php">Buscar</a>
-        </center>
+        </div>
 <br>
         <i class="fa-solid fa-user-gear"></i>
         
@@ -219,8 +219,8 @@
                 </tr>";
                 }
                 "</tbody>
-                </table>"
-                ; 
+                </table>";
+                
                 
         ?>
         </div>
