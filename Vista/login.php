@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -37,7 +38,11 @@
 
 
 <body>
-  
+<?php
+if(isset($_GET['registro'])){
+                echo "<script>swal.fire('¡Solicitud de registro fue exito!','Un administrador aceptara su registro en la brevedad');</script>";
+            }
+?>
   <div class="body-form">
     <div class="form-titulo"><i class="fa-solid fa-circle-user"></i>
     
