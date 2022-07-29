@@ -107,7 +107,7 @@ Class Usuario{
 
     public function getUsuario(){
 			
-        $sql = "SELECT * FROM usuario ORDER BY ci";
+        $sql = "SELECT * FROM usuario ORDER BY CI";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -137,7 +137,6 @@ Class Usuario{
         
         
         if($this->db->query($sql)){
-            
             return true;
             
         }else{
@@ -161,7 +160,7 @@ Class Usuario{
 
     public function EliminarUsuario($c){
 	
-        $sql = "DELETE FROM usuario WHERE ci = '$c'";
+        $sql = "DELETE FROM usuario WHERE CI = '$c'";
         if($this->db->query($sql)){
             return true;
         }else{
@@ -172,15 +171,15 @@ Class Usuario{
 
     public function ModificarUsuarios($c, $nombre, $apellido, $celular, $email, $calle, $numero, $esquina, $barrio, $tipo){
 	
-        $sql = "UPDATE usuario SET nombre = '$nombre' WHERE ci = '$c'";
-        $sql1 = "UPDATE usuario SET apellido = '$apellido' WHERE ci = '$c'";
-        $sql2 = "UPDATE usuario SET celular = '$celular' WHERE ci = '$c'";
-        $sql3 = "UPDATE usuario SET email = '$email' WHERE ci = '$c'";
-        $sql4 = "UPDATE usuario SET calle = '$calle' WHERE ci = '$c'";
-        $sql5 = "UPDATE usuario SET numero = '$numero' WHERE ci = '$c'";
-        $sql6 = "UPDATE usuario SET esquina = '$esquina' WHERE ci = '$c'";
-        $sql7 = "UPDATE usuario SET barrio = '$barrio' WHERE ci = '$c'";
-        $sql8 = "UPDATE usuario SET tipo = '$tipo' WHERE ci = '$c'";
+        $sql = "UPDATE usuario SET nombre = '$nombre' WHERE CI = '$c'";
+        $sql1 = "UPDATE usuario SET apellido = '$apellido' WHERE CI = '$c'";
+        $sql2 = "UPDATE usuario SET celular = '$celular' WHERE CI = '$c'";
+        $sql3 = "UPDATE usuario SET email = '$email' WHERE CI = '$c'";
+        $sql4 = "UPDATE usuario SET calle = '$calle' WHERE CI = '$c'";
+        $sql5 = "UPDATE usuario SET numero = '$numero' WHERE CI = '$c'";
+        $sql6 = "UPDATE usuario SET esquina = '$esquina' WHERE CI = '$c'";
+        $sql7 = "UPDATE usuario SET barrio = '$barrio' WHERE CI = '$c'";
+        $sql8 = "UPDATE usuario SET tipo = '$tipo' WHERE CI = '$c'";
         if($nombre!=""){
             $modificar = $this->db->query($sql);
         }

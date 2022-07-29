@@ -22,11 +22,15 @@ require_once("../Vista/login.php");
                   foreach($credenciales as $credencial){
                      
 
-                        header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'&nombre='.$credencial['nombre'].'');
+                        header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'');
                   }
                  
             
           
+
+      }else{
+            header('location:../Controlador/controladorLogin.php?errlogin');
+            
 
       }
 

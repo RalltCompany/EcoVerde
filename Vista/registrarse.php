@@ -87,16 +87,42 @@
 
             <?php
             if(isset($_GET['errmail'])){
-                echo "<script>swal.fire('Ha ocurrido un error','El correo electronico que quieres utilizar, ya fue registrado');</script>";
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'El correo electronico que quieres utilizar, ya fue registrado',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
             }
+
+           
 
             if(isset($_GET['errcedula'])){
-                echo "<script>swal.fire('Ha ocurrido un error','La cedula que quieres utilizar ya fue registrada');</script>";
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'La cedula que quieres utilizar ya fue registrada',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
             }
+        
 
             if(isset($_GET['errclave'])){
-                echo "<script>swal.fire('Ha ocurrido un error','Las contraseñas ingresadas no coinciden');</script>";
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'Las contraseñas ingresadas no coinciden',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
             }
+
+
 
 
             ?>
