@@ -8,7 +8,7 @@ font-family: Dosis, sans-serif;
 
 
 .cuerpo{
-    width: 80%;
+    width: 70%;
     height: calc(100vh - 156px);
     float: left;
 }
@@ -86,8 +86,13 @@ font-family: Dosis, sans-serif;
     width: 20%;
     float: right;
     text-align: center;
+    background-color:white;
+    border: solid 2px #008037 ;
+    border-radius: 1%;
+    height: 100%;
+    margin-right: 90px;
+    padding-left: 42.5px;
 }
-
 
 .form-productos input{
     width: 80%;
@@ -98,7 +103,7 @@ font-family: Dosis, sans-serif;
     background: #ffffff00;
     font-weight: 700;
     margin: auto;
-   font-size: 20px;
+    font-size: 20px;
 
 }
 
