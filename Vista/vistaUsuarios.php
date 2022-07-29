@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -116,20 +117,20 @@
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="nombre" maxlength="30" placeholder="Nombre">
                 </div>
                 <div class="izquierda-divs">
-                    <input type="text" name="apellido" placeholder="Apellido">
+                    <input type="text" name="apellido" maxlength="30" placeholder="Apellido">
                     </div>
                 <div class="izquierda-divs">
-                <input type="number" name="cedula" placeholder="Cédula de identidad"c>
+                <input type="number" name="cedula" minlength="8" maxlength="8"  placeholder="Cédula de identidad"c>
                 </div>
                 <div class="izquierda-divs">
                 <input type="email" name="email" placeholder="Email">
                 </div>
 
                 <div class="izquierda-divs">
-                    <input type="password" name="password" id="" placeholder="Contraseña">
+                    <input type="password" name="password" minlength="8" id="" placeholder="Contraseña">
                 </div>
 
 
@@ -146,8 +147,47 @@
                 </div>
                 </div>
             
+<?php
+                if(isset($_GET['errmail'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'El correo electronico que quieres utilizar, ya fue registrado',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
+
+           
+
+            if(isset($_GET['errcedula'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'La cedula que quieres utilizar ya fue registrada',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
+        
+
+            if(isset($_GET['errclave'])){
+                echo "<script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...!',
+              text: 'Las contraseñas ingresadas no coinciden',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+            }
 
 
+
+
+            ?>
 
 
             <div class="derecha">

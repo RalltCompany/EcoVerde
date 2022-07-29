@@ -21,10 +21,33 @@
         $esquina = $_POST['esq'];
         $barrio = $_POST['bar'];
         $tipo = $_POST['tipous'];
-		$usuario2->RegistrarUsuarios($cedula, $nombre, $apellido, $celular, $email, $clave, $calle, $numero, $esquina, $barrio, $tipo);
-		echo("<meta http-equiv='refresh' content='0.1'>");
-	}
+		
+		
+        if($usuario2->ComprobarEmail($email)){
+
+            
+            header('location:../Controlador/controladorRegistrarUsuario.php?errmail');
+    }else{
+    
+    
+      if($usuario2->ComprobarCedula($cedula)){
+    
+        header('location:../Controlador/controladorRegistrarUsuario.php?errcedula');
+    
+    }else{
+    
+    $usuario2->RegistrarUsuarios($cedula, $nombre, $apellido, $celular, $email, $clave, $calle, $numero, $esquina, $barrio, $tipo);
+        echo("<meta http-equiv='refresh' content='0.1'>");
+    }
+    
+    
+    }
+    
+    
+    }
 
 	
+    
+    
 
     ?>

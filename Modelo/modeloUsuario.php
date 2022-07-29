@@ -107,7 +107,7 @@ Class Usuario{
 
     public function getUsuario(){
 			
-        $sql = "SELECT * FROM usuario ORDER BY CI";
+        $sql = "SELECT * FROM usuario ORDER BY ci";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
