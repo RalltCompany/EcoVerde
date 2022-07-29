@@ -14,6 +14,7 @@ foreach($credenciales as $credencial){
                      
     $_SESSION['CI']=$_GET['ci'];
     $_SESSION['TIPO']=$_GET['tipo'];
+    $_SESSION['NOMBRE']=$_GET['nombre'];
     
 }
 

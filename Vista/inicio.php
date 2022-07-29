@@ -49,11 +49,23 @@
                         <ul>
                             <?php   
                             session_start();
+                            if(isset($_SESSION['TIPO'])){ 
+                            if($_SESSION['TIPO']=="Cliente"){
+                                
+                               echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                            
+                            
+                             } else if($_SESSION['TIPO']=="Administrador"){
 
-                            if(isset($_SESSION['CI'])){
-                                echo $_SESSION['CI'];
-                               echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesion</a></li>";
+                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=Vista/MenuAdmin.html><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+
+
+                            }
+                           
                             
                             }else{
 
@@ -61,15 +73,12 @@
 
                                 echo "<li><a href=Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
                             }
-                           
-                            
-
 
                           
                             ?>
                             
                             
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            
                         </ul>
                     </div>
                 </div>

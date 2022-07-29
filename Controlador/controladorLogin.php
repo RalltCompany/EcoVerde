@@ -22,7 +22,7 @@ require_once("../Vista/login.php");
                   foreach($credenciales as $credencial){
                      
 
-                        header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'');
+                        header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'&nombre='.$credencial['nombre'].'');
                   }
                  
             
