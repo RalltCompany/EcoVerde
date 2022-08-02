@@ -29,7 +29,7 @@ require_once("../Vista/login.php");
           
 
       }else{
-            header('location:../Controlador/controladorLogin.php?errlogin');
+            echo "<script>window.location='../Controlador/controladorLogin.php?errlogin'";
             
 
       }

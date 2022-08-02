@@ -25,14 +25,13 @@
 		
         if($usuario2->ComprobarEmail($email)){
 
-            
-            header('location:../Controlador/controladorRegistrarUsuario.php?errmail');
+            echo "<script>window.location='../Controlador/controladorRegistrarUsuario.php?errmail'";
     }else{
     
     
       if($usuario2->ComprobarCedula($cedula)){
-    
-        header('location:../Controlador/controladorRegistrarUsuario.php?errcedula');
+        echo "<script>window.location='../Controlador/controladorRegistrarUsuario.php?errcedula'";
+        
     
     }else{
     

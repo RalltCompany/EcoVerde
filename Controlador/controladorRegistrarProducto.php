@@ -11,17 +11,6 @@
     require_once("../Vista/vistaProductos.php");
 
 	if(isset($_POST['registrar'])){
-
-        $nombreI=$_FILES["imagen"] ["name"];
-        $tipoI=$_FILES["imagen"] ["type"];
-
-        if(((strpos($tipoI, "gif") || strpos($tipoI, "jpeg") || strpos($tipoI, "jpg")) || strpos($tipoI, "png"))){
-
-        $carpetaD=$_SERVER["DOCUMENT_ROOT"]. "../Vista/images/";
-        move_uploaded_file($_FILES["imagen"] ["tmp_name"], $carpetaD.$nombreI);
-    }else{
-        echo "Solo se pueden ingresar imagenes con extension png/jpe/jpeg/gif.";
-    }
         $ciu = $_POST['cedula'];
 		$nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
@@ -29,7 +18,8 @@
         $dispo = $_POST['disponibilidad'];
         $propi = $_POST['propiedades'];
         $mes = $_POST['mesplantado'];
-		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes);
+        $img = $_POST['imagen'];
+		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, $img);
 		echo("<meta http-equiv='refresh' content='0.1'>");
         
         }

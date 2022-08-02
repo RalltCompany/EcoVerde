@@ -13,12 +13,17 @@ font-family: Dosis, sans-serif;
     
 }
 
-
+h2{
+    font-size: 50px;
+    text-align: center;
+    color: #008037;
+    margin-top: 15px;
+}
 .opciones-arriba{
 width: 100%;
 height: 50%;
 display:flex;
-    margin-top: 10px;
+    
     justify-content: center;
     align-items: flex-end;
 }

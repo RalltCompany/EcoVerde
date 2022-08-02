@@ -99,9 +99,20 @@ public function __construct(){
     }
 
 
-    public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado){
+    public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $nombreI, $nombreD){
+        $tmp_name = $_FILES[$nombreI]['tmp_name'];
+
+	    if (is_dir($nombreD) && is_uploaded_file($tmp_name)){
+		
+		$img_file = $_FILES[$nombreI]['name'];
+		$img_type = $_FILES[$nombreI]['type'];
+
+		if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg")) || strpos($img_type, "png"))){
+			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
+				
+				$ruta = $nombreD . '/' . $img_file;
         $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen) VALUES 
-        ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '2022-07-06', 'dfsd')";
+        ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$ruta')";
         
         
         if($this->db->query($sql)){
@@ -110,8 +121,10 @@ public function __construct(){
         }else{
             return false;
         }
+    }
 
-}
+    } 
+        }}
 
     public function CedulaUs(){
         $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador'";
