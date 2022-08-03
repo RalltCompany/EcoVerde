@@ -5,9 +5,10 @@
   
 	
 	$usuario1 = new Usuario();
-    $datosZ = $usuario1->getUsuario();
+    $datosZ = $usuario1->getUsuarioParaModificar($_GET['Cedula']);
 
     require_once("../Vista/vistaModificarUsuarios.php");	
+    
 
 	if(isset($_POST['mod'])){
 		$nombree = $_POST['nom'];
@@ -20,8 +21,9 @@
         $esquinaa = $_POST['esquina'];
         $barrioo = $_POST['barrio'];
         $tipoo = $_POST['tipouss'];
+        
 		$usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo);
-		echo("<meta http-equiv='refresh' content='0.1'>");
+		echo "<script>window.location='controladorRegistrarUsuario.php'</script>";
 	}	
 
     ?>

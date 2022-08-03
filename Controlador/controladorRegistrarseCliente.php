@@ -29,17 +29,17 @@ $usuario=new Usuario();
       if($usuario->ComprobarEmail($Email)){
 
             
-            echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errmail'";
+            echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errmail'</script>";
     }else{
 
 
       if($usuario->ComprobarCedula($Cedula)){
-        echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errcedula'";
+        echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errcedula'</script>";
   
 }else{
 
   if( $Clave != $ClaveVal){
-    echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errclave'";
+    echo "<script>window.location='../Controlador/controladorRegistrarseCliente.php?errclave'</script>";
 
   }else{
     $usuario->RegistrarCliente($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio);

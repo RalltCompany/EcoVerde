@@ -117,6 +117,16 @@ Class Usuario{
         
     }
 
+    public function getUsuarioParaModificar($CI){
+        $sql = "SELECT * FROM usuario WHERE ci='$CI' ORDER BY ci";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
+    }
+
     public function getCredenciales($email){
         $sql = "SELECT * FROM usuario WHERE email='$email'";
         $consulta = $this->db->query($sql);
@@ -233,9 +243,9 @@ Class Usuario{
               while($fila = mysqli_fetch_array( $consulta ) ){
         
                     if($fila['estado']=="Aceptado"){
-                        return true;
-                    }else{
                         return false;
+                    }else{
+                        return true;
                     }
               }
           
@@ -285,6 +295,7 @@ Class Usuario{
 }
 
 }
+
 
 
     public function IniciarSesion($Mail, $Clave){

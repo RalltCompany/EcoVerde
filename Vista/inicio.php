@@ -144,8 +144,8 @@
                             <ul class="dropdown-menu">
 								<li><a href="Vista/shop.html">Sidebar Shop</a></li>
 								<li><a href="Vista/shop-detail.html">Shop Detail</a></li>
-                                <li><a href="Vista/cart.html">Cart</a></li>
-                                <li><a href="Vista/checkout.html">Checkout</a></li>
+                                <li><a href="Vista/cart.php">Cart</a></li>
+                                <li><a href="Vista/pedido.php">Checkout</a></li>
                                 <li><a href="Vista/my-account.html">My Account</a></li>
                                 <li><a href="Vista/wishlist.html">Wishlist</a></li>
                             </ul>

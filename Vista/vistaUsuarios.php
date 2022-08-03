@@ -106,7 +106,6 @@
 
         <div class="men">
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="../Controlador/controladorModificarUsuario.php">Modificar</a>
         <a class="a" href="vistaUsuarios.php">Buscar</a>
         </div>
 <br>
@@ -246,7 +245,7 @@
                 <td data-label='Email'>".$dato["email"]."</td>
                 <td data-label='Tipo'>".$dato["tipo"]."</td>
                 <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
-                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>

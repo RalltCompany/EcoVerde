@@ -104,7 +104,7 @@
         <center>
         <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
         
-        <a class="a" href="../Controlador/controladorModificarUsuario.php">Modificar</a>
+        
         <a class="a" href="vistaUsuarios.php">Buscar</a>
         </center>
 <br>
@@ -115,7 +115,7 @@
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                <input type="number" name="cedu" placeholder="Cedula del usuario a modificar">
+                <input type="number" name="cedu" placeholder="CI del usuario: <?php  echo $_GET['Cedula'];  ?>"  readonly>
                 </div>
                 <div class="izquierda-divs">
                     <input type="text" name="nom" placeholder="Nombre">
@@ -194,7 +194,7 @@
         
                   foreach($datosZ as $dato) {
                     echo "<tr>
-                    <td data-label='Cedula'>".$dato["CI"]."</td>
+                    <td data-label='Cedula'>".$dato["ci"]."</td>
                     <td data-label='Cedula del Admin'>NULL</td>
                     <td data-label='Nombre'>".$dato["nombre"]."</td>
                     <td data-label='Apellido'>".$dato["apellido"]."</td>

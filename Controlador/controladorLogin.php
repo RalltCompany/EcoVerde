@@ -16,24 +16,32 @@ require_once("../Vista/login.php");
          $Clave=MD5($_POST['pass']);
          $usuario=new Usuario();
 
-         if($usuario->IniciarSesion($Mail, $Clave)){
+         if($usuario->ComprobarEstado($Mail,$Clave)){
+echo "<script>window.location='../Controlador/controladorLogin.php?errestado'</script>";
         
-                  $credenciales=$usuario->getCredenciales($Mail, $Clave);
-                  foreach($credenciales as $credencial){
-                     
 
-                        header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'&nombre='.$credencial['nombre'].'');
-                  }
+}else{
+
+      if($usuario->IniciarSesion($Mail, $Clave)){
+        
+            $credenciales=$usuario->getCredenciales($Mail, $Clave);
+            foreach($credenciales as $credencial){
+               
+
+                  header('location:abrirSesion.php?ci='.$credencial['ci'].'&tipo='.$credencial['tipo'].'&nombre='.$credencial['nombre'].'');
+            }
                  
             
           
 
       }else{
-            echo "<script>window.location='../Controlador/controladorLogin.php?errlogin'";
+            echo "<script>window.location='../Controlador/controladorLogin.php?errlogin'</script>";
             
 
       }
 
        }
+      
+      }
 
 ?>

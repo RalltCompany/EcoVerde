@@ -110,7 +110,7 @@
         <br>
 
         
-        <form action="" enctype="multipart/form-data" class="form-productos">
+        <form action="../Controlador/controladorRegistrarProducto.php" enctype="multipart/form-data" method="POST" class="form-productos">
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
@@ -177,7 +177,7 @@
         
 <?php
 foreach($datos as $dato){
-    echo "<img src='../Vista/images/".$dato['imagen']."' width='80%'>
+    echo "<img src='".$dato['imagen']."' width='80%'>
                 <p>Nombre: ".$dato["nombre"]."</p>
                 <p>Codigo: ".$dato["codigo"]."</p>
                 <p>Cedula del Usuario: ".$dato["ciu"]."</p>

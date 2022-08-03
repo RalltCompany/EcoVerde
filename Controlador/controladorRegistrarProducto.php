@@ -11,6 +11,7 @@
     require_once("../Vista/vistaProductos.php");
 
 	if(isset($_POST['registrar'])){
+
         $ciu = $_POST['cedula'];
 		$nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
@@ -18,8 +19,7 @@
         $dispo = $_POST['disponibilidad'];
         $propi = $_POST['propiedades'];
         $mes = $_POST['mesplantado'];
-        $img = $_POST['imagen'];
-		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, $img);
+		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images");
 		echo("<meta http-equiv='refresh' content='0.1'>");
         
         }

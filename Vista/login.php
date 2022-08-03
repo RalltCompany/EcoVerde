@@ -50,6 +50,15 @@ if(isset($_GET['registro'])){
     </script>";
             }
 
+            if(isset($_GET['errestado'])){
+              echo "<script>
+             Swal.fire({
+               title: '¡Su cuenta todavia no ha sido aceptada!',
+               text: 'Intentelo de nuevo, o espere a que sea aceptaa',
+               confirmButtonColor: '#008037', 
+               });
+               </script>";
+           }
             
 
 

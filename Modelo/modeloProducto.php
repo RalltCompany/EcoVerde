@@ -114,7 +114,6 @@ public function __construct(){
         $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen) VALUES 
         ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$ruta')";
         
-        
         if($this->db->query($sql)){
             return true;
             
