@@ -225,18 +225,14 @@
     <thead>
             <tr>
                 <th>Cedula</th>
-                <th>Cedula del Admin</th>
+                
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Celular</th>
                 <th class="celdaEmail">Email</th>
-                <th>Calle</th>
-                <th>Numero</th>
-                <th>Esquina</th>
-                <th>Barrio</th>
                 <th>Tipo</th>
-                <th>Estado</th>
-                <th class="celdaEliminar">Eliminar</th>
+                <th></th>
+                <th></th>
                 </tr>
     </thead>
     <?php echo "<tbody>";
@@ -244,18 +240,13 @@
               foreach($datos as $dato) {
                 echo "<tr>
                 <td data-label='Cedula'>".$dato["ci"]."</td>
-                <td data-label='Cedula del Admin'>NULL</td>
                 <td data-label='Nombre'>".$dato["nombre"]."</td>
                 <td data-label='Apellido'>".$dato["apellido"]."</td>
                 <td data-label='Celular'>".$dato["celular"]."</td>
                 <td data-label='Email'>".$dato["email"]."</td>
-                <td data-label='Calle'>".$dato["calle"]."</td>
-                <td data-label='Numero'>".$dato["numero"]."</td>
-                <td data-label='Esquina'>".$dato["esquina"]."</td>
-                <td data-label='Barrio'>".$dato["barrio"]."</td>
                 <td data-label='Tipo'>".$dato["tipo"]."</td>
-                <td data-label='Estado'>".$dato["estado"]."</td>
                 <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>

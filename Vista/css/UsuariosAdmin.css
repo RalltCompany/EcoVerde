@@ -76,6 +76,14 @@ body{
         text-align: center;
     }
 
+
+    .fa-solid.fa-user-pen{
+        
+        
+        font-size: 20px;
+        color: #008037;
+        text-align: center;
+    }
     select{
         font-weight: 600;
         font-size: 20px;
@@ -112,7 +120,7 @@ tr{
 }
 
 .contenedor{
-    width: 100%;
+    width: 70%;
     margin: auto;
     margin-top: 200px;
 }
