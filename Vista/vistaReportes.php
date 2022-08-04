@@ -44,7 +44,7 @@
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
         <div class="volver">
-            <a href="MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
         </div>
         <div class="container">
             <!-- Start Header Navigation -->
@@ -152,20 +152,20 @@
     </thead>
     <?php echo "<tbody>";
         
-        foreach($datosUsuarios as $dato) {
+        foreach($datosUsuarios as $datoUsuario) {
           echo "<tr>
-          <td data-label='Cedula'>".$dato["ci"]."</td>
+          <td data-label='Cedula'>".$datoUsuario["ci"]."</td>
           <td data-label='Cedula del Admin'>NULL</td>
-          <td data-label='Nombre'>".$dato["nombre"]."</td>
-          <td data-label='Apellido'>".$dato["apellido"]."</td>
-          <td data-label='Celular'>".$dato["celular"]."</td>
-          <td data-label='Email'>".$dato["email"]."</td>
-          <td data-label='Calle'>".$dato["calle"]."</td>
-          <td data-label='Numero'>".$dato["numero"]."</td>
-          <td data-label='Esquina'>".$dato["esquina"]."</td>
-          <td data-label='Barrio'>".$dato["barrio"]."</td>
-          <td data-label='Tipo'>".$dato["tipo"]."</td>
-          <td data-label='Estado'>".$dato["estado"]."</td>
+          <td data-label='Nombre'>".$datoUsuario["nombre"]."</td>
+          <td data-label='Apellido'>".$datoUsuario["apellido"]."</td>
+          <td data-label='Celular'>".$datoUsuario["celular"]."</td>
+          <td data-label='Email'>".$datoUsuario["email"]."</td>
+          <td data-label='Calle'>".$datoUsuario["calle"]."</td>
+          <td data-label='Numero'>".$datoUsuario["numero"]."</td>
+          <td data-label='Esquina'>".$datoUsuario["esquina"]."</td>
+          <td data-label='Barrio'>".$datoUsuario["barrio"]."</td>
+          <td data-label='Tipo'>".$datoUsuario["tipo"]."</td>
+          <td data-label='Estado'>".$datoUsuario["estado"]."</td>
           </tr>";
           }
           "</tbody>"
@@ -173,7 +173,7 @@
 ?>
 </table><br>
 <center>
-    <input type="submit" value="Crear Reporte" class="boton1">
+    <a href="../Vista/PHPpdf/mostrarPDFUsuarios.php" target="_blank" class="botonReporte"> Crear Reporte</a>
 
 </center>
 <div class="cuerpo">
@@ -190,74 +190,33 @@
         <th>Nombre</th>
         <th>Disponibilidad</th>
         <th>Familia o Categoria</th>
-        <th>Imagen</th>
         <th>Propiedades</th>
-        <th>Precio</th>
+        <th>Precio por KG</th>
         <th>Mes de plantado</th>
         
 
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td data-label="Codigo">sdfasdsda</td>
-        <td data-label="Nombre">dffasdf</td>
-        <td data-label="Disponibilidad">ASASASAS</td>
-        <td data-label="Familia/Categoria">sdfgdsgsd</td>
-        <td data-label="Imagen">sdfasdsda</td>
-        <td data-label="Propiedades">dffasdf</td>
-        <td data-label="Precio">ASASASAS</td>
-        <td data-label="Mes de plantado">sdfgdsgsd</td>
+<?php echo "<tbody>";
         
-    </tr>
-    <tr>
-        <td data-label="Codigo">sdfasdsda</td>
-        <td data-label="Nombre">dffasdf</td>
-        <td data-label="Disponibilidad">ASASASAS</td>
-        <td data-label="Familia/Categoria">sdfgdsgsd</td>
-        <td data-label="Imagen">sdfasdsda</td>
-        <td data-label="Propiedades">dffasdf</td>
-        <td data-label="Precio">ASASASAS</td>
-        <td data-label="Mes de plantado">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="Codigo">sdfasdsda</td>
-        <td data-label="Nombre">dffasdf</td>
-        <td data-label="Disponibilidad">ASASASAS</td>
-        <td data-label="Familia/Categoria">sdfgdsgsd</td>
-        <td data-label="Imagen">sdfasdsda</td>
-        <td data-label="Propiedades">dffasdf</td>
-        <td data-label="Precio">ASASASAS</td>
-        <td data-label="Mes de plantado">sdfgdsgsd</td>
-       
-    </tr>
-    <tr>
-        <td data-label="Codigo">sdfasdsda</td>
-        <td data-label="Nombre">dffasdf</td>
-        <td data-label="Disponibilidad">ASASASAS</td>
-        <td data-label="Familia/Categoria">sdfgdsgsd</td>
-        <td data-label="Imagen">sdfasdsda</td>
-        <td data-label="Propiedades">dffasdf</td>
-        <td data-label="Precio">ASASASAS</td>
-        <td data-label="Mes de plantado">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="Codigo">sdfasdsda</td>
-        <td data-label="Nombre">dffasdf</td>
-        <td data-label="Disponibilidad">ASASASAS</td>
-        <td data-label="Familia/Categoria">sdfgdsgsd</td>
-        <td data-label="Imagen">sdfasdsda</td>
-        <td data-label="Propiedades">dffasdf</td>
-        <td data-label="Precio">ASASASAS</td>
-        <td data-label="Mes de plantado">sdfgdsgsd</td>
-        
-    </tr>
-</tbody>
+        foreach($datosProductos as $datoProducto) {
+          echo "<tr>
+          <td data-label='Cedula'>".$datoProducto["codigo"]."</td>
+          <td data-label='Nombre'>".$datoProducto["nombre"]."</td>
+          <td data-label='Apellido'>".$datoProducto["disponibilidad"]."</td>
+          <td data-label='Celular'>".$datoProducto["familia"]."</td>
+          <td data-label='Email'>".$datoProducto["propiedades"]."</td>
+          <td data-label='Calle'>".$datoProducto["precio"]."</td>
+          <td data-label='Numero'>".$datoProducto["mes_de_plantado"]."</td>
+          </tr>";
+          }
+          "</tbody>"
+          ; 
+?>
 </table><br>
 <center>
-    <input type="submit" value="Crear Reporte" class="boton1">
+<a href="../Vista/PHPpdf/mostrarPDFProductos.php" target="_blank" class="botonReporte"> Crear Reporte</a>
 
 </center>
 <div class="cuerpo">

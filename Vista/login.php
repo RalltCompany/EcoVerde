@@ -73,7 +73,16 @@ if(isset($_GET['registro'])){
               </script>";
           }
 
-
+          if(isset($_GET['errSesion'])){
+            echo "<script>
+Swal.fire({
+  icon: 'error',
+  title: '¡Debes iniciar sesion!',
+  text: 'Ve al login para poder iniciar sesión y acceder a esa interfaz.',
+  confirmButtonColor: '#008037', 
+  });
+  </script>";
+          }
 ?>
   <div class="body-form">
     <div class="form-titulo"><i class="fa-solid fa-circle-user"></i>

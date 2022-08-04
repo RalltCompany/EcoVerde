@@ -52,6 +52,33 @@ th{
 tr{
     color: black;
 }
+.botonReporte{
+    font-size: 25px;
+    font-weight: 900;
+    border-radius: 5px;
+    color: #008037;
+    transition: .1s;
+
+    
+}
+
+.botonReporte:hover{
+    border-bottom: 3px solid #008037;
+    color: #008037;
+
+
+}
+
+.title-sub{
+    font-size: 30px;
+    font-weight: 600;
+    color: #008037;
+    margin-top: 20px;
+    margin-left: 40px;
+
+}
+
+
 .total{
     width: 100%;
     float: left;
@@ -200,7 +227,6 @@ h1{
     font-size: 40px;
     font-weight: 600;
     color: #008037;
-    margin-top: 20px;
-    margin-left: 40px;
+    text-align: center;
 
 }

@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -47,7 +48,9 @@
 
 session_start();
 
-
+if(!isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
 
 ?>
 
