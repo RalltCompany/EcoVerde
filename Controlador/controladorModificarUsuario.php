@@ -23,7 +23,7 @@
         $tipoo = $_POST['tipouss'];
         
 		$usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo);
-		echo "<script>window.location='controladorRegistrarUsuario.php'</script>";
+		echo "<script>window.location='controladorUsuariosAdmin.php'</script>";
 	}	
 
     ?>

@@ -141,7 +141,7 @@ session_start();
 
     <div class="opciones-abajo">
         
-        <a href="vistaReportes.html"><div class="opciones-divs2"><i class="fa-solid fa-clipboard-list"></i><p class="titulos">Reportes</p></div>
+        <a href="../Controlador/controladorReportes.php"><div class="opciones-divs2"><i class="fa-solid fa-clipboard-list"></i><p class="titulos">Reportes</p></div>
         <a href="vistaClientesAdmin.html"><div class="opciones-divs2"><i class="fa-solid fa-people-group"></i><p class="titulos">Clientes</p></div></a>
     </div>
 </div>

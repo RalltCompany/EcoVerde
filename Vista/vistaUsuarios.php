@@ -105,119 +105,14 @@
         <h2 class="title-product">Usuarios</h2>
 
         <div class="men">
-        <a class="a" href="../Controlador/controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="vistaUsuarios.php">Buscar</a>
+        <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
+        <a class="a" href="controladorUsuariosAdmin.php">Buscar</a>
         </div>
 <br>
         <i class="fa-solid fa-user-gear"></i>
         
 
-        <form action="../Controlador/controladorRegistrarUsuario.php" method="POST" class="form-productos">
-            <div class="contenedor-flex">
-                <div class="izquierda">
-                    <div class="izquierda-divs">
-                <input type="text" name="nombre" maxlength="30" placeholder="Nombre">
-                </div>
-                <div class="izquierda-divs">
-                    <input type="text" name="apellido" maxlength="30" placeholder="Apellido">
-                    </div>
-                <div class="izquierda-divs">
-                <input type="number" name="cedula" minlength="8" maxlength="8"  placeholder="Cédula de identidad"c>
-                </div>
-                <div class="izquierda-divs">
-                <input type="email" name="email" placeholder="Email">
-                </div>
-
-                <div class="izquierda-divs">
-                    <input type="password" name="password" minlength="8" id="" placeholder="Contraseña">
-                </div>
-
-
-                <div class="izquierda-divs">
-                    <select name="tipous" id="" >
-                        <option value="null" class="">Selecciona tipo de usuario</option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Gestor">Gestor</option>
-                        <option value="Reparto">Reparto</option>
-                        <option value="Cliente">Cliente</option>
-                       
-        
-                    </select>
-                </div>
-                </div>
-            
-<?php
-                if(isset($_GET['errmail'])){
-                echo "<script>
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...!',
-              text: 'El correo electronico que quieres utilizar, ya fue registrado',
-              confirmButtonColor: '#008037', 
-              });
-              </script>";
-            }
-
-           
-
-            if(isset($_GET['errcedula'])){
-                echo "<script>
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...!',
-              text: 'La cedula que quieres utilizar ya fue registrada',
-              confirmButtonColor: '#008037', 
-              });
-              </script>";
-            }
-        
-
-            if(isset($_GET['errclave'])){
-                echo "<script>
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...!',
-              text: 'Las contraseñas ingresadas no coinciden',
-              confirmButtonColor: '#008037', 
-              });
-              </script>";
-            }
-
-
-
-
-            ?>
-
-
-            <div class="derecha">
-
-                <div class="derecha-divs">
-                <input type="text" name="calle" placeholder="Calle">
-                </div>
-                <div class="derecha-divs">
-                    <input type="text" name="num" placeholder="Numero">
-                    </div>
-                
-                    <div class="derecha-divs">
-                        <input type="text" name="esq" placeholder="Esquina">
-                        </div>
-                        <div class="derecha-divs">
-                            <input type="text" name="bar" placeholder="Barrio">
-                            </div>
-
-                <div class="derecha-divs">
-            <input type="text" name="cel"  placeholder="Celular">
-            </div>
-            </div>
-                </div>
-            <div class="botones">
-                <input type="submit" name="reg" value="Registrar" class="registrar">
-            </div>
-        </form>
-        <br>
-        
-    </div>
-    
+      
     <div class='contenedor'>
     <table class='notas'>
     

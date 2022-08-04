@@ -115,7 +115,7 @@
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                <input type="number" name="cedu" placeholder="CI del usuario: <?php  echo $_GET['Cedula'];  ?>"  readonly>
+                <input type="number" name="cedu" placeholder="" value="<?php  echo $_GET['Cedula'];  ?>" readonly>
                 </div>
                 <div class="izquierda-divs">
                     <input type="text" name="nom" placeholder="Nombre">

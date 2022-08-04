@@ -79,7 +79,7 @@ h1{
 }
 .contenedor{
     width: 100%;
-    max-width: 1000px;
+    
     margin: auto;
 }
 
@@ -92,6 +92,9 @@ h1{
     table-layout: fixed;
 }
 
+.celdaEmail{
+    width: 220px;
+}
 
 .notas caption{
     font-size: 20px;
@@ -191,4 +194,13 @@ h1{
 
 .volver i:hover{
     font-size: 40px;
+}
+
+.title-product{
+    font-size: 40px;
+    font-weight: 600;
+    color: #008037;
+    margin-top: 20px;
+    margin-left: 40px;
+
 }

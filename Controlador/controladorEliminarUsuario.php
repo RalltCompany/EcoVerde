@@ -14,7 +14,7 @@
 	
 		$ced = $_GET['Cedula'];
 		$usuario->EliminarUsuario($ced);
-		header("location:controladorRegistrarUsuario.php");
+		header("location:controladorUsuariosAdmin.php");
 	
 
 	

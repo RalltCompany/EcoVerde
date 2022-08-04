@@ -7,7 +7,7 @@
 	$usuario2 = new Usuario();
     $datos = $usuario2->getUsuario();
 
-    require_once("../Vista/vistaUsuarios.php");
+    require_once("../Vista/vistaRegistrarUsuarios.php");
 
 	if(isset($_POST['reg'])){
         $cedula = $_POST['cedula'];
