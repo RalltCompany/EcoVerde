@@ -431,8 +431,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Nuestra huerta</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <h1>Nuestra huerta y plantaciones</h1>
+                        <p>Estas nos algunas fotos de nuestra huerta orgánica. </p>
                     </div>
                 </div>
             </div>
@@ -444,11 +444,11 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                <h3>Plantaciones</h3>
+                                <p>Nuestras plantaciones son cuidadas con productos y abono de buena calidad, tambien son cosechadas por personas capacitadas y con experiencia en en area.</p>
                             </div>
                             <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                              
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
                                 <li><a href="#"><i class="far fa-comments"></i></a></li>
                             </ul>
@@ -462,11 +462,10 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
+                                <h3>Plantaciones despues de 2 meses</h3>
                                 <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                             </div>
                             <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
                                 <li><a href="#"><i class="far fa-comments"></i></a></li>
                             </ul>
@@ -480,17 +479,18 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
+                                <h3>Cosecha</h3>
                                 <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                             </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <ul class="option-blog">                            
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
                                 <li><a href="#"><i class="far fa-comments"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                
             </div>
         </div>
     </div>
