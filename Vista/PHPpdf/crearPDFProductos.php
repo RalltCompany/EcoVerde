@@ -53,6 +53,8 @@ class PDF extends FPDF
             $this->Cell(34,7, utf8_decode($fila['precio']),1, 0 , 'L' );
             $this->Cell(34,7, utf8_decode($fila['mes_de_plantado']),1, 0 , 'L' );
             $this->Ln();//Salto de línea para generar otra fila
+            $this->SetX(2);
+        $this->SetFont('Arial','',10);
         }
     }
  
