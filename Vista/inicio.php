@@ -546,12 +546,10 @@
                         <div class="footer-link">
                             <h4>Información</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="">Inicio</a></li>
+                                <li><a href="">Sobre nosotros</a></li>
+                                <li><a href="">Galeria</a></li>
+                                <li><a href="">Contáctanos</a></li>
                             </ul>
                         </div>
                     </div>

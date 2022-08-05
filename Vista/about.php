@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Sobre nosotros</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					
                     <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                        <p>Contactanos: <a href="#"> 22260722</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
@@ -53,15 +53,22 @@
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
-                               echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
                                ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
                                echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                             
                             
                              } else if($_SESSION['TIPO']=="Administrador"){
 
-                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
                                ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+
+
+                            }else if($_SESSION['TIPO']=="Gestor"){
+
+                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
                                echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
@@ -89,28 +96,28 @@
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
                                 <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                                    <i class="fab fa-opencart"></i> 20% de descueto con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 10%! compra de vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                    <i class="fab fa-opencart"></i> 20% de descueto con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                             </ul>
                         </div>
@@ -216,33 +223,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>ABOUT US</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">ABOUT US</li>
+                    <h2>Sobre nosotros</h2>
+                   <!-- <ul class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">ABOUT US</li>-->
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End All Title Box -->
+     <!--End All Title Box -->
 
     <!-- Start About Page  -->
     <div class="about-box-main">
         <div class="container">
             <div class="row">
 				<div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-fluid" src="images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-fluid" src="images/hola11.JPG" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="noo-sh-title-top">We are <span>Freshshop</span></h2>
+                    <h2 class="noo-sh-title-top">Historia</h2>
                     <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
                         voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
                         sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
                         Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					<a class="btn hvr-hover" href="#">Read More</a>
+				 
                 </div>
             </div>
             <div class="row my-5">
@@ -265,7 +272,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row my-4">
+            <!--<div class="row my-4">
                 <div class="col-12">
                     <h2 class="noo-sh-title">Meet Our Team</h2>
                 </div>
@@ -372,97 +379,14 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
                         </div>
                         <hr class="my-0"> </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
     <!-- End About Page -->
 
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- End Instagram Feed  -->
 
 
@@ -473,35 +397,31 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Business Time</h3>
+							<h3>Horarios de atencion </h3>
 							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
+								<li>Lunes a Viernes 08.00am a 17.00pm</li> <li>Sabado: 10.00am a 08.00pm</li> <li>Domingo: <span>Cerrado</span></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Newsletter</h3>
+							<h3>Mensaje rapido</h3>
 							<form class="newsletter-box">
 								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<input class="" type="email" name="Email" placeholder="Mensaje" />
 									<i class="fa fa-envelope"></i>
 								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
+								<button class="btn hvr-hover" type="submit">Enviar</button>
 							</form>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<h3>Redes sociales</h3>
+							<p>Lugares en donde nos puedes encontrar</p>
 							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/ecoverde_uy/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
 						</div>
@@ -509,38 +429,28 @@
 				</div>
 				<hr>
                 <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link">
-                            <h4>Information</h4>
+                            <h4>Información</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="">Inicio</a></li>
+                                <li><a href="">Sobre nosotros</a></li>
+                                <li><a href="">Galeria</a></li>
+                                <li><a href="">Contáctanos</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
-                            <h4>Contact Us</h4>
+                            <h4>Contacto</h4>
                             <ul>
+                                
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-phone-square"></i>Telefono: <a href="tel:+1-888705770">22260722</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">ecoverdeuy2022@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
