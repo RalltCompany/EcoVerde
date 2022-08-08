@@ -137,7 +137,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -149,16 +149,16 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Vista/shop.html">Sidebar Shop</a></li>
-								<li><a href="Vista/shop-detail.html">Shop Detail</a></li>
+								<li><a href="Vista/shop.php">Sidebar Shop</a></li>
+								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
                                 <li><a href="Vista/cart.php">Cart</a></li>
                                 <li><a href="Vista/pedido.php">Checkout</a></li>
                                 <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="Vista/wishlist.html">Wishlist</a></li>
+                                <li><a href="Vista/wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../gallery.html">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../contact-us.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Vista/gallery.php">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Vista/contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -227,7 +227,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="#">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                         <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="#">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                         <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="#">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
