@@ -149,12 +149,16 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Vista/shop.php">Sidebar Shop</a></li>
+								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
-                                <li><a href="Vista/cart.php">Cart</a></li>
-                                <li><a href="Vista/pedido.php">Checkout</a></li>
-                                <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="Vista/wishlist.php">Wishlist</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                <li><a href='Vista/pedido.php'>Pedido</a></li>
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  ?>
+                                
+                                
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="Vista/gallery.php">Galería</a></li>

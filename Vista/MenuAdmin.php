@@ -80,10 +80,12 @@ if(!isset($_SESSION['CI'])){
                         <ul class="dropdown-menu">
                             <li><a href="shop.html">Sidebar Shop</a></li>
                             <li><a href="shop-detail.html">Shop Detail</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                <li><a href='Vista/pedido.php'>Pedido</a></li>
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  ?>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Galería</a></li>

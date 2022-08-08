@@ -34,7 +34,16 @@
     <![endif]-->
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
 </head>
+<?php
 
+
+
+
+if(isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
+
+?>
 <body>
     <!-- Start Main Top -->
     <div class="main-top">

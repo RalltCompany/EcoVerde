@@ -39,7 +39,12 @@
     <![endif]-->
 
 </head>
+<?php
+if(isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
 
+?>
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
@@ -52,7 +57,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-                <a class="navbar-brand" href="../index.php"><img src="../images/logo.png" class="logo-eco" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="../images/logo.png" class="logo-eco" alt=""></a>
             </div>
             <!-- End Header Navigation -->
 
@@ -120,6 +125,13 @@
 </header>
 
 
+<?php
+
+if(isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
+
+?>
 <body>
 
 

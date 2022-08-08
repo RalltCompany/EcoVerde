@@ -39,7 +39,16 @@
     <![endif]-->
 
 </head>
+<?php
 
+
+
+
+if(isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
+
+?>
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">

@@ -98,6 +98,18 @@ public function __construct(){
         
     }
 
+    public function getVerduras(){
+			
+        $sql = "SELECT * FROM producto WHERE familia = 'Frutas'";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Producto[]=$filas;
+        }
+        return $this->Producto;
+        
+    }
+
 
     public function RegistrarProductos($CIU, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $nombreI, $nombreD){
         $tmp_name = $_FILES[$nombreI]['tmp_name'];
