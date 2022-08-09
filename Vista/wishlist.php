@@ -34,7 +34,13 @@
     <![endif]-->
 
 </head>
+<?php
+session_start();
+if(!isset($_SESSION['CI'])){
+    echo "<script>window.location='errorSession.php'</script>";
+}
 
+?>
 <body>
     <!-- Start Main Top -->
     <div class="main-top">

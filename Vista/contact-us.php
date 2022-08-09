@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Contactanos</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -144,21 +144,21 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Vista/about.php">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Vista/shop.html">Sidebar Shop</a></li>
-								<li><a href="Vista/shop-detail.html">Shop Detail</a></li>
+								<li><a href="shop.php">Sidebar Shop</a></li>
+								<li><a href="../controlador/controladorTienda.php">Shop Detail</a></li>
                                 <li><a href="Vista/cart.php">Cart</a></li>
                                 <li><a href="Vista/pedido.php">Checkout</a></li>
                                 <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="Vista/wishlist.html">Wishlist</a></li>
+                                <li><a href="Vista/wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../gallery.html">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../contact-us.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

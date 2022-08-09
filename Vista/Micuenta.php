@@ -37,9 +37,7 @@
 <?php
 
 
-
-
-if(isset($_SESSION['CI'])){
+if(!isset($_SESSION['NOMBRE'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
 
