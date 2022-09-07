@@ -201,7 +201,7 @@ if(!isset($_SESSION['CI'])){
                   foreach($datosZ as $dato) {
                     echo "<tr>
                     <td data-label='Cedula'>".$dato["ci"]."</td>
-                    <td data-label='Cedula del Admin'>NULL</td>
+                    <td data-label='Cedula del Admin'>".$dato['ciadmin']."</td>
                     <td data-label='Nombre'>".$dato["nombre"]."</td>
                     <td data-label='Apellido'>".$dato["apellido"]."</td>
                     <td data-label='Celular'>".$dato["celular"]."</td>

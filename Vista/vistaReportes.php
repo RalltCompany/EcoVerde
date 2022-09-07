@@ -126,13 +126,7 @@ if(!isset($_SESSION['CI'])){
 </header>
 
 
-<?php
 
-if(isset($_SESSION['CI'])){
-    echo "<script>window.location='errorSession.php'</script>";
-}
-
-?>
 <body>
 
 

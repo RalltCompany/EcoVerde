@@ -35,7 +35,7 @@
 
 </head>
 <?php
-
+session_start();
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -54,7 +54,7 @@ if(!isset($_SESSION['CI'])){
                     <div class="our-link">
                         <ul>
                             <?php   
-                            session_start();
+                            
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
