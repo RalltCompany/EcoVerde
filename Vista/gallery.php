@@ -76,9 +76,9 @@
                             
                             }else{
 
-                                echo "<li><a href=Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
+                                echo "<li><a href=../Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
 
-                                echo "<li><a href=Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
+                                echo "<li><a href=../Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
                             }
 
                           
@@ -145,16 +145,19 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="../controlador/controladorTienda.php">Sidebar Shop</a></li>
+								<li><a href="../Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="shop-detail.php">Shop Detail</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="pedido.php">Checkout</a></li>
-                                <li><a href="Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                <li><a href='Vista/pedido.php'>Pedido</a></li>
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                ?>
                             </ul>
                         </li>
                         <li class="nav-item active"><a class="nav-link" href="gallery.php">Galería</a></li>
@@ -210,7 +213,7 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Buscar">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>
@@ -222,11 +225,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Services</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
-                    </ul>
+                    <h2>Servicios</h2>
+                   
                 </div>
             </div>
         </div>
@@ -541,35 +541,31 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Business Time</h3>
+							<h3>Horarios de atencion </h3>
 							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
+								<li>Lunes a Viernes 08.00am a 17.00pm</li> <li>Sabado: 10.00am a 08.00pm</li> <li>Domingo: <span>Cerrado</span></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Newsletter</h3>
+							<h3>Mensaje rapido</h3>
 							<form class="newsletter-box">
 								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<input class="" type="email" name="Email" placeholder="Mensaje" />
 									<i class="fa fa-envelope"></i>
 								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
+								<button class="btn hvr-hover" type="submit">Enviar</button>
 							</form>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<h3>Redes sociales</h3>
+							<p>Lugares en donde nos puedes encontrar</p>
 							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/ecoverde_uy/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
 						</div>
@@ -577,38 +573,30 @@
 				</div>
 				<hr>
                 <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link">
-                            <h4>Information</h4>
+                            <h4>Acceso rapído</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="inicio.php">Inicio</a></li>
+                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
+                                <li><a href="">Tienda</a></li>
+                                <li><a href="Vista/gallery.php">Galeria</a></li>
+                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
-                            <h4>Contact Us</h4>
+                            <h4>Contacto</h4>
                             <ul>
+                                
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-phone-square"></i>Telefono: <a href="tel:+1-888705770">22260722</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">ecoverdeuy2022@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>

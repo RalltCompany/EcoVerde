@@ -76,9 +76,9 @@
                             
                             }else{
 
-                                echo "<li><a href=Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
+                                echo "<li><a href=../Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
 
-                                echo "<li><a href=Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
+                                echo "<li><a href=../Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
                             }
 
                           
@@ -145,16 +145,19 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.php">Sidebar Shop</a></li>
-								<li><a href="../controlador/controladorTienda.php">Shop Detail</a></li>
-                                <li><a href="Vista/cart.php">Cart</a></li>
-                                <li><a href="Vista/pedido.php">Checkout</a></li>
-                                <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="Vista/wishlist.php">Wishlist</a></li>
+								<li><a href="../Controlador/controladorTienda.php">Sidebar Shop</a></li>
+								<li><a href="shop-detail.php">Shop Detail</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                <li><a href='Vista/pedido.php'>Pedido</a></li>
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                ?>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
@@ -210,7 +213,7 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Buscar">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>
@@ -222,11 +225,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Contact Us</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"> Contact Us </li>
-                    </ul>
+                    <h2>Contáctanos</h2>
+                    
                 </div>
             </div>
         </div>
@@ -239,35 +239,35 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-12">
                     <div class="contact-form-right">
-                        <h2>GET IN TOUCH</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio justo, ultrices ac nisl sed, lobortis porta elit. Fusce in metus ac ex venenatis ultricies at cursus mauris.</p>
+                        <h2>Envienos su mensaje </h2>
+                        <p></p>
                         <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required data-error="Please enter your name">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <input type="text" placeholder="Correo electonico" id="email" class="form-control" name="name" required data-error="Please enter your email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Subject" required data-error="Please enter your Subject">
+                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Asunto" required data-error="Please enter your Subject">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <textarea class="form-control" id="message" placeholder="Mensaje" rows="4" data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <button class="btn hvr-hover" id="submit" type="submit">Enviar mensaje</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -278,17 +278,17 @@
                 </div>
 				<div class="col-lg-4 col-sm-12">
                     <div class="contact-info-left">
-                        <h2>CONTACT INFO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <h2>Información de contacto</h2>
+                        <p>Lo que pueden encontrar en en este  lugar es la dirección de nuestra huerta, telefono de contacto y nuesto correo electronico</p>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street Wichita,<br> KS 87213 </p>
+                                <p><i class="fas fa-map-marker-alt"></i>Avenida General San Martín & Gilberto Bellini, 12300 Montevideo 
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                <p><i class="fas fa-phone-square"></i>Telefono: <a href="22260722">22260722</a></p>
                             </li>
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                <p><i class="fas fa-envelope"></i>Gmail: <a href="mailto: ecoverdeuy2022@gmail.com"> ecoverdeuy2022@gmail.com</a></p>
                             </li>
                         </ul>
                     </div>
@@ -298,130 +298,41 @@
     </div>
     <!-- End Cart -->
 
-    <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Instagram Feed  -->
+    
 
 
-    <!-- Start Footer  -->
-    <footer>
+   <!-- Start Footer  -->
+   <footer>
         <div class="footer-main">
             <div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Business Time</h3>
+							<h3>Horarios de atencion </h3>
 							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
+								<li>Lunes a Viernes 08.00am a 17.00pm</li> <li>Sabado: 10.00am a 08.00pm</li> <li>Domingo: <span>Cerrado</span></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Newsletter</h3>
+							<h3>Mensaje rapido</h3>
 							<form class="newsletter-box">
 								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<input class="" type="email" name="Email" placeholder="Mensaje" />
 									<i class="fa fa-envelope"></i>
 								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
+								<button class="btn hvr-hover" type="submit">Enviar</button>
 							</form>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<h3>Redes sociales</h3>
+							<p>Lugares en donde nos puedes encontrar</p>
 							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/ecoverde_uy/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
 						</div>
@@ -429,38 +340,30 @@
 				</div>
 				<hr>
                 <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link">
-                            <h4>Information</h4>
+                            <h4>Acceso rapído</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="inicio.php">Inicio</a></li>
+                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
+                                <li><a href="">Tienda</a></li>
+                                <li><a href="Vista/gallery.php">Galeria</a></li>
+                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
-                            <h4>Contact Us</h4>
+                            <h4>Contacto</h4>
                             <ul>
+                                
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-phone-square"></i>Telefono: <a href="tel:+1-888705770">22260722</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">ecoverdeuy2022@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>

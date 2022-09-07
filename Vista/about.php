@@ -77,9 +77,9 @@
                             
                             }else{
 
-                                echo "<li><a href=Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
+                                echo "<li><a href=../Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
 
-                                echo "<li><a href=Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
+                                echo "<li><a href=../Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
                             }
 
                           
@@ -152,14 +152,17 @@
                             <ul class="dropdown-menu">
 								<li><a href="../Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="shop-detail.php">Shop Detail</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="my-account.php">My Account</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                <li><a href='Vista/pedido.php'>Pedido</a></li>
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                ?>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
+                        <li class="nav-item "><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -211,7 +214,7 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Buscar">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>

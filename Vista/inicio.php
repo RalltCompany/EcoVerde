@@ -156,9 +156,8 @@
                                 echo "<li><a href='Vista/cart.php'>Carrito</a></li>
                                 <li><a href='Vista/pedido.php'>Pedido</a></li>
                                 <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
-                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  ?>
-                                
-                                
+                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                ?>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="Vista/gallery.php">Galería</a></li>
@@ -214,7 +213,7 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Buscar">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>
@@ -548,12 +547,14 @@
                     
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link">
-                            <h4>Información</h4>
+                            <h4>Acceso rapído</h4>
                             <ul>
-                                <li><a href="">Inicio</a></li>
-                                <li><a href="">Sobre nosotros</a></li>
-                                <li><a href="">Galeria</a></li>
-                                <li><a href="">Contáctanos</a></li>
+                                <li><a href="inicio.php">Inicio</a></li>
+                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
+                                <li><a href="">Tienda</a></li>
+                                <li><a href="Vista/gallery.php">Galeria</a></li>
+                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
+
                             </ul>
                         </div>
                     </div>
