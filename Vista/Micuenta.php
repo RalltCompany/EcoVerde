@@ -35,9 +35,8 @@
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
 </head>
 <?php
-
-
-if(!isset($_SESSION['NOMBRE'])){
+session_start();
+if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
 
@@ -55,7 +54,7 @@ if(!isset($_SESSION['NOMBRE'])){
                     <div class="our-link">
                         <ul>
                             <?php   
-                            session_start();
+                            
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
