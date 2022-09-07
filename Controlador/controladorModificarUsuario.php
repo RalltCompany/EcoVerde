@@ -21,9 +21,10 @@
         $esquinaa = $_POST['esquina'];
         $barrioo = $_POST['barrio'];
         $tipoo = $_POST['tipouss'];
-        
-		$usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo);
-		echo "<script>window.location='controladorUsuariosAdmin.php'</script>";
+        $ciadmin= $_SESSION['CI'];
+		$usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo, $ciadmin);
+		echo "<script>window.location='controladorUsuariosAdmin.php?$ciadmin'</script>";
+        echo $_SESSION['CI'];
 	}	
 
     ?>

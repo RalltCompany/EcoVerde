@@ -178,20 +178,21 @@ Class Usuario{
         }
         
     }
-
-    public function ModificarUsuarios($c, $nombre, $apellido, $celular, $email, $calle, $numero, $esquina, $barrio, $tipo){
-	
-        $sql = "UPDATE usuario SET nombre = '$nombre' WHERE CI = '$c'";
-        $sql1 = "UPDATE usuario SET apellido = '$apellido' WHERE CI = '$c'";
-        $sql2 = "UPDATE usuario SET celular = '$celular' WHERE CI = '$c'";
-        $sql3 = "UPDATE usuario SET email = '$email' WHERE CI = '$c'";
-        $sql4 = "UPDATE usuario SET calle = '$calle' WHERE CI = '$c'";
-        $sql5 = "UPDATE usuario SET numero = '$numero' WHERE CI = '$c'";
-        $sql6 = "UPDATE usuario SET esquina = '$esquina' WHERE CI = '$c'";
-        $sql7 = "UPDATE usuario SET barrio = '$barrio' WHERE CI = '$c'";
-        $sql8 = "UPDATE usuario SET tipo = '$tipo' WHERE CI = '$c'";
+    
+    public function ModificarUsuarios($c, $nombre, $apellido, $celular, $email, $calle, $numero, $esquina, $barrio, $tipo, $ciadmin){
+        
+        $sql = "UPDATE usuario SET nombre = '$nombre', ciadmin='$ciadmin'  WHERE CI = '$c'";
+        $sql1 = "UPDATE usuario SET apellido = '$apellido', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql2 = "UPDATE usuario SET celular = '$celular', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql3 = "UPDATE usuario SET email = '$email', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql4 = "UPDATE usuario SET calle = '$calle', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql5 = "UPDATE usuario SET numero = '$numero', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql6 = "UPDATE usuario SET esquina = '$esquina', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql7 = "UPDATE usuario SET barrio = '$barrio', ciadmin='$ciadmin' WHERE CI = '$c'";
+        $sql8 = "UPDATE usuario SET tipo = '$tipo', ciadmin='$ciadmin' WHERE CI = '$c'";
         if($nombre!=""){
             $modificar = $this->db->query($sql);
+            
         }
         if($apellido!=""){
             $modificar = $this->db->query($sql1);
