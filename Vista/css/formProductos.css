@@ -14,6 +14,12 @@ font-family: Dosis, sans-serif;
 }
 
 
+.cuerpoCli{
+    width: 100%;
+    height: calc(100vh - 156px);
+    
+}
+
 .title-product{
     font-size: 40px;
     font-weight: 600;
@@ -32,6 +38,8 @@ font-family: Dosis, sans-serif;
     
     
 }
+
+
 
 .a{
     position: relative;
@@ -67,6 +75,7 @@ font-family: Dosis, sans-serif;
 .contenedor{
     text-align: left;
     width: 100%;
+    max-width: 1400px !important;
 }
 .p1{
     float: left;
@@ -270,4 +279,15 @@ select{
     .p2{
         width: 44.50%;
     }
+}
+
+
+.fa-user-plus{
+    color: #03632c;
+    font-size: 20px;
+}
+
+.fa-user-xmark{
+    color: #930404;
+    font-size: 20px;
 }

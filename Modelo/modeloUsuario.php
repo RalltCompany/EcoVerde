@@ -117,6 +117,18 @@ Class Usuario{
         
     }
 
+    public function getUsuariosPendientes(){
+			
+        $sql = "SELECT * FROM usuario WHERE estado='Pendiente' AND tipo='Cliente' ORDER BY ci";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
+        
+    }
+
     public function getUsuarioParaModificar($CI){
         $sql = "SELECT * FROM usuario WHERE ci='$CI' ORDER BY ci";
         $consulta = $this->db->query($sql);

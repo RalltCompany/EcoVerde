@@ -11,11 +11,24 @@
 
 	
 
-	
+	if(isset($_GET['Cedula'])){ 
 		$ced = $_GET['Cedula'];
 		$usuario->EliminarUsuario($ced);
 		header("location:controladorUsuariosAdmin.php");
-	
+	}
+
+
+	if(isset($_GET['CedulaAceptar'])){
+
+
+
+	}
+
+	if(isset($_GET['CedulaRechazar'])){
+
+
+
+	}
 
 	
 

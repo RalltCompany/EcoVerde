@@ -17,20 +17,20 @@
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="../Vista/css/styleLogin.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/formClientes.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/formProductos.css">
-
+    <link rel="stylesheet" href="../Vista/css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/formClientes.css">
+    <link rel="stylesheet" href="../Vista/css/style.css">
+    <link rel="stylesheet" href="../Vista/css/formProductos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
 
     <!--[if lt IE 9]>
@@ -58,7 +58,7 @@ if(!isset($_SESSION['CI'])){
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="../images/logo.png" class="logo-eco" alt=""></a>
             </div>
             <!-- End Header Navigation -->
 
@@ -129,72 +129,37 @@ if(!isset($_SESSION['CI'])){
 <body>
 
 
-    <div class="cuerpo">
+    <div class="cuerpoCli">
 
         <h2 class="title-product">CLIENTES</h2>
-
+        <h1  class="title-producto">Aceptar o Rechazar registro: </h1>
         <div class="contenedor">
-    <table class="notas">
+    <table class="notas notascli">
     
     <thead>
         <tr>
-            <th>Nombre</th>
             <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Email</th>
             <th>Dirección</th>
-            
+            <th>Aceptar</th>
+            <th>Rechazar</th>
 
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-           
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
+       <?php
+
+        foreach($datos as $dato){
+            echo "<tr><td>".$dato['ci']."</td><td>".$dato['nombre']."</td><td>".$dato['apellido']."</td><td>".$dato['email']."</td><td>".$dato['calle']." ".$dato['numero']."</td><td><a href='controladorEliminarUsuario.php?CedulaAceptar=".$dato['ci']."'><i class='fa-sharp fa-solid fa-user-plus'></i></a></td><td><a href='controladorEliminarUsuario.php?CedulaRechazar=".$dato['ci']."'><i class='fa-solid fa-user-xmark'></i></a></td></tr>";
+        }
+
+        ?>
     </tbody>
 </table><br>
-<h1  class="title-producto">Aceptar o Rechazar registro: </h1>
-<form action="">
-<input class="acep-pedido" type="text" placeholder="Ingrese cédula del cliente"><br>
-<center>
-    <input type="submit" value="Aceptar" class="boton1">
-    <input type="submit" value="Eliminar" class="boton2">
 
-</center>
 
-</div>
-</form>
 </div>
     
 
@@ -251,21 +216,21 @@ if(!isset($_SESSION['CI'])){
 
 
   <!-- ALL JS FILES -->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../Vista/js/jquery-3.2.1.min.js"></script>
+  <script src="../Vista/js/popper.min.js"></script>
+  <script src="../Vista/js/bootstrap.min.js"></script>
   <!-- ALL PLUGINS -->
-  <script src="js/jquery.superslides.min.js"></script>
-  <script src="js/bootstrap-select.js"></script>
-  <script src="js/inewsticker.js"></script>
-  <script src="js/bootsnav.js."></script>
-  <script src="js/images-loded.min.js"></script>
-  <script src="js/isotope.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/baguetteBox.min.js"></script>
-  <script src="js/form-validator.min.js"></script>
-  <script src="js/contact-form-script.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../Vista/js/jquery.superslides.min.js"></script>
+  <script src="../Vista/js/bootstrap-select.js"></script>
+  <script src="../Vista/js/inewsticker.js"></script>
+  <script src="../Vista/js/bootsnav.js."></script>
+  <script src="../Vista/js/images-loded.min.js"></script>
+  <script src="../Vista/js/isotope.min.js"></script>
+  <script src="../Vista/js/owl.carousel.min.js"></script>
+  <script src="../Vista/js/baguetteBox.min.js"></script>
+  <script src="../Vista/js/form-validator.min.js"></script>
+  <script src="../Vista/js/contact-form-script.js"></script>
+  <script src="../Vista/js/custom.js"></script>
 </body>
 
 </html>

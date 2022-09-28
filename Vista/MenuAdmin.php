@@ -147,7 +147,7 @@ if(!isset($_SESSION['CI'])){
     <div class="opciones-abajo">
         
         <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorReportes.php'><div class='opciones-divs2'><i class='fa-solid fa-clipboard-list'></i><p class='titulos'>Reportes</p></div>";
-         echo "<a href='vistaClientesAdmin.html'><div class='opciones-divs2'><i class='fa-solid fa-people-group'></i><p class='titulos'>Clientes</p></div></a>";} ?>
+         echo "<a href='../Controlador/controladorClientes.php'><div class='opciones-divs2'><i class='fa-solid fa-people-group'></i><p class='titulos'>Clientes</p></div></a>";} ?>
         
     </div>
 </div>
