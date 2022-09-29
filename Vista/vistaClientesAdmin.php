@@ -8,7 +8,7 @@
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Site Metas -->
     <title>EcoVerde - Gestión Clientes</title>
     <meta name="keywords" content="">
@@ -50,7 +50,7 @@ if(!isset($_SESSION['CI'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
         <div class="volver">
-            <a href="MenuAdmin.html"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
         </div>
         <div class="container">
             <!-- Start Header Navigation -->
@@ -155,6 +155,30 @@ if(!isset($_SESSION['CI'])){
             echo "<tr><td>".$dato['ci']."</td><td>".$dato['nombre']."</td><td>".$dato['apellido']."</td><td>".$dato['email']."</td><td>".$dato['calle']." ".$dato['numero']."</td><td><a href='controladorEliminarUsuario.php?CedulaAceptar=".$dato['ci']."'><i class='fa-sharp fa-solid fa-user-plus'></i></a></td><td><a href='controladorEliminarUsuario.php?CedulaRechazar=".$dato['ci']."'><i class='fa-solid fa-user-xmark'></i></a></td></tr>";
         }
 
+
+
+        if(isset($_GET['Aceptado'])){
+            echo "<script>
+            Swal.fire({
+              icon: 'success',
+              title: '¡Cliente Aceptado!',
+              html: '<p>El cliente de cédula <b>".$_GET['CIACEPTADO']."</b> ha sido aceptado con éxito.</p>',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+                      }
+
+
+                      if(isset($_GET['Rechazado'])){
+                        echo "<script>
+                        Swal.fire({
+                          icon: 'info',
+                          title: '¡Cliente Rechazado!',
+                          html: '<p>El cliente de cédula <b>".$_GET['CIRECHAZADO']."</b> ha sido aceptado con éxito.</p>',
+                          confirmButtonColor: '#008037', 
+                          });
+                          </script>";
+                                  }
         ?>
     </tbody>
 </table><br>

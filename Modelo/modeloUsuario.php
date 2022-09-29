@@ -182,7 +182,7 @@ Class Usuario{
 
     public function EliminarUsuario($c){
 	
-        $sql = "DELETE FROM usuario WHERE CI = '$c'";
+        $sql = "DELETE FROM usuario WHERE ci = '$c'";
         if($this->db->query($sql)){
             return true;
         }else{
@@ -329,6 +329,19 @@ Class Usuario{
     }
 
 
+    public function AceptarCliente($Cedula){
+        
+        $Estado= "Aceptado";
+        $sql = "UPDATE usuario SET estado = '$Estado' WHERE ci = '$Cedula'";
+        
+        
+        if($this->db->query($sql)){
+            return true;
+            
+        }else{
+            return false;
+        }
+    }
 
 
 

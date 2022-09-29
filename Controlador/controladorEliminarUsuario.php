@@ -5,7 +5,7 @@
   
 	
 	$usuario = new Usuario();
-    $datosS = $usuario->getUsuario();
+    $datos = $usuario->getUsuario();
 
 
 
@@ -19,14 +19,25 @@
 
 
 	if(isset($_GET['CedulaAceptar'])){
-
-
-
+		$Cedula=$_GET['CedulaAceptar'];
+		if($usuario->AceptarCliente($Cedula)){
+			header("location:controladorClientes.php?Aceptado=1&CIACEPTADO=".$Cedula."");
+		}else{
+			echo "No se pudo aceptar";
+		}
+		
+		
 	}
 
 	if(isset($_GET['CedulaRechazar'])){
 
-
+		$Cedula=$_GET['CedulaRechazar'];
+		if($usuario->EliminarUsuario($Cedula)){
+			header("location:controladorClientes.php?Rechazado=1&CIRECHAZADO=".$Cedula."");
+		}else{
+			echo "No se pudo rechazar";
+		}
+		
 
 	}
 
