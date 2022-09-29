@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -10,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>EcoVerde - Gestión Productos</title>
+    <title>EcoVerde - Gestión Usuarios</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
@@ -27,11 +28,13 @@
     <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../Vista/css/custom.css">
-
+    
     <link rel="stylesheet" href="../Vista/css/style.css">
-    <link rel="stylesheet" href="../Vista/css/formProductos.css">
+    <link rel="stylesheet" href="../Vista/css/UsuariosAdmin.css">
+ 
 
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
+    
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -100,104 +103,58 @@ if(!isset($_SESSION['CI'])){
 </header>
 
 
+
 <body>
 
 
     <div class="cuerpo">
-
-        <h2 class="title-product">Productos</h2>
+        <h2 class="title-product">Usuarios</h2>
 
         <div class="men">
-        <a class="a" href="../Controlador/controladorRegistrarProducto.php">Registrar</a>
-        <a class="a" href="../Controlador/controladorProductoAdmin.php">Buscar</a>
+        <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
+        <a class="a" href="controladorUsuariosAdmin.php">Buscar</a>
         </div>
-
-        <br>
-
+<br>
+        <i class="fa-solid fa-boxes-packing"></i>
         
-        <form action="../Controlador/controladorRegistrarProducto.php" enctype="multipart/form-data" method="POST" class="form-productos">
-            <div class="contenedor-flex">
-                <div class="izquierda">
-                    <div class="izquierda-divs">
-                <input type="text" name="nombre" placeholder="Nombre del producto">
-                </div>
-                <div class="izquierda-divs">
-                <input type="number" name="disponibilidad" placeholder="Disponibilidad en KG">
-                </div>
-                <div class="izquierda-divs">
-                <input type="text" name="familia" placeholder="Familia o Categoría">
-                </div>
 
-                <div class="izquierda-divs">
-                    <input type="file" name="imagen" id="">
-                </div>
-
-
-                </div>
-            
-
-
-
-
-            <div class="derecha">
-
-                <div class="derecha-divs">
-                <input type="text" name="propiedades" placeholder="Propiedades">
-                </div>
-
-                <div class="derecha-divs">
-            <input type="text" name="precio"  placeholder="Precio en pesos">
-            </div>
-
-            <div class="derecha-divs">
-            <input type="date" name="mesplantado" placeholder="Mes de plantado">
-        </div>
-
-        <div class="derecha-divs">
-            <select name="cedula" id="" aria-placeholder="Codigo">
-              <option value="null">Cedula del Usuario</option>
-              <?php
-              foreach($cius as $ci){
-                echo "<option value=".$ci["ci"].">".$ci["nombre"]."</option>";
-              }
-              ?>
-            </select>
-        </div>
-            </div>
-                </div>
-            <div class="botones">
-                <input type="submit" value="Registrar" name="registrar" class="registrar">
-            </div>
-        </form>
-
-        </div>
-<br><br><br>
-<div class="todo">
-<div class="all">
-    <p class="p1"><</p>
-        <p class="p2">></p><br>
-    </div>
-
+      
     <div class='contenedor'>
-        
-<?php
-foreach($datos as $dato){
-    echo "<img src='".$dato['imagen']."' width='80%'>
-                <p>Nombre: ".$dato["nombre"]."</p>
-                <p>Codigo: ".$dato["codigo"]."</p>
-                <p>Cedula del Usuario: ".$dato["ciu"]."</p>
-                <p>Precio: $".$dato["precio"]." (KG)</p>
-                <p>Familia: ".$dato["familia"]."</p>
-                <p>Disponibilidad: ".$dato["disponibilidad"]."KG</p>
-                <p>Propiedades: ".$dato["propiedades"]."</p>
-                <p>Mes de plantado: ".$dato["mes_de_plantado"]."</p></tr>";
-            }
-            ?>
-            
-    </div>
-    </div>
+    <table class='notas'>
     
+    <thead>
+            <tr>
+                <th>Codigo</th>
+                
+                <th>CI Admin</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th class="celdaEmail">Familia</th>
+                <th>Disponibilidad</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+                </tr>
+    </thead>
+    <?php echo "<tbody>";
     
+              foreach($datos as $dato) {
+                echo "<tr>
+                <td data-label='Cedula'>".$dato["codigo"]."</td>
+                <td data-label='Nombre'>".$dato["ciu"]."</td>
+                <td data-label='Apellido'>".$dato["nombre"]."</td>
+                <td data-label='Celular'>".$dato["precio"]."</td>
+                <td data-label='Email'>".$dato["familia"]."</td>
+                <td data-label='Tipo'>".$dato["disponibilidad"]." KG</td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["codigo"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorModificarUsuario.php?Cedula=".$dato["codigo"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+                </tr>";
+                }
+                "</tbody>
+                </table>";
+                
+                
+        ?>
+        </div>
 
 
 
@@ -219,35 +176,7 @@ foreach($datos as $dato){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
   <!-- ALL JS FILES -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.min.js"></script>

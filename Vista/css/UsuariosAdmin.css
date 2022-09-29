@@ -51,6 +51,15 @@ body{
         font-weight: 600;
     }
 
+    .fa-solid.fa-boxes-packing{
+        width: 100%;
+        
+        font-size: 80px;
+        color: #008037;
+        text-align: center;
+        
+    }
+
     .fa-solid.fa-user-gear{
         width: 100%;
         
