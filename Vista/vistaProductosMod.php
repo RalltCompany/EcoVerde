@@ -108,11 +108,11 @@ if(!isset($_SESSION['CI'])){
 
 
     <div class="cuerpo">
-        <h2 class="title-product">Usuarios</h2>
+        <h2 class="title-product">Productos</h2>
 
         <div class="men">
-        <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="controladorUsuariosAdmin.php">Buscar</a>
+        <a class="a" href="controladorRegistrarProducto.php">Registrar</a>
+        <a class="a" href="controladorProductoAdmin.php">Buscar</a>
         </div>
 <br>
         <i class="fa-solid fa-boxes-packing"></i>

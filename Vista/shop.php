@@ -138,7 +138,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="../images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href="../index.php"><img src="../images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -292,7 +292,7 @@
                                                 </div>
                                                 <div class="why-text">
                                                     <h4><?php echo $dato['nombre']; ?></h4>
-                                                    <h5>$ <?php echo $dato['precio']; ?></h5>
+                                                    <h5>$ <?php echo $dato['precio']; ?> /KG</h5>
                                                 </div>
                                             </div>
                                         </div>
