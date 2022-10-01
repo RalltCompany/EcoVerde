@@ -13,6 +13,12 @@ font-family: Dosis, sans-serif;
     float: left;
 }
 
+.cuerpomod{
+    width: 100%;
+    height: calc(100vh - 156px);
+   
+}
+
 
 .cuerpoCli{
     width: 100%;
@@ -22,6 +28,15 @@ font-family: Dosis, sans-serif;
 
 .title-product{
     font-size: 40px;
+    font-weight: 600;
+    color: #008037;
+    margin-top: 20px;
+    margin-left: 40px;
+
+}
+
+.title-productmod{
+    font-size: 25px;
     font-weight: 600;
     color: #008037;
     margin-top: 20px;

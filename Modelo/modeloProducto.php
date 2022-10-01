@@ -126,16 +126,43 @@ public function __construct(){
         $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen) VALUES 
         ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$ruta')";
         
-        if($this->db->query($sql)){
+            if($this->db->query($sql)){
+                return true;
+            
+            }else{
+                return false;
+            }
+        }
+        }
+}
+}
+
+
+
+    public function UpdateImagen($codigo, $nombreI, $nombreD){
+        $tmp_name = $_FILES[$nombreI]['tmp_name'];
+
+	    if (is_dir($nombreD) && is_uploaded_file($tmp_name)){
+		
+		$img_file = $_FILES[$nombreI]['name'];
+		$img_type = $_FILES[$nombreI]['type'];
+
+		if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg")) || strpos($img_type, "png"))){
+			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
+				
+				$ruta = $nombreD . '/' . $img_file;
+        $sql1 = "UPDATE producto SET imagen='$ruta' WHERE codigo='$codigo'";
+        
+        if($this->db->query($sql1)){
             return true;
             
         }else{
             return false;
         }
     }
-
-    } 
-        }}
+}
+}
+}
 
     public function CedulaUs(){
         $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador'";
@@ -149,5 +176,28 @@ public function __construct(){
 			return $this->us;
 			
 		}
-    }
+
+
+
+        public function deleteProducto($Codigo){
+            $sql = "DELETE FROM producto WHERE codigo='$Codigo'";
+                
+                if($delete = $this->db->query($sql)){
+                    return true;
+                }else{
+                    return false;
+                }
+                
+                
+            }
+        }
+
+
+
+
+    
+
+
+
+   
 ?>

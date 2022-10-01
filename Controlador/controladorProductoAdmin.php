@@ -8,7 +8,7 @@
     $datos = $producto->getProducto();
     
 
-    require_once("../Vista/vistaProductosMod.php");
+    require_once("../Vista/vistaProductosAdmin.php");
 
 	if(isset($_POST['registrar'])){
 

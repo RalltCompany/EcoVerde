@@ -19,7 +19,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
@@ -145,14 +145,41 @@ if(!isset($_SESSION['CI'])){
                 <td data-label='Celular'>".$dato["precio"]."</td>
                 <td data-label='Email'>".$dato["familia"]."</td>
                 <td data-label='Tipo'>".$dato["disponibilidad"]." KG</td>
-                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["codigo"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
-                <td data-label='Eliminar'><a href=controladorModificarUsuario.php?Cedula=".$dato["codigo"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?ProdEliminar=".$dato["codigo"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorModificarProducto.php?Codigo=".$dato["codigo"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>
                 </table>";
                 
                 
+
+
+
+
+                
+        if(isset($_GET['Eliminado'])){
+            echo "<script>
+            Swal.fire({
+              icon: 'info',
+              title: '¡Producto Eliminado!',
+              html: '<p>El producto de código: <b>".$_GET['CodEliminado']."</b> ha sido eliminado con éxito.</p>',
+              confirmButtonColor: '#008037', 
+              });
+              </script>";
+                      }
+
+                      if(isset($_GET['Modificado'])){
+                        echo "<script>
+                        Swal.fire({
+                          icon: 'success',
+                          title: '¡Producto Modificado!',
+                          html: '<p>El producto ha sido modificado con éxito.</p>',
+                          confirmButtonColor: '#008037', 
+                          });
+                          </script>";
+                                  }
+                     
         ?>
         </div>
 

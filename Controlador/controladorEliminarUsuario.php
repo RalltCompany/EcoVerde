@@ -3,11 +3,13 @@
     require_once("../db/db.php");
 	require_once("../Modelo/modeloUsuario.php");
   
-	
+	require_once("../Modelo/modeloProducto.php");
+
 	$usuario = new Usuario();
     $datos = $usuario->getUsuario();
 
-
+	$producto = new Producto();
+    //$datosProd = $producto->getUsuario();
 
 	
 
@@ -41,6 +43,16 @@
 
 	}
 
-	
+	if(isset($_GET['ProdEliminar'])){
+
+		$Codigo=$_GET['ProdEliminar'];
+		if($producto->deleteProducto($Codigo)){
+			header("location:controladorProductoAdmin.php?Eliminado=1&CodEliminado=".$Codigo."");
+		}else{
+			echo "No se pudo Eliminar";
+		}
+		
+
+	}
 
     ?>

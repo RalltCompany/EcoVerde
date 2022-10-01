@@ -8,7 +8,7 @@
     $datos = $producto->getProducto();
     $cius = $producto->CedulaUs();
 
-    require_once("../Vista/vistaProductos.php");
+    require_once("../Vista/vistaRegistrarProductos.php");
 
 	if(isset($_POST['registrar'])){
 
