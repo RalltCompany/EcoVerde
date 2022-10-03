@@ -929,11 +929,13 @@
  .products-single .box-img-hover{
      overflow: hidden;
      position: relative;
+     height: 250px;
 }
  .box-img-hover img{
      margin: 0 auto;
      text-align: center;
      display: block;
+     height: 100%;
 }
  .type-lb{
      position: absolute;
