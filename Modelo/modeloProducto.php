@@ -88,7 +88,7 @@ public function __construct(){
 
     public function getProducto(){
 			
-        $sql = "SELECT * FROM producto ORDER BY Codigo";
+        $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -100,7 +100,7 @@ public function __construct(){
 
     public function getVerduras(){
 			
-        $sql = "SELECT * FROM producto WHERE familia = 'Frutas'";
+        $sql = "SELECT * FROM producto WHERE familia = 'Frutas' AND productoactivo='1'";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -123,8 +123,8 @@ public function __construct(){
 			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
 				
 				$ruta = $nombreD . '/' . $img_file;
-        $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen) VALUES 
-        ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$ruta')";
+        $sql = "INSERT INTO producto (ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen, productoactivo) VALUES 
+        ('$CIU', '$nombre', '$precio', '$familia', '$disponibilidad', '$propiedades', '$mesdeplantado', '$ruta', '1')";
         
             if($this->db->query($sql)){
                 return true;
@@ -151,7 +151,7 @@ public function __construct(){
 			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
 				
 				$ruta = $nombreD . '/' . $img_file;
-        $sql1 = "UPDATE producto SET imagen='$ruta' WHERE codigo='$codigo'";
+        $sql1 = "UPDATE producto SET imagen='$ruta' WHERE codigo='$codigo' AND productoactivo='1'";
         
         if($this->db->query($sql1)){
             return true;
@@ -165,7 +165,7 @@ public function __construct(){
 }
 
     public function CedulaUs(){
-        $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador'";
+        $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador' AND clienteactivo='1'";
 			$consulta = $this->db->query($sql);
 			
 			while($filas=$consulta->fetch_assoc()){
@@ -180,7 +180,7 @@ public function __construct(){
 
 
         public function deleteProducto($Codigo){
-            $sql = "DELETE FROM producto WHERE codigo='$Codigo'";
+            $sql = "UPDATE producto SET productoactivo='0' WHERE codigo='$Codigo'";
                 
                 if($delete = $this->db->query($sql)){
                     return true;

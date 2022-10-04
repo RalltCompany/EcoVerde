@@ -107,7 +107,7 @@ Class Usuario{
 
     public function getUsuario(){
 			
-        $sql = "SELECT * FROM usuario WHERE estado='Aceptado' ORDER BY ci ";
+        $sql = "SELECT * FROM usuario WHERE estado='Aceptado' AND clienteactivo='1' ORDER BY ci ";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -119,7 +119,7 @@ Class Usuario{
 
     public function getUsuariosPendientes(){
 			
-        $sql = "SELECT * FROM usuario WHERE estado='Pendiente' AND tipo='Cliente' ORDER BY ci";
+        $sql = "SELECT * FROM usuario WHERE estado='Pendiente' AND tipo='Cliente' AND clienteactivo='1' ORDER BY ci";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -140,7 +140,7 @@ Class Usuario{
     }
 
     public function getCredenciales($email){
-        $sql = "SELECT * FROM usuario WHERE email='$email'";
+        $sql = "SELECT * FROM usuario WHERE email='$email' AND clienteactivo='1'";
         $consulta = $this->db->query($sql);
         while($filas=$consulta->fetch_assoc()){
 
@@ -155,7 +155,8 @@ Class Usuario{
     public function RegistrarCliente($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio ){
         $Tipo= "Cliente";
         $Estado= "Pendiente";
-        $sql = "INSERT INTO usuario VALUES ('$Cedula', NULL, '$Nombre', '$Apellido', '$Celular', '$Email', '$Clave', '$Calle', '$Numero', '$Esquina', '$Barrio', '$Tipo', '$Estado')";
+        
+        $sql = "INSERT INTO usuario VALUES ('$Cedula', NULL, '$Nombre', '$Apellido', '$Celular', '$Email', '$Clave', '$Calle', '$Numero', '$Esquina', '$Barrio', '$Tipo', '$Estado', '1')";
         
         
         if($this->db->query($sql)){
@@ -168,7 +169,7 @@ Class Usuario{
 
     public function RegistrarUsuarios($Cedula, $Nombre, $Apellido, $Celular, $Email, $Clave, $Calle, $Numero, $Esquina, $Barrio, $Tipo){
         $Estado= "Aceptado";
-        $sql = "INSERT INTO usuario VALUES ('$Cedula', NULL, '$Nombre', '$Apellido', '$Celular', '$Email', '$Clave', '$Calle', '$Numero', '$Esquina', '$Barrio', '$Tipo', '$Estado')";
+        $sql = "INSERT INTO usuario VALUES ('$Cedula', NULL, '$Nombre', '$Apellido', '$Celular', '$Email', '$Clave', '$Calle', '$Numero', '$Esquina', '$Barrio', '$Tipo', '$Estado', '1')";
         
         
         if($this->db->query($sql)){
@@ -182,7 +183,7 @@ Class Usuario{
 
     public function EliminarUsuario($c){
 	
-        $sql = "DELETE FROM usuario WHERE ci = '$c'";
+        $sql = "UPDATE usuario SET clienteactivo='0' WHERE ci = '$c'";
         if($this->db->query($sql)){
             return true;
         }else{
@@ -244,7 +245,7 @@ Class Usuario{
 
 
     public function ComprobarEstado($Mail, $Clave){
-        $sql="SELECT * FROM usuario WHERE email='$Mail' AND contraseña='$Clave'";
+        $sql="SELECT * FROM usuario WHERE email='$Mail' AND contraseña='$Clave' AND clienteactivo='1'";
         $consulta = $this->db->query($sql);
        
         if( $consulta ){
@@ -271,7 +272,7 @@ Class Usuario{
 
 
     public function ComprobarCedula($Cedula){
-        $sql="SELECT * FROM usuario WHERE CI='$Cedula'";
+        $sql="SELECT * FROM usuario WHERE CI='$Cedula' AND clienteactivo='1'";
         $consulta = $this->db->query($sql);
        
         if( $consulta ){
@@ -291,7 +292,7 @@ Class Usuario{
 
 
  public function ComprobarEmail($Mail){
-    $sql="SELECT * FROM usuario WHERE email='$Mail'";
+    $sql="SELECT * FROM usuario WHERE email='$Mail' AND clienteactivo='1'";
     $consulta = $this->db->query($sql);
    
     if( $consulta ){
@@ -312,7 +313,7 @@ Class Usuario{
 
 
     public function IniciarSesion($Mail, $Clave){
-        $sql="SELECT * FROM usuario WHERE email='$Mail' AND contraseña='$Clave'"; 
+        $sql="SELECT * FROM usuario WHERE email='$Mail' AND contraseña='$Clave' AND clienteactivo='1'"; 
         $consulta = $this->db->query($sql);
         
         
@@ -332,7 +333,7 @@ Class Usuario{
     public function AceptarCliente($Cedula){
         
         $Estado= "Aceptado";
-        $sql = "UPDATE usuario SET estado = '$Estado' WHERE ci = '$Cedula'";
+        $sql = "UPDATE usuario SET estado = '$Estado' WHERE ci = '$Cedula' AND clienteactivo='1'";
         
         
         if($this->db->query($sql)){
