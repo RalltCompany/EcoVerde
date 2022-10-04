@@ -139,14 +139,15 @@ if(!isset($_SESSION['CI'])){
 
     <div class="opciones">
     <div class="opciones-arriba">
-        <a href="../Controlador/controladorRegistrarProducto.php"><div class="opciones-divs1"><i class="fa-solid fa-boxes-packing"></i><span class="titulos"><p class="titulos">Productos</p></span></div></a>
+        <a href="../Controlador/controladorProductoAdmin.php"><div class="opciones-divs1"><i class="fa-solid fa-boxes-packing"></i><span class="titulos"><p class="titulos">Productos</p></span></div></a>
         <a href="vistaPedidos.html"><div class="opciones-divs1"><i class="fa-solid fa-box"></i><p class="titulos">Pedidos</p></div></a>
-        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorRegistrarUsuario.php'><div class='opciones-divs1'><i class='fa-solid fa-user-gear'></i><p class='titulos'>Usuarios</p></div></a>";  } ?>
+        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorUsuariosAdmin.php'><div class='opciones-divs1'><i class='fa-solid fa-user-gear'></i><p class='titulos'>Usuarios</p></div></a>";  } ?>
     </div>
 
     <div class="opciones-abajo">
         
-        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorReportes.php'><div class='opciones-divs2'><i class='fa-solid fa-clipboard-list'></i><p class='titulos'>Reportes</p></div>";
+        <?php   if($_SESSION['TIPO']=="Administrador"){ 
+            echo "<a href='../Controlador/controladorReportes.php'><div class='opciones-divs2'><i class='fa-solid fa-clipboard-list'></i><p class='titulos'>Reportes</p></div>";
          echo "<a href='../Controlador/controladorClientes.php'><div class='opciones-divs2'><i class='fa-solid fa-people-group'></i><p class='titulos'>Clientes</p></div></a>";} ?>
         
     </div>
