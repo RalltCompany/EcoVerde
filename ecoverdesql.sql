@@ -16,6 +16,7 @@ esquina VARCHAR(30) NOT NULL,
 barrio VARCHAR(30) NOT NULL,
 tipo enum("Cliente", "Administrador", "Gestor", "Reparto") NOT NULL,
 estado enum("Pendiente", "Aceptado"),
+clienteactivo enum(1, 0),
 FOREIGN KEY(ciadmin) REFERENCES Usuario(ci)
 )ENGINE=INNODB;
 
@@ -43,8 +44,9 @@ disponibilidad VARCHAR(30) NOT NULL,
 propiedades VARCHAR(50) NOT NULL,
 mes_de_plantado DATE NOT NULL,
 imagen VARCHAR(50) NOT NULL,
-
+productoactivo enum(1, 0),
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
+
 )ENGINE=INNODB;
 
 CREATE TABLE Conforma(
@@ -56,3 +58,6 @@ PRIMARY KEY(numerop,codigopro),
 FOREIGN KEY(numerop) REFERENCES Pedido(numero),
 FOREIGN KEY(codigopro) REFERENCES Producto(codigo)
 )ENGINE=INNODB;
+
+
+
