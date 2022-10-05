@@ -86,18 +86,6 @@ public function __construct(){
     }
 
 
-    public function getProducto(){
-			
-        $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
-        $consulta = $this->db->query($sql);
-        
-        while($filas=$consulta->fetch_assoc()){
-            $this->Producto[]=$filas;
-        }
-        return $this->Producto;
-        
-    }
-
     public function getVerduras(){
 			
         $sql = "SELECT * FROM producto WHERE familia = 'Frutas' AND productoactivo='1'";
@@ -190,13 +178,88 @@ public function __construct(){
                 
                 
             }
-        }
+        
 
 
+       public  function getPaginado(){
+			
+			$sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
+			$consulta = $this->db->query($sql);
+            $total_registros = mysqli_num_rows($consulta);
+			$url="../Controlador/controladorTienda.php";
 
+			if ($total_registros > 0) {				
+				$cant_reg_paginas = 3;
+				$pagina = false;
+				if (isset($_GET["pagina"])){
+					$pagina = $_GET["pagina"];
+				}
+				
+				if (!$pagina){
+					$inicio = 0;
+					$pagina = 1;
+				}else{
+					$inicio = ($pagina - 1) * $cant_reg_paginas;
+				}
+				$consulta2 = "SELECT nombre, precio, imagen FROM producto ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+				$rs = $this->db->query($consulta2); 
+				
+				$total_paginas = ceil($total_registros / $cant_reg_paginas);
+				
+				while ($row=$rs->fetch_array()) {
+                    
+                        echo '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="type-lb">
+                                    <p class="sale">Sale</p>
+                                </div>';
+                               echo "<img src='../Vista/images/".$row['imagen']."'class='img-fluid'>";
 
+                               echo " <div class='mask-icon'>
+                               <ul>
+                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='View'><i class='fas fa-eye'></i></a></li>
+                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='Compare'><i class='fas fa-sync-alt'></i></a></li>
+                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='Add to Wishlist'><i class='far fa-heart'></i></a></li>
+                               </ul>
+                               <a class='cart' href='#'>Add to Cart</a>
+                           </div>
+                       </div>
+                       <div class='why-text'>";
+
+                       echo "<h4>".$row['nombre']."</h4>
+                                                    <h5>$".$row['precio']." /KG</h5>
+                                                    </div>
+                                            </div>
+                                        </div>";
+                                        
+					
+
+					
+				}
+                echo '<p>';
+               
+                if ($total_paginas >= 1) {
+                    if ($pagina != 1)
+                        echo '<a href="'.$url.'?pagina='.($pagina-1).'"> Anterior </a>';
+                        for ($i=1;$i<=$total_paginas;$i++) {
+                            if ($pagina == $i){
+                                echo $pagina;
+                            }else{
+                                echo '  <a href="'.$url.'?pagina='.$i.'">'.$i.'</a>  ';
+                            }
+                        }
+                    if ($pagina != $total_paginas)
+                        echo '<a href="'.$url.'?pagina='.($pagina+1).'"> Siguiente </a>';
+                }
+                echo '</p>';
+					
+				
+				return $total_paginas;	
+			}
+		}
+ }
     
-
 
 
    

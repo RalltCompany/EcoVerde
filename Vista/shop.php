@@ -269,34 +269,12 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
-                                    <?php foreach($datos as $dato){ ?>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                   
-                                                        <img src='<?php echo $dato['imagen']; ?>' class='img-fluid'>
+                                        <?php
 
 
-                                                    
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4><?php echo $dato['nombre']; ?></h4>
-                                                    <h5>$ <?php echo $dato['precio']; ?> /KG</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php } ?>
+                                    $total_paginas = $producto->getPaginado();
+
+                                    ?>
                                     </div>  
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="list-view">
