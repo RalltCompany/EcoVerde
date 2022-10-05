@@ -180,13 +180,26 @@ public function __construct(){
             }
         
 
+            public function getProducto(){
+                $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
+			    $consulta = $this->db->query($sql);
+
+
+            while($filas=$consulta->fetch_assoc()){
+
+				$this->Producto[]=$filas;
+			}
+
+			return $this->Producto;
+            }
+
 
        public  function getPaginado(){
 			
 			$sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
 			$consulta = $this->db->query($sql);
             $total_registros = mysqli_num_rows($consulta);
-			$url="../Controlador/controladorTienda.php";
+			
 
 			if ($total_registros > 0) {				
 				$cant_reg_paginas = 3;
@@ -201,10 +214,10 @@ public function __construct(){
 				}else{
 					$inicio = ($pagina - 1) * $cant_reg_paginas;
 				}
-				$consulta2 = "SELECT nombre, precio, imagen FROM producto ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+				$consulta2 = "SELECT nombre, precio, imagen FROM producto WHERE productoactivo='1' ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
 				$rs = $this->db->query($consulta2); 
 				
-				$total_paginas = ceil($total_registros / $cant_reg_paginas);
+				
 				
 				while ($row=$rs->fetch_array()) {
                     
@@ -214,7 +227,7 @@ public function __construct(){
                                 <div class="type-lb">
                                     <p class="sale">Sale</p>
                                 </div>';
-                               echo "<img src='../Vista/images/".$row['imagen']."'class='img-fluid'>";
+                               echo "<img src='".$row['imagen']."'class='img-fluid'>";
 
                                echo " <div class='mask-icon'>
                                <ul>
@@ -237,28 +250,59 @@ public function __construct(){
 
 					
 				}
-                echo '<p>';
+                
+			}
+		}
+
+        public function mostrarPaginado(){
+            $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY Codigo ";
+			$consulta = $this->db->query($sql);
+            $total_registros = mysqli_num_rows($consulta);
+            $url="../Controlador/controladorTienda.php";
+            echo '<p>';
                
+            if ($total_registros > 0) {				
+				$cant_reg_paginas = 3;
+				$pagina = false;
+				if (isset($_GET["pagina"])){
+					$pagina = $_GET["pagina"];
+				}
+				
+				if (!$pagina){
+					$inicio = 0;
+					$pagina = 1;
+				}else{
+					$inicio = ($pagina - 1) * $cant_reg_paginas;
+				}
+
+                $total_paginas = ceil($total_registros / $cant_reg_paginas);
+
                 if ($total_paginas >= 1) {
                     if ($pagina != 1)
-                        echo '<a href="'.$url.'?pagina='.($pagina-1).'"> Anterior </a>';
+                        echo '<a class="paginado" href="'.$url.'?pagina='.($pagina-1).'"> Anterior </a>';
                         for ($i=1;$i<=$total_paginas;$i++) {
                             if ($pagina == $i){
-                                echo $pagina;
+                                echo '<p class="active">'.$i.' -</p>';
                             }else{
-                                echo '  <a href="'.$url.'?pagina='.$i.'">'.$i.'</a>  ';
+                                echo '  <a class="paginado" href="'.$url.'?pagina='.$i.'">'.$i.' -</a>  ';
                             }
                         }
                     if ($pagina != $total_paginas)
-                        echo '<a href="'.$url.'?pagina='.($pagina+1).'"> Siguiente </a>';
+                        echo '<a class="paginado" href="'.$url.'?pagina='.($pagina+1).'"> Siguiente </a>';
                 }
                 echo '</p>';
 					
 				
-				return $total_paginas;	
-			}
-		}
- }
+				return $pagina;	
+
+
+        }
+
+
+
+
+     }
+    }
     
 
 

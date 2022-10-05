@@ -1,2 +1,27 @@
 
-/** ADD YOUR AWESOME CODES HERE **/
+
+
+
+
+.price-box-slider .paginado{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.price-box-slider p{
+    display: inline;
+    font-size: 20px;
+    color: green;
+    font-weight: 700;
+}
+
+
+.cent{
+    text-align: center;
+    width: 30% !important;
+    margin: auto !important;
+    border-top: solid 3px black;
+
+}
+

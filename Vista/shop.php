@@ -274,6 +274,9 @@
 
                                     $total_paginas = $producto->getPaginado();
 
+
+                                    
+
                                     ?>
                                     </div>  
                                 </div>
@@ -433,6 +436,7 @@
                                     <button class="btn hvr-hover" type="submit">Filter</button>
                                 </p>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -440,7 +444,13 @@
         </div>
     </div>
     <!-- End Shop Page -->
+    <div class="price-box-slider cent">
+                            <?php 
+                            
+                            $azar = $producto->mostrarPaginado();
 
+                            ?>
+                            </div>
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
