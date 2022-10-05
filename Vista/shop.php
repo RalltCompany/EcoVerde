@@ -82,6 +82,11 @@
                                 echo "<li><a href=Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
                             }
 
+
+
+
+
+                           
                           
                             ?>
                             

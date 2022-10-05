@@ -214,7 +214,7 @@ public function __construct(){
 				}else{
 					$inicio = ($pagina - 1) * $cant_reg_paginas;
 				}
-				$consulta2 = "SELECT nombre, precio, imagen FROM producto WHERE productoactivo='1' ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+				$consulta2 = "SELECT codigo, nombre, precio, imagen FROM producto WHERE productoactivo='1' ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
 				$rs = $this->db->query($consulta2); 
 				
 				
@@ -235,7 +235,7 @@ public function __construct(){
                                    <li><a href='#' data-toggle='tooltip' data-placement='right' title='Compare'><i class='fas fa-sync-alt'></i></a></li>
                                    <li><a href='#' data-toggle='tooltip' data-placement='right' title='Add to Wishlist'><i class='far fa-heart'></i></a></li>
                                </ul>
-                               <a class='cart' href='#'>Add to Cart</a>
+                               <a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."'>Añadir al carrito</a>
                            </div>
                        </div>
                        <div class='why-text'>";
