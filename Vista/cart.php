@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -228,8 +229,8 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-12">
                     <h2>Cart</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Cart</li>
+                        <li class="breadcrumb-item"><a href="ControladorTienda.php">Tienda</a></li>
+                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php">Carrito</a></li>
                     </ul>
                 </div>
             </div>
@@ -262,13 +263,16 @@ if(!isset($_SESSION['CI'])){
                     </div>
 
                     <div class="update-box">
-                       <a href="terminar_carrito.php"> <input value="Reiniciar carrito" type="submit"></a>
+                       <a href="controladorCarrito.php"> <input value="Reiniciar carrito" type="submit"></a>
                     </div>
                 
             </div>
 
-      
-                <div class="col-12 d-flex shopping-box"><a href="controladorPedido.php" class="ml-auto btn hvr-hover">Siguiente</a> </div>
+      <form method="POST" action="controladorCarrito.php">
+                <div class="col-12 d-flex shopping-box"><input type="submit" name="btncart" class="ml-auto btn hvr-hover" value="Siguiente"></div>
+                </form>       <?php
+                           
+                            ?>
             </div>
 
         </div>

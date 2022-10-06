@@ -231,8 +231,8 @@
                 <div class="col-lg-12">
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
+                        <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php">Carrito</a></li>
                     </ul>
                 </div>
             </div>

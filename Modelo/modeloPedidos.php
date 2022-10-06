@@ -158,9 +158,27 @@ function getIva(){
 		echo "</tbody>";
 		$this->subtotal= $suma;
 	 	$this->total_compra = $suma * 1.22;
-		 $this->iva = $suma * 0.22;
-		
+		$this->iva = $suma * 0.22;
 
+		if(isset($_POST['btncart'])){
+
+			if($suma == 0){
+				echo "<script>window.location='controladorCarrito.php?vacio'</script>";
+			}else{
+				echo "<script>window.location='controladorPedido.php'</script>";
+			}
+		}
+		if(isset($_GET['vacio'])){
+			echo "<script>
+			Swal.fire({
+			  icon: 'error',
+			  title: 'Oops...!',
+			  text: '¡Su carrito esta vacío!',
+			  confirmButtonColor: '#008037', 
+			  });
+			  </script>";
+			
+		}
 
 
 	} //cierro la funci�n imprime_carrito
