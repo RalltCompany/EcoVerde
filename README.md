@@ -1,6 +1,6 @@
 # EcoVerde
 Este es el repositorio donde se trabaja en la aplicación web de EcoVerde.
-Desarrolladores: Leonardo Cuña, Andrew Suarez, Lucas Gonzalez
+Desarrolladores: Leopardo Cuña, Pistola Suarez, Pucas Con Thales
 
-Testers: Thiago Arellano, Rodrigo Silvia
+Testers: Thiago Barre Llano, Dario Silvia
 
