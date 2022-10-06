@@ -17,7 +17,8 @@ Class Pedidos{
 	public $array_id_prod; //almacena los identificadores de los productos comprados
 	public $array_nombre_prod; //almacena los nombres de los productos comprados
 	public $array_precio_prod; //almacena los precios de los productos comprados
-    
+    public $iva;
+	public $subtotal;
     /*public function __construct($Numero, $Metdepago, $Fecha, $Hora, $Rangohora, $Fechaentrega){
         $this -> Numero=$Numero;
         $this -> Metdepago=$Metdepago;
@@ -73,10 +74,20 @@ Class Pedidos{
         return $this -> Fechaentrega;
     }
 
+	
+
 
 
 function ret_val(){
     return $this->total_compra;
+}
+
+function getSubtotal(){
+    return $this->subtotal;
+}
+
+function getIva(){
+    return $this->iva;
 }
 
 
@@ -115,36 +126,43 @@ function ret_val(){
     //Muestra el contenido del carrito de la compra
 	//adem�s pone los enlaces para eliminar un producto del carrito
 	function imprime_carrito(){
+		
 		$suma = 0;
-		echo '<table border=1 cellpadding="4">
+		echo '<thead>
 			  <tr>
-			  	<td><b>Cant</b></td>
-				<td><b>Nombre producto</b></td>
-				<td><b>Precio</b></td>
-				<td>&nbsp;</td>
-			  </tr>';
+			  <th>Nombre del producto</th>
+			  
+			  <th>Cantidad</th>
+			  <th>Total</th>
+			  <th>Remove</th>
+			  </tr></thead><tbody>';
 		for ($i=0;$i<$this->num_productos;$i++){
 			//El siguiente if controla que el producto no haya sido eliminado del carrito
 			if($this->array_id_prod[$i]!=0){
 				echo '<tr>';
-				echo "<td>" . $this->array_cantidad_prod[$i] . "</td>";				
-				echo "<td>" . $this->array_nombre_prod[$i] . "</td>";
-				echo "<td>" . $this->array_precio_prod[$i] . "</td>";
-				echo "<td><a href='controlador/eliminar_producto.php?linea=$i'><img src='delete.png' 
-				width='20' height='20'></td>";
+				echo "<td class='name-pr'>" . $this->array_nombre_prod[$i] . "</td>";				
+				
+				echo "<td class='quantity-box'><input type='number' size='4' value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
+				echo "<td class='price-pr'>" . $this->array_precio_prod[$i]. "</td>";
+				echo "<td><a href='eliminar_carrito.php?linea=$i'><i class='fa-solid fa-minus'></i></td>";
 				echo '</tr>';
 				$suma += $this->array_precio_prod[$i];
 			}
 		}
 		//muestro el total
-		echo "<tr><td colspan='2'><b>TOTAL:</b></td><td> <b>$suma</b></td><td>&nbsp;
+		echo "<tr><td colspan='1'><b>TOTAL:</b></td><td> <b>$suma</b></td><td>&nbsp;
 		</td></tr>";
 		//total m�s IVA
-		echo "<tr><td colspan='2'><b>IVA INCLUIDO(22%):</b></td><td> <b>" . $suma * 1.22 . 
+		echo "<tr><td colspan='1'><b>IVA INCLUIDO(22%):</b></td><td> <b>" . $suma * 1.22 . 
 		"</b></td><td>&nbsp;</td></tr>";
-		echo "</table>";
-
+		echo "</tbody>";
+		$this->subtotal= $suma;
 	 	$this->total_compra = $suma * 1.22;
+		 $this->iva = $suma * 0.22;
+		
+
+
+
 	} //cierro la funci�n imprime_carrito
 
 
@@ -178,7 +196,7 @@ function ret_val(){
 } //cierro la clase carrito
 
 //inicio la sesi�n
-
+session_start();
 //si no esta creado el objeto carrito en la sesi�n, lo creo
 
 

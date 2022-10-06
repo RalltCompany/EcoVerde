@@ -3,7 +3,7 @@
 
 
 require("../Modelo/modeloPedidos.php");
-require_once("../Vista/cart.php");
+require_once("../Vista/pedido.php");
 
 
 	

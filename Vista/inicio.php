@@ -153,7 +153,7 @@
 								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
-                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
+                                echo "<li><a href='Controlador/controladorCarrito.php'>Carrito</a></li>
                                 <li><a href='Vista/pedido.php'>Pedido</a></li>
                                 <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
                                 <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  

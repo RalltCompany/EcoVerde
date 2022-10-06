@@ -49,7 +49,7 @@
                     <div class="our-link">
                         <ul>
                             <?php   
-                            session_start();
+                            
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
@@ -85,7 +85,9 @@
 
 
 
-
+                            if (!isset($_SESSION["ocarrito"])){
+                                $_SESSION["ocarrito"] = new Pedidos();
+                            }
                            
                           
                             ?>
@@ -157,8 +159,8 @@
                             <ul class="dropdown-menu">
 								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
-                                <li><a href="Vista/cart.php">Cart</a></li>
-                                <li><a href="Vista/pedido.php">Checkout</a></li>
+                                <li><a href="controladorCarrito.php">Carrito</a></li>
+                                <li><a href="controladorPedido.php">Pedido</a></li>
                                 <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
                                 <li><a href="Vista/wishlist.html">Wishlist</a></li>
                             </ul>

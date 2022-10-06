@@ -16,17 +16,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../Vista/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Vista/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../Vista/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,7 +35,7 @@
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
 </head>
 <?php
-session_start();
+
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -136,7 +136,7 @@ if(!isset($_SESSION['CI'])){
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="../index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href="../index.php"><img src="../Vista/images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -427,7 +427,7 @@ if(!isset($_SESSION['CI'])){
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
-                                    <h3>Shopping cart</h3>
+                                    <h3>Carrito de compras</h3>
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                     <div class="media mb-2 border-bottom">
@@ -451,7 +451,7 @@ if(!isset($_SESSION['CI'])){
                         <div class="col-md-12 col-lg-12">
                             <div class="order-box">
                                 <div class="title-left">
-                                    <h3>Your order</h3>
+                                    <h3>Su orden</h3>
                                 </div>
                                 <div class="d-flex">
                                     <div class="font-weight-bold">Product</div>
@@ -460,29 +460,22 @@ if(!isset($_SESSION['CI'])){
                                 <hr class="my-1">
                                 <div class="d-flex">
                                     <h4>Sub Total</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 440 </div>
+                                    <div class="ml-auto font-weight-bold"><?php echo "$ ".$subtotal=$_SESSION["ocarrito"]->getSubtotal(); ?> </div>
                                 </div>
-                                <div class="d-flex">
-                                    <h4>Discount</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 40 </div>
-                                </div>
+                            
                                 <hr class="my-1">
                                 <div class="d-flex">
-                                    <h4>Coupon Discount</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 10 </div>
+                                    <h4>Iva</h4>
+                                    <div class="ml-auto font-weight-bold"><?php echo "$ ".$subtotal=$_SESSION["ocarrito"]->getIva(); ?></div>
                                 </div>
                                 <div class="d-flex">
-                                    <h4>Tax</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 2 </div>
-                                </div>
-                                <div class="d-flex">
-                                    <h4>Shipping Cost</h4>
-                                    <div class="ml-auto font-weight-bold"> Free </div>
+                                    <h4>Costo de envío</h4>
+                                    <div class="ml-auto font-weight-bold"> Gratis </div>
                                 </div>
                                 <hr>
                                 <div class="d-flex gr-total">
-                                    <h5>Grand Total</h5>
-                                    <div class="ml-auto h5"> $ 388 </div>
+                                    <h5>Total + IVA</h5>
+                                    <div class="ml-auto h5"> <?php echo "$ ".$total_fact=$_SESSION["ocarrito"]->ret_val(); ?></div>
                                 </div>
                                 <hr> </div>
                         </div>
@@ -678,21 +671,21 @@ if(!isset($_SESSION['CI'])){
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../Vista/js/jquery-3.2.1.min.js"></script>
+    <script src="../Vista/js/popper.min.js"></script>
+    <script src="../Vista/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="../Vista/js/jquery.superslides.min.js"></script>
+    <script src="../Vista/js/bootstrap-select.js"></script>
+    <script src="../Vista/js/inewsticker.js"></script>
+    <script src="../Vista/js/bootsnav.js."></script>
+    <script src="../Vista/js/images-loded.min.js"></script>
+    <script src="../Vista/js/isotope.min.js"></script>
+    <script src="../Vista/js/owl.carousel.min.js"></script>
+    <script src="../Vista/js/baguetteBox.min.js"></script>
+    <script src="../Vista/js/form-validator.min.js"></script>
+    <script src="../Vista/js/contact-form-script.js"></script>
+    <script src="../Vista/js/custom.js"></script>
 </body>
 
 </html>
