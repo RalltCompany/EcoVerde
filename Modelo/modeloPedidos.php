@@ -210,7 +210,58 @@ function getIva(){
 			$this->total_compra -= $this->array_precio_prod[$linea];
 	    	$this->array_id_prod[$linea]=0;  
 		} 
-	} //cierro la funci�n elimina_producto
+	}
+	
+	
+	
+	
+	function imprime_factura(){
+		
+		
+		
+		for ($i=0;$i<$this->num_productos;$i++){
+			//El siguiente if controla que el producto no haya sido eliminado del carrito
+			if($this->array_id_prod[$i]!=0){
+				echo '<div class="media mb-2 border-bottom">';
+				echo "<div class='media-body'> <a href='detail.html'>" . $this->array_nombre_prod[$i] . "</a>";				
+				echo "<div class='small text-muted factu'>Precio: $".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]." [KG]<span class='mx-2'>|</span>Cantidad: ".$this->array_cantidad_prod[$i]."<span class='mx-2'>|</span>Total: $".$this->array_precio_prod[$i]."</div>";
+				echo "</div>";
+				echo "</div>";
+				
+		
+			}
+		}
+		//muestro el total
+		
+		
+
+		
+
+	} //
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//cierro la funci�n elimina_producto
 } //cierro la clase carrito
 
 //inicio la sesi�n
