@@ -5,7 +5,7 @@
     
 
 	$_SESSION['ocarrito']->introduce_producto($_GET["codigo"], $_GET["nombre"], $_GET["precio"]);
-	header("Location:controladorTienda.php");
+	header("Location:controladorTienda.php?pagina=".$_GET['pagina']."");
 
   
 ?>

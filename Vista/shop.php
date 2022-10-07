@@ -14,7 +14,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -89,6 +89,13 @@
                                 $_SESSION["ocarrito"] = new Pedidos();
                             }
                            
+                            $url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+                          
+                            
+                            if($url=="localhost/Ecoverde/Controlador/controladorTienda.php"){
+                                header("location:controladorTienda?pagina=1");
+                            }
+                          
                           
                             ?>
                             
@@ -231,8 +238,8 @@
                 <div class="col-lg-12">
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../">Inicio</a></li>
-                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php">Carrito</a></li>
+                        <li class="breadcrumb-item"><a href="../" class="linkCarrito">Inicio</a></li>
+                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php" class="linkCarrito"><i class="fa-solid fa-cart-shopping"></i><?php //SIN TERMINAR //$total_paginas = $producto->getCantidadProd();   ?></a></li>
                     </ul>
                 </div>
             </div>

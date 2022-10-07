@@ -14,6 +14,7 @@ Class Pedidos{
     private $num_productos; //almacena el n�mero de productos almacenados en el carrito
  	private $array_cantidad_prod; //almacena la cantidad comprada para cada producto	
 	public $total_compra; //almacena el monto total de la compra
+	public $total_cantidad_prod;
 	public $array_id_prod; //almacena los identificadores de los productos comprados
 	public $array_nombre_prod; //almacena los nombres de los productos comprados
 	public $array_precio_prod; //almacena los precios de los productos comprados
@@ -90,6 +91,11 @@ function getIva(){
     return $this->iva;
 }
 
+function getCantidadProd(){
+    return $this->total_cantidad_prod;
+}
+
+
 
 //Introduce un producto en el carrito. Recibe los datos del producto
 	//Se encarga de introducir los datos en los arrays del objeto carrito
@@ -149,6 +155,8 @@ function getIva(){
 				echo "<td><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."'><i class='fa-regular fa-plus'></i></td>";
 				echo '</tr>';
 				$suma += $this->array_precio_prod[$i];
+
+				$this->total_cantidad_prod+=1;
 			}
 		}
 		//muestro el total

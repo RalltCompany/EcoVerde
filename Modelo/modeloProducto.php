@@ -235,7 +235,7 @@ public function __construct(){
                                    <li><a href='#' data-toggle='tooltip' data-placement='right' title='Compare'><i class='fas fa-sync-alt'></i></a></li>
                                    <li><a href='#' data-toggle='tooltip' data-placement='right' title='Add to Wishlist'><i class='far fa-heart'></i></a></li>
                                </ul>
-                               <a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."'>Añadir al carrito</a>
+                               <a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."&pagina=".$_GET['pagina']."'>Añadir al carrito</a>
                            </div>
                        </div>
                        <div class='why-text'>";
