@@ -134,7 +134,8 @@ function getIva(){
 			  
 			  <th>Cantidad</th>
 			  <th>Total</th>
-			  <th>Remove</th>
+			  <th>Restar KG</th>
+			  <th>Agregar KG</th>
 			  </tr></thead><tbody>';
 		for ($i=0;$i<$this->num_productos;$i++){
 			//El siguiente if controla que el producto no haya sido eliminado del carrito
@@ -142,9 +143,10 @@ function getIva(){
 				echo '<tr>';
 				echo "<td class='name-pr'>" . $this->array_nombre_prod[$i] . "</td>";				
 				
-				echo "<td class='quantity-box'><input type='number' size='4' value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
-				echo "<td class='price-pr'>" . $this->array_precio_prod[$i]. "</td>";
+				echo "<td class='quantity-box'><input type='number' size='4' readonly value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
+				echo "<td class='price-pr'>$ " . $this->array_precio_prod[$i]. "</td>";
 				echo "<td><a href='eliminar_carrito.php?linea=$i'><i class='fa-solid fa-minus'></i></td>";
+				echo "<td><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."'><i class='fa-regular fa-plus'></i></td>";
 				echo '</tr>';
 				$suma += $this->array_precio_prod[$i];
 			}
@@ -160,25 +162,7 @@ function getIva(){
 	 	$this->total_compra = $suma * 1.22;
 		$this->iva = $suma * 0.22;
 
-		if(isset($_POST['btncart'])){
-
-			if($suma == 0){
-				echo "<script>window.location='controladorCarrito.php?vacio'</script>";
-			}else{
-				echo "<script>window.location='controladorPedido.php'</script>";
-			}
-		}
-		if(isset($_GET['vacio'])){
-			echo "<script>
-			Swal.fire({
-			  icon: 'error',
-			  title: 'Oops...!',
-			  text: '¡Su carrito esta vacío!',
-			  confirmButtonColor: '#008037', 
-			  });
-			  </script>";
-			
-		}
+		
 
 
 	} //cierro la funci�n imprime_carrito

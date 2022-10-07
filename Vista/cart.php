@@ -87,6 +87,29 @@ if(!isset($_SESSION['CI'])){
                             if (!isset($_SESSION["ocarrito"])){
                                 $_SESSION["ocarrito"] = new Pedidos();
                             }
+
+
+
+
+
+
+
+
+
+
+
+
+                            if(isset($_GET['vacio'])){
+                                echo "<script>
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...!',
+                                  text: '¡Su carrito esta vacío!',
+                                  confirmButtonColor: '#008037', 
+                                  });
+                                  </script>";
+                                
+                            }
                             ?>
                             
                             
@@ -263,13 +286,13 @@ if(!isset($_SESSION['CI'])){
                     </div>
 
                     <div class="update-box">
-                       <a href="controladorCarrito.php"> <input value="Reiniciar carrito" type="submit"></a>
+                       <a href="terminar_carrito.php"> <input value="Reiniciar carrito" type="submit"></a>
                     </div>
                 
             </div>
 
       <form method="POST" action="controladorCarrito.php">
-                <div class="col-12 d-flex shopping-box"><input type="submit" name="btncart" class="ml-auto btn hvr-hover" value="Siguiente"></div>
+                <div class="col-12 d-flex shopping-box"><a href="controladorPedido.php" class="ml-auto btn hvr-hover"> Siguiente</a></div>
                 </form>       <?php
                            
                             ?>

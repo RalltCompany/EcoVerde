@@ -378,8 +378,23 @@ if(!isset($_SESSION['CI'])){
 
                                     <?php
 
+                                
+                                        if(!isset($_SESSION["ocarrito"])){ 
+                                        $_SESSION["ocarrito"]=new Pedidos();
+                                    }
                                         $_SESSION["ocarrito"]->imprime_factura();
+                                    
 
+
+
+
+
+
+                                            if($_SESSION["ocarrito"]->ret_val() == 0){
+                                                echo "<script>window.location='controladorCarrito.php?vacio'</script>";
+                                            }
+                                        
+                                        
                                     ?>
 
                                 </div>
