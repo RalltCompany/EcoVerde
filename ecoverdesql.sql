@@ -30,7 +30,6 @@ metodoPago VARCHAR(30) NOT NULL,
 horaPref varchar(50) NOT NULL,
 estado enum("Pendiente", "Armado", "A entregarse", "Ruta", "Entregado", "Cancelado", "No entregado") NOT NULL,
 Nombre_destinatario VARCHAR(30),
-
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
 )ENGINE=INNODB;
 
@@ -40,7 +39,7 @@ ciu int(8) NOT NULL,
 nombre VARCHAR(30) NOT NULL,
 precio INT(9) NOT NULL,
 familia VARCHAR(30) NOT NULL,
-disponibilidad VARCHAR(30) NOT NULL,
+disponibilidad INT(10) NOT NULL,
 propiedades VARCHAR(50) NOT NULL,
 mes_de_plantado DATE NOT NULL,
 imagen VARCHAR(50) NOT NULL,
