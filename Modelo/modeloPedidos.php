@@ -92,7 +92,7 @@ function getIva(){
 }
 
 function getCantidadProd(){
-    return $this->total_cantidad_prod;
+    return $this->num_productos;
 }
 
 
@@ -138,7 +138,7 @@ function getCantidadProd(){
 			  <tr>
 			  <th>Nombre del producto</th>
 			  
-			  <th>Cantidad</th>
+			  <th>Cantidad [KG]</th>
 			  <th>Total</th>
 			  <th>Restar KG</th>
 			  <th>Agregar KG</th>

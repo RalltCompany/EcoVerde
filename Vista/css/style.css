@@ -1538,6 +1538,16 @@
      left: 0px;
      top: 0px;
 }
+
+.numCarrito{
+    font-size: 15px;
+    color: white;
+    padding: 0px 3px 0px 3px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
  .all-title-box h2{
      font-size: 28px;
      font-weight: 700;

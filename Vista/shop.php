@@ -166,7 +166,7 @@
                             <ul class="dropdown-menu">
 								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
-                                <li><a href="controladorCarrito.php">Carrito</a></li>
+                                <li><a href="controladorCarrito.php">Carrito <span class="numCarrito"><?php echo $_SESSION["ocarrito"]->getCantidadProd();   ?><span></a></li>
                                 <li><a href="controladorPedido.php">Pedido</a></li>
                                 <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
                                 <li><a href="Vista/wishlist.html">Wishlist</a></li>
@@ -239,7 +239,7 @@
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../" class="linkCarrito">Inicio</a></li>
-                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php" class="linkCarrito"><i class="fa-solid fa-cart-shopping"></i><?php //SIN TERMINAR //$total_paginas = $producto->getCantidadProd();   ?></a></li>
+                        <li class="breadcrumb-item active"><a href="ControladorCarrito.php" class="linkCarrito"><i class="fa-solid fa-cart-shopping"></i><span class="numCarrito"><?php echo $_SESSION["ocarrito"]->getCantidadProd();   ?><span></a></li>
                     </ul>
                 </div>
             </div>

@@ -48,7 +48,7 @@
                     <div class="our-link">
                         <ul>
                             <?php   
-                            session_start();
+                           
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
@@ -82,6 +82,11 @@
                             }
 
                           
+
+
+                            if (!isset($_SESSION["ocarrito"])){
+                                $_SESSION["ocarrito"] = new Pedidos();
+                            }
                             ?>
                             
                             
@@ -152,8 +157,11 @@
 								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
 								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
                                 <?php 
+
+
+
                                     if(isset($_SESSION['CI'])){ 
-                                echo "<li><a href='Controlador/controladorCarrito.php'>Carrito</a></li>
+                                echo "<li><a href='Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
                                 <li><a href='Controlador/controladorPedido.php'>Pedido</a></li>
                                 <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
                                 <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
