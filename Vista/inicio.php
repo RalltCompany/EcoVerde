@@ -118,7 +118,7 @@
                                     <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 20% de descueto con el codigo 3Ad-5Up
+                                    <i class="fab fa-opencart"></i> 20% de descuento con el codigo 3Ad-5Up
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> 50%! Compra ahora 
@@ -154,8 +154,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
-								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
+								<li><a href="Controlador/controladorTienda.php">Tienda</a></li>
+								
                                 <?php 
 
 
