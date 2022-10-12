@@ -245,13 +245,15 @@ if(!isset($_SESSION['CI'])){
                         <form class="needs-validation" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="firstName">Primer nombre *</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                    <label for="firstName">Nombre *</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value="<?php 
+                                    
+                                    foreach($datosCliente as $datoC){echo $datoC['nombre'];}   ?>" readonly>
                                     <div class="invalid-feedback"> Valid first name is required. </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="lastName">Segundo nombre *</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                    <label for="lastName">Apellido *</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" readonly>
                                     <div class="invalid-feedback"> Valid last name is required. </div>
                                 </div>
                             </div>
@@ -269,19 +271,7 @@ if(!isset($_SESSION['CI'])){
                             
                             <div class="row">
                                 
-                                <div class="col-md-4 mb-3">
-                                    <label for="state">Departamento *</label>
-                                    <select class="wide w-100" id="state">
-									<option data-display="Select">Choose...</option>
-									<option>California</option>
-								</select>
-                                    <div class="invalid-feedback"> Please provide a valid state. </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="zip">Zip *</label>
-                                    <input type="text" class="form-control" id="zip" placeholder="" required>
-                                    <div class="invalid-feedback"> Zip code required. </div>
-                                </div>
+                                
                             </div>
                             <hr class="mb-4">
                             <div class="custom-control custom-checkbox">

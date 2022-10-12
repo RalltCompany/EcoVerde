@@ -7,7 +7,7 @@ Class Pedidos{
     private $Hora;
     private $Rangohora;
     private $Fechaentrega;
-
+	private $cliente;
 
 
 
@@ -35,6 +35,7 @@ Class Pedidos{
      $this->array_nombre_prod=array(); //nombre de los productos elegidos
      $this->array_precio_prod=array(); //precio de los productos elegidos
      $this->array_cantidad_prod=array(); //cantidad comprada por producto
+	 $this->cliente=array();
  }
 
 
@@ -225,6 +226,10 @@ function getCantidadProd(){
 		}
 		//muestro el total
 		
+		
+		
+
+
 		
 
 		
