@@ -278,21 +278,25 @@ if(!isset($_SESSION['CI'])){
                                         echo $datoC['calle']." ".$datoC['numero'];  } ?>" readonly >
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
                             </div>
-                            
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="direccion" >
+                                <label class="custom-control-label" for="direccion">Editar dirección de entrega</label>
+                            </div>
                             <div class="row">
                                 
+                            <script type="text/Javascript">
+                                
+                                function editDireccion(){
+                                if(document.getElementById('direccion').checked) {
+                                    alert('checkbox esta seleccionado');
+                                }
+                            }
+                            </script>
                                 
                             </div>
                             <hr class="mb-4">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">Save this information for next time</label>
-                            </div>
-                            <hr class="mb-4">
+                            
+                            
                             <div class="title"> <span>Método de pago</span> </div>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
@@ -432,7 +436,7 @@ if(!isset($_SESSION['CI'])){
                                 </div>
                                 <hr> </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"> <a href="checkout.html" class="ml-auto btn hvr-hover">Place Order</a> </div>
+                        <div class="col-12 d-flex shopping-box"> <a href="checkout.html" class="ml-auto btn hvr-hover">Finalizar Compra</a> </div>
                     </div>
                 </div>
             </div>
