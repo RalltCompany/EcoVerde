@@ -240,7 +240,7 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Galería de nuestra huerta</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -248,11 +248,9 @@
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".bulbs">Bulbs</button>
-                            <button data-filter=".fruits">Fruits</button>
-							<button data-filter=".podded-vegetables">Podded vegetables</button>
-							<button data-filter=".root-and-tuberous">Root and tuberous</button>
+                            <button class="active" data-filter="*">Todos</button>
+                            <button data-filter=".bulbs">Frutas</button>
+                            <button data-filter=".fruits">Verduras</button>
                         </div>
                     </div>
                 </div>
