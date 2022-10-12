@@ -247,14 +247,19 @@
                 </div>
                 <div class="col-lg-6">
                     <h2 class="noo-sh-title-top">Historia</h2>
-                    <p>Nuestro emprendimiento comenzo cuando nuestra familia desde que eramos chicos nos inculcaron el valor de la tierra y los seres vivos </p>
-				 
+                    <p class="letras">Nuestro emprendimiento comenzo cuando nuestra famiamilia decidio que teniamos que tener un cambio de estilo de vida, 
+                    teniamos muy mala alimentación y los problemas de salud empezaban a aparecer, conmenzamos plantando tomates, lechugas y espinaca esas fueron las primeras plantaciones que se 
+                    plantaron en el terreno de nuestra casa. Despúes de varias semanas de haber plantado pudimos ver que salan vegetales de muy buenos y naturales 
+                    sin quimicos, personas cercanas a nosotos nos sugerieron que empecemos a vender nuestros productos por la buena producción que teniamos. Luego de 5 meces de venta y producción 
+                    pudimos hacer un cantero mas grande para poder plantar en más cantidad. Despúes de un año de mucho trabajo en familia pudimos inagurar la huerta donde tenemos una variedad de frutas y verduras 
+                    para consumo, los productos son 100% organicos sin quimicos ni toxinas. Hoy en dia segiomos con la producción con buena salud y con una huerta bastante conocida.  </p>
+				
                 </div>
             </div>
             <div class="row my-5">
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Profecionales</h3>
+                        <h3>Profesionales</h3>
                         <p> </p>
                     </div>
                 </div>
