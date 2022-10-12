@@ -273,13 +273,13 @@ if(!isset($_SESSION['CI'])){
                             </div>
                             <div class="mb-3">
                                 <label for="address">Dirección de entrega de pedido *</label>
-                                <input type="text" class="form-control" id="address" placeholder="" value="<?php 
+                                <input type="text" class="form-control" id="direccionEdit" placeholder="" value="<?php 
                                         
                                         echo $datoC['calle']." ".$datoC['numero'];  } ?>" readonly >
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="direccion" >
+                                <input type="checkbox" class="custom-control-input" id="direccion" onclick="editDireccion()">
                                 <label class="custom-control-label" for="direccion">Editar dirección de entrega</label>
                             </div>
                             <div class="row">
@@ -288,7 +288,9 @@ if(!isset($_SESSION['CI'])){
                                 
                                 function editDireccion(){
                                 if(document.getElementById('direccion').checked) {
-                                    alert('checkbox esta seleccionado');
+                                    document.getElementById('direccionEdit').removeAttribute("readonly");
+                                }else{
+                                    document.getElementById('direccionEdit').setAttribute("readonly", "readonly");
                                 }
                             }
                             </script>
