@@ -247,25 +247,35 @@ if(!isset($_SESSION['CI'])){
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Nombre *</label>
                                     <input type="text" class="form-control" id="firstName" placeholder="" value="<?php 
-                                    
-                                    foreach($datosCliente as $datoC){echo $datoC['nombre'];}   ?>" readonly>
+                                    $cliente=new Usuario();
+
+                                    $datosCliente=$cliente->getUsuarioComprador($_SESSION['CI']);
+                                    foreach($datosCliente as $datoC){
+                                        
+                                        echo $datoC['nombre'];   ?>" readonly>
                                     <div class="invalid-feedback"> Valid first name is required. </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">Apellido *</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" readonly>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="<?php 
+                                        
+                                        echo $datoC['apellido'];   ?>" readonly>
                                     <div class="invalid-feedback"> Valid last name is required. </div>
                                 </div>
                             </div>
                            
                             <div class="mb-3">
                                 <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email" placeholder="">
+                                <input type="email" class="form-control" id="email" placeholder="" value="<?php 
+                                        
+                                        echo $datoC['email'];   ?>"  readonly>
                                 <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                             </div>
                             <div class="mb-3">
                                 <label for="address">Dirección de entrega de pedido *</label>
-                                <input type="text" class="form-control" id="address" placeholder="" required>
+                                <input type="text" class="form-control" id="address" placeholder="" value="<?php 
+                                        
+                                        echo $datoC['calle']." ".$datoC['numero'];  } ?>" readonly >
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
                             </div>
                             
@@ -286,16 +296,16 @@ if(!isset($_SESSION['CI'])){
                             <div class="title"> <span>Método de pago</span> </div>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                    <input id="credit" name="metodoPago" type="radio" class="custom-control-input" checked required>
                                     <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                    <input id="debit" name="metodoPago" type="radio" class="custom-control-input" required>
                                     <label class="custom-control-label" for="debit">Tarjeta de débito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                    <label class="custom-control-label" for="paypal">MercadoPagp</label>
+                                    <input id="paypal" name="metodoPago" type="radio" class="custom-control-input" required>
+                                    <label class="custom-control-label" for="paypal">MercadoPago</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -345,17 +355,18 @@ if(!isset($_SESSION['CI'])){
                                 </div>
                                 <div class="mb-4">
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption1" name="shipping-option" class="custom-control-input" checked="checked" type="radio">
-                                        <label class="custom-control-label" for="shippingOption1">Standard Delivery</label> <span class="float-right font-weight-bold">FREE</span> </div>
-                                    <div class="ml-4 mb-2 small">(3-7 business days)</div>
+                                        <input id="shippingOption1" name="rangoHora" class="custom-control-input" checked="checked" type="radio">
+                                        <label class="custom-control-label" for="shippingOption1">Matutino</label>  </div>
+                                    <div class="ml-4 mb-2 small">(8 a 12)</div>
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption2" name="shipping-option" class="custom-control-input" type="radio">
-                                        <label class="custom-control-label" for="shippingOption2">Express Delivery</label> <span class="float-right font-weight-bold">$10.00</span> </div>
-                                    <div class="ml-4 mb-2 small">(2-4 business days)</div>
+                                        <input id="shippingOption2" name="rangoHora" class="custom-control-input" type="radio">
+                                        <label class="custom-control-label" for="shippingOption2">Tarde</label>  </div>
+                                    <div class="ml-4 mb-2 small">(12 a 16)</div>
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption3" name="shipping-option" class="custom-control-input" type="radio">
-                                        <label class="custom-control-label" for="shippingOption3">Next Business day</label> <span class="float-right font-weight-bold">$20.00</span> </div>
-                                </div>
+                                        <input id="shippingOption3" name="rangoHora" class="custom-control-input" type="radio">
+                                        <label class="custom-control-label" for="shippingOption3">Nocturno</label>  </div>
+                                        <div class="ml-4 mb-2 small">(16 a 20)</div>
+                                    </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12">
