@@ -346,6 +346,23 @@ Class Usuario{
 
 
 
+
+
+    function getUsuarioComprador($cedula){
+			
+			
+		$sql = "SELECT * FROM usuario WHERE ci = '$cedula'";
+		$consulta = $this->db->query($sql);
+		
+		while($filas=$consulta->fetch_assoc()){
+			$this->Usuario[]=$filas;
+		}
+
+		return $this->Usuario;
+		
+	
+}
+
 }
 
 
