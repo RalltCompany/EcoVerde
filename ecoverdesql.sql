@@ -25,7 +25,7 @@ CREATE TABLE Pedido(
 numero int(8) PRIMARY KEY AUTO_INCREMENT,  
 ciu int(8),
 fechayHora DATETIME,
-fechaentrega DATE NOT NULL,
+fechaentrega DATE ,
 metodoPago VARCHAR(30) NOT NULL,
 horaPref varchar(50) NOT NULL,
 estado enum("Pendiente", "Armado", "A entregarse", "Ruta", "Entregado", "Cancelado", "No entregado") NOT NULL,

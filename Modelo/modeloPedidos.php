@@ -1,4 +1,4 @@
-<?php
+ <?php
 Class Pedidos{
 
     private $Numero;
@@ -93,7 +93,8 @@ function getIva(){
 }
 
 function getCantidadProd(){
-    return $this->num_productos;
+    $cantProd=count($this->array_cantidad_prod);
+	return $cantProd;
 }
 
 
@@ -129,6 +130,10 @@ function getCantidadProd(){
 
 
 
+	function insertPedidos($CIu, $FechaHora, $FechaEntrega, $Metodo, $HoraPref, $DireccionPe ){
+		$Estado="Pendiente";
+
+	}
 
     //Muestra el contenido del carrito de la compra
 	//adem�s pone los enlaces para eliminar un producto del carrito
@@ -202,6 +207,7 @@ function getCantidadProd(){
 		{
 			$this->total_compra -= $this->array_precio_prod[$linea];
 	    	$this->array_id_prod[$linea]=0;  
+			
 		} 
 	}
 	
@@ -235,7 +241,6 @@ function getCantidadProd(){
 		
 
 	} //
-	
 	
 	
 	
