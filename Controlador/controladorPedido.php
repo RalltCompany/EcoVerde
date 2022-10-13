@@ -24,7 +24,14 @@ if(isset($_POST['Finalizar'])){
     
     
     if($pedido->insertPedidos($CI, $FechaHora, $MetodoPago, $RangoHora, $DireccionPe)){
-        echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
+        
+       $NumPedido=$_SESSION['ocarrito']->getUltimoPedidoInsertado($CI);
+       
+        
+       $_SESSION['ocarrito']->conformarPedido($NumPedido);
+        
+
+        //echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
     }else{
         echo "no se pudo insertar";
     }
