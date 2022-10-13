@@ -145,9 +145,41 @@ function getCantidadProd(){
 	}
 
 
-	//public conformarPedido($NumeroPedido){
 
-	//}
+	//SELECT MAX(numero) FROM pedido WHERE ciu=53235432;
+
+
+	function getUltimoPedidoInsertado($CI){
+		$sql="SELECT MAX(numero) FROM pedido WHERE ciu='$CI'";
+
+		$res = mysqli_query($this->db, $sql);
+		$arr = mysqli_fetch_array($res);
+		return $arr[0];
+	}
+
+
+
+	function conformarPedido($NumeroPedido){
+		$ProductosInsertados=0;
+		for ($i=0;$i<$this->num_productos;$i++){
+			echo "Hola";
+			
+			//El siguiente if controla que el producto no haya sido eliminado del carrito
+			if($this->array_id_prod[$i]!=0){
+				
+				$codigopro=$this->array_id_prod[$i];
+				$cantidad=$this->array_cantidad_prod[$i];
+				$sql="INSERT INTO conforma(numerop, codigopro, cantidad) VALUES ('$NumeroPedido', '$codigopro', '$cantidad')";
+
+				if($this->db->query($sql)){
+					$ProductosInsertados++;
+				}
+				
+			}
+		}
+
+		//return $ProductosInsertados;
+	}
 
 
     //Muestra el contenido del carrito de la compra
