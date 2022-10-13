@@ -178,7 +178,8 @@ function getCantidadProd(){
 				
 				$sql="INSERT INTO conforma(numerop, codigopro, cantidad) VALUES ('$NumeroPedido', '$codigopro', '$cantidad')";
 
-				if($db->query($sql)){
+				$sql2="UPDATE producto SET disponibilidad= disponibilidad - $cantidad WHERE codigo= '$codigopro'";
+				if($db->query($sql) && $db->query($sql2)){
 					$ProductosInsertados++;
 				}
 				

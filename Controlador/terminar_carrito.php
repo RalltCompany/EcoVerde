@@ -4,7 +4,7 @@
 	unset($_SESSION["ocarrito"]);
 
 	if(isset($_GET['Pedido'])){
-		header("location:controladorTienda.php?Pedido");
+		header("location:controladorTienda.php?pagina=1&Pedido");
 	}
 
 

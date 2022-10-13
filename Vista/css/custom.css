@@ -16,7 +16,10 @@
     font-weight: 700;
 }
 
-
+.disponibilidad{
+    margin-top: 5px;
+    font-size: 13px !important;
+}
 .cent{
     text-align: center;
     width: 30% !important;

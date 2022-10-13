@@ -241,35 +241,36 @@ public function __construct(){
 				}else{
 					$inicio = ($pagina - 1) * $cant_reg_paginas;
 				}
-				$consulta2 = "SELECT codigo, nombre, precio, imagen FROM producto WHERE productoactivo='1' ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+				$consulta2 = "SELECT codigo, nombre, precio, imagen, disponibilidad FROM producto WHERE productoactivo='1' ORDER BY nombre ASC LIMIT ".$inicio."," . $cant_reg_paginas;
 				$rs = $this->db->query($consulta2); 
 				
 				
 				
 				while ($row=$rs->fetch_array()) {
-                    
+                    $disponible=true;
                         echo '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="sale">Sale</p>
-                                </div>';
+                                <div class="type-lb">';
+
+                                if($row['disponibilidad']<=0){   echo '<p class="sale">Sin Stock</p>'; $disponible=false;}else{echo '<p class="sale">Disponible</p>';}
+                                
+                                    echo '</div>';
                                echo "<img src='".$row['imagen']."'class='img-fluid'>";
 
-                               echo " <div class='mask-icon'>
-                               <ul>
-                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='View'><i class='fas fa-eye'></i></a></li>
-                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='Compare'><i class='fas fa-sync-alt'></i></a></li>
-                                   <li><a href='#' data-toggle='tooltip' data-placement='right' title='Add to Wishlist'><i class='far fa-heart'></i></a></li>
-                               </ul>
-                               <a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."&pagina=".$_GET['pagina']."'>Añadir al carrito</a>
-                           </div>
+                               echo " <div class='mask-icon'>";
+
+                               if($disponible){echo "<a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."&pagina=".$_GET['pagina']."'>Añadir al carrito</a>";}
+                           echo "</div>
                        </div>
                        <div class='why-text'>";
 
                        echo "<h4>".$row['nombre']."</h4>
                                                     <h5>$".$row['precio']." /KG</h5>
-                                                    </div>
+                                                    <br>";
+                                                    if($row['disponibilidad']>0){   echo "<h5 class='disponibilidad'>Disponible: ".$row['disponibilidad']." KG</h5>";}else{echo "<h5 class='disponibilidad'>Proximamente</h5>";}
+                                                    
+                                                    echo "</div>
                                             </div>
                                         </div>";
                                         
