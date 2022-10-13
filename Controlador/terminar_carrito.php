@@ -2,7 +2,12 @@
 	include("../Modelo/modeloPedidos.php");
 	$total_fact=$_SESSION["ocarrito"]->ret_val();
 	unset($_SESSION["ocarrito"]);
-	
+
+	if(isset($_GET['Pedido'])){
+		header("location:controladorTienda.php?Pedido");
+	}
+
+
 ?>
 
 <script language="javascript">

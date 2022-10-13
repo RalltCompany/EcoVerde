@@ -132,10 +132,10 @@ function getCantidadProd(){
 
 
 
-	function insertPedidos($CIu, $FechaHora, $FechaEntrega, $Metodo, $HoraPref, $DireccionPe ){
+	function insertPedidos($CIu, $FechaHora, $Metodo, $HoraPref, $DireccionPe ){
 		$Estado="Pendiente";
 		
-		$sql="INSERT INTO pedido(numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_Destinatario, direccionpe) VALUES (NULL, '$CIu', '$FechaHora', '$FechaEntrega', '$Metodo', '$HoraPref','$Estado', NULL, '$DireccionPe')";
+		$sql="INSERT INTO pedido(numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_Destinatario, direccionpe) VALUES (NULL, '$CIu', '$FechaHora', NULL, '$Metodo', '$HoraPref','$Estado', NULL, '$DireccionPe')";
 
 		if($this->db->query($sql)){
 			return true;
@@ -143,6 +143,12 @@ function getCantidadProd(){
 			return false;
 		}
 	}
+
+
+	//public conformarPedido($NumeroPedido){
+
+	//}
+
 
     //Muestra el contenido del carrito de la compra
 	//adem�s pone los enlaces para eliminar un producto del carrito

@@ -8,7 +8,7 @@
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Site Metas -->
     <title>EcoVerde</title>
     <meta name="keywords" content="">
@@ -87,6 +87,10 @@
                             if (!isset($_SESSION["ocarrito"])){
                                 $_SESSION["ocarrito"] = new Pedidos();
                             }
+
+
+
+                            
                             ?>
                             
                             
