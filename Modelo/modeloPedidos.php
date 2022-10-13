@@ -9,7 +9,7 @@ Class Pedidos{
     private $Fechaentrega;
 	private $cliente;
 
-
+	private $db;
 
     private $num_productos; //almacena el n�mero de productos almacenados en el carrito
  	private $array_cantidad_prod; //almacena la cantidad comprada para cada producto	
@@ -29,6 +29,7 @@ Class Pedidos{
         $this -> Fechaentrega=$Fechaentrega;
     }*/
 
+
     function __construct(){
         $this->num_productos=0; //cantidad de productos
      $this->array_id_prod=array(); //id de los productos elegidos
@@ -36,6 +37,7 @@ Class Pedidos{
      $this->array_precio_prod=array(); //precio de los productos elegidos
      $this->array_cantidad_prod=array(); //cantidad comprada por producto
 	 $this->cliente=array();
+	 $this->db = Conectar::conexion();
  }
 
 
@@ -132,7 +134,14 @@ function getCantidadProd(){
 
 	function insertPedidos($CIu, $FechaHora, $FechaEntrega, $Metodo, $HoraPref, $DireccionPe ){
 		$Estado="Pendiente";
+		
+		$sql="INSERT INTO pedido(numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_Destinatario, direccionpe) VALUES (NULL, '$CIu', '$FechaHora', '$FechaEntrega', '$Metodo', '$HoraPref','$Estado', NULL, '$DireccionPe')";
 
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
     //Muestra el contenido del carrito de la compra
@@ -223,7 +232,7 @@ function getCantidadProd(){
 			if($this->array_id_prod[$i]!=0){
 				echo '<div class="media mb-2 border-bottom">';
 				echo "<div class='media-body'> <a href='detail.html'>" . $this->array_nombre_prod[$i] . "</a>";				
-				echo "<div class='small text-muted factu'>Precio: $".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]." [KG]<span class='mx-2'>|</span>Cantidad: ".$this->array_cantidad_prod[$i]."<span class='mx-2'>|</span>Total: $".$this->array_precio_prod[$i]."</div>";
+				echo "<div class='small text-muted factu'><span class='mx-2'></span>ID: ".$this->array_id_prod[$i]."<span class='mx-2'>|</span>Precio: $".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]." [KG]<span class='mx-2'>|</span>Cantidad: ".$this->array_cantidad_prod[$i]."<span class='mx-2'>|</span>Total: $".$this->array_precio_prod[$i]."</div>";
 				echo "</div>";
 				echo "</div>";
 				
@@ -232,13 +241,7 @@ function getCantidadProd(){
 		}
 		//muestro el total
 		
-		
-		
 
-
-		
-
-		
 
 	} //
 	

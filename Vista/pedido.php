@@ -242,7 +242,7 @@ if(!isset($_SESSION['CI'])){
                         <div class="title-left">
                             <h3>Formulario de factura</h3>
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" method="POST" action='' >
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Nombre *</label>
@@ -273,7 +273,7 @@ if(!isset($_SESSION['CI'])){
                             </div>
                             <div class="mb-3">
                                 <label for="address">Dirección de entrega de pedido *</label>
-                                <input type="text" class="form-control" id="direccionEdit" placeholder="" value="<?php 
+                                <input type="text" class="form-control" id="direccionEdit" name="DireccionPed" placeholder="" value="<?php 
                                         
                                         echo $datoC['calle']." ".$datoC['numero'];  } ?>" readonly >
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
@@ -302,15 +302,15 @@ if(!isset($_SESSION['CI'])){
                             <div class="title"> <span>Método de pago</span> </div>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="credit" name="metodoPago" type="radio" class="custom-control-input" checked required>
+                                    <input id="credit" name="metodoPago" type="radio" class="custom-control-input" value="Tarjeta de crédito" checked required>
                                     <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="debit" name="metodoPago" type="radio" class="custom-control-input" required>
+                                    <input id="debit" name="metodoPago" type="radio" class="custom-control-input" value="Tarjeta de débito" required>
                                     <label class="custom-control-label" for="debit">Tarjeta de débito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="paypal" name="metodoPago" type="radio" class="custom-control-input" required>
+                                    <input id="paypal" name="metodoPago" type="radio" class="custom-control-input" value="MercadoPago" required>
                                     <label class="custom-control-label" for="paypal">MercadoPago</label>
                                 </div>
                             </div>
@@ -349,7 +349,7 @@ if(!isset($_SESSION['CI'])){
                                     </div>
                                 </div>
                             </div>
-                            <hr class="mb-1"> </form>
+                            <hr class="mb-1"> 
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-6 mb-3">
@@ -361,15 +361,15 @@ if(!isset($_SESSION['CI'])){
                                 </div>
                                 <div class="mb-4">
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption1" name="rangoHora" class="custom-control-input" checked="checked" type="radio">
+                                        <input id="shippingOption1" name="rangoHora" value="8 a 12" class="custom-control-input" checked="checked" type="radio">
                                         <label class="custom-control-label" for="shippingOption1">Matutino</label>  </div>
                                     <div class="ml-4 mb-2 small">(8 a 12)</div>
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption2" name="rangoHora" class="custom-control-input" type="radio">
+                                        <input id="shippingOption2" name="rangoHora" value="12 a 16" class="custom-control-input" type="radio">
                                         <label class="custom-control-label" for="shippingOption2">Tarde</label>  </div>
                                     <div class="ml-4 mb-2 small">(12 a 16)</div>
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption3" name="rangoHora" class="custom-control-input" type="radio">
+                                        <input id="shippingOption3" name="rangoHora" value="16 a 20" class="custom-control-input" type="radio">
                                         <label class="custom-control-label" for="shippingOption3">Nocturno</label>  </div>
                                         <div class="ml-4 mb-2 small">(16 a 20)</div>
                                     </div>
@@ -438,7 +438,7 @@ if(!isset($_SESSION['CI'])){
                                 </div>
                                 <hr> </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"> <a href="checkout.html" class="ml-auto btn hvr-hover">Finalizar Compra</a> </div>
+                        <div class="col-12 d-flex shopping-box"><input type="submit" class="ml-auto btn hvr-hover" value="Finalizar Compra" name="Finalizar"> </div></form>
                     </div>
                 </div>
             </div>
