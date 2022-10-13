@@ -94,6 +94,10 @@ function getIva(){
     return $this->iva;
 }
 
+function getNum(){
+    return $this->num_productos;
+}
+
 function getCantidadProd(){
     $cantProd=count($this->array_cantidad_prod);
 	return $cantProd;
@@ -159,26 +163,33 @@ function getCantidadProd(){
 
 
 
-	function conformarPedido($NumeroPedido){
+	function conformarPedido($NumeroPedido, $productos){
 		$ProductosInsertados=0;
-		for ($i=0;$i<$this->num_productos;$i++){
-			echo "Hola";
+		$db=Conectar::conexion();
+		
+		for ($i=0;$i<$productos;$i++){
+			
 			
 			//El siguiente if controla que el producto no haya sido eliminado del carrito
 			if($this->array_id_prod[$i]!=0){
 				
 				$codigopro=$this->array_id_prod[$i];
 				$cantidad=$this->array_cantidad_prod[$i];
+				
 				$sql="INSERT INTO conforma(numerop, codigopro, cantidad) VALUES ('$NumeroPedido', '$codigopro', '$cantidad')";
 
-				if($this->db->query($sql)){
+				if($db->query($sql)){
 					$ProductosInsertados++;
 				}
 				
 			}
 		}
 
-		//return $ProductosInsertados;
+		if($ProductosInsertados==$productos){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 

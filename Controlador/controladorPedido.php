@@ -13,9 +13,11 @@ $pedido=new Pedidos();
 
 $CI=$_SESSION['CI'];
 $FechaHora= date("d-m-y h:i:s");
-echo $FechaHora;
+
 $MetodoPago= $_POST['metodoPago'];
 $RangoHora= $_POST['rangoHora'];
+
+$productos=$_SESSION['ocarrito']->getNum();
 
 
 if(isset($_POST['Finalizar'])){
@@ -24,14 +26,16 @@ if(isset($_POST['Finalizar'])){
     
     
     if($pedido->insertPedidos($CI, $FechaHora, $MetodoPago, $RangoHora, $DireccionPe)){
-        
-       $NumPedido=$_SESSION['ocarrito']->getUltimoPedidoInsertado($CI);
+
+       $NumPedido=$pedido->getUltimoPedidoInsertado($CI);
        
         
-       $_SESSION['ocarrito']->conformarPedido($NumPedido);
+       if($_SESSION['ocarrito']->conformarPedido($NumPedido, $productos)){
+        echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
+       }
         
 
-        //echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
+        
     }else{
         echo "no se pudo insertar";
     }
