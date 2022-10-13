@@ -127,7 +127,7 @@ public function __construct(){
 
 
 
-    public function UpdateImagen($codigo, $nombreI, $nombreD){
+    public function ModificarProducto($c, $ciadmin, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $nombreI, $nombreD){
         $tmp_name = $_FILES[$nombreI]['tmp_name'];
 
 	    if (is_dir($nombreD) && is_uploaded_file($tmp_name)){
@@ -139,14 +139,41 @@ public function __construct(){
 			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
 				
 				$ruta = $nombreD . '/' . $img_file;
-        $sql1 = "UPDATE producto SET imagen='$ruta' WHERE codigo='$codigo' AND productoactivo='1'";
-        
-        if($this->db->query($sql1)){
-            return true;
+        $sql = "UPDATE producto SET nombre = '$nombre', ciu='$ciadmin'  WHERE codigo = '$c' AND productoactivo='1'";
+        $sql1 = "UPDATE producto SET precio = '$precio', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
+        $sql2 = "UPDATE producto SET familia = '$familia', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
+        $sql3 = "UPDATE producto SET disponibilidad = '$disponibilidad', ciu='$ciadmin', WHERE codigo='$c' AND productoactivo='1'";
+        $sql4 = "UPDATE producto SET propiedades = '$propiedades', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
+        $sql5 = "UPDATE producto SET mes_de_plantado = '$mesdeplantado', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
+        $sql6 = "UPDATE producto SET imagen='$ruta', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
+
+        if($nombre!=""){
+            $modificar = $this->db->query($sql);
             
-        }else{
-            return false;
         }
+        if($precio!=""){
+            $modificar = $this->db->query($sql1);
+            }
+
+        if($familia!=""){
+            $modificar = $this->db->query($sql2);
+        }
+        
+        if($disponibilidad!=""){
+            $modificar = $this->db->query($sql3);
+            }
+        
+        if($propiedades!=""){
+            $modificar = $this->db->query($sql4);
+        }
+        if($mesdeplantado!=""){
+            $modificar = $this->db->query($sql5);
+            } 
+
+        if($ruta!=""){
+            $modificar = $this->db->query($sql6);
+        }
+        
     }
 }
 }

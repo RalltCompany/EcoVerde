@@ -174,27 +174,9 @@ if(!isset($_SESSION['CI'])){
 <br><br><br>
 <div class="todo">
 <div class="all">
-    <p class="p1"><</p>
-        <p class="p2">></p><br>
     </div>
 
-    <div class='contenedor'>
-        
-<?php
-foreach($datos as $dato){
-    echo "<img src='".$dato['imagen']."' width='80%'>
-                <p>Nombre: ".$dato["nombre"]."</p>
-                <p>Codigo: ".$dato["codigo"]."</p>
-                <p>Cedula del Usuario: ".$dato["ciu"]."</p>
-                <p>Precio: $".$dato["precio"]." (KG)</p>
-                <p>Familia: ".$dato["familia"]."</p>
-                <p>Disponibilidad: ".$dato["disponibilidad"]."KG</p>
-                <p>Propiedades: ".$dato["propiedades"]."</p>
-                <p>Mes de plantado: ".$dato["mes_de_plantado"]."</p></tr>";
-            }
-            ?>
-            
-    </div>
+   
     </div>
     
     
