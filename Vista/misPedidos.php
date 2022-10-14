@@ -16,17 +16,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../Vista/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Vista/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../Vista/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -136,7 +136,7 @@ if(!isset($_SESSION['CI'])){
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href="../index.php"><img src="../Vista/images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -227,7 +227,7 @@ if(!isset($_SESSION['CI'])){
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Mi cuenta</h2>
+                    <h2>Mis pedidos</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Tienda</a></li>
                         <li class="breadcrumb-item active">Mi cuenta</li>
@@ -241,142 +241,23 @@ if(!isset($_SESSION['CI'])){
     <!-- Start My Account  -->
     <div class="my-account-box-main">
         <div class="container">
-            <div class="my-account-page">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="../Controlador/controladorMiCuenta.php"> <i class="fa-solid fa-box"></i></a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Mis pedidos</h4>
-                                    <p>Realizar seguimiento de mis pedidos realizados</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa-solid fa-user-shield"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Perfil &amp; seguridad</h4>
-                                    <p>Ver mi información, cambiar contraseña, etc</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contpedidos">
 
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa-solid fa-location-dot"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Dirección</h4>
-                                    <p>Cambiar dirección de entrega de mis pedidos.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-               
-                </div>
+            <div class="media mb-2 border-bottom">
+				<div class='media-body titlePedido'> <h4>Numero de pedido: </h4>			
+				<div class='small text-muted detailPed'><span class='mx-2'></span>Cantidad de productos: <span class='mx-2'>|</span>Total a pagar: <span class='mx-2'>|</span>Dirección de entrega: <span class='mx-2'>| Estado: <b>  </b></span></div>
+				</div>
+				</div>
+            
             </div>
         </div>
     </div>
     <!-- End My Account -->
 
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- End Instagram Feed  -->
+
 
 
     <!-- Start Footer  -->
@@ -474,21 +355,21 @@ if(!isset($_SESSION['CI'])){
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../Vista/js/jquery-3.2.1.min.js"></script>
+    <script src="../Vista/js/popper.min.js"></script>
+    <script src="../Vista/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="../Vista/js/jquery.superslides.min.js"></script>
+    <script src="../Vista/js/bootstrap-select.js"></script>
+    <script src="../Vista/js/inewsticker.js"></script>
+    <script src="../Vista/js/bootsnav.js."></script>
+    <script src="../Vista/js/images-loded.min.js"></script>
+    <script src="../Vista/js/isotope.min.js"></script>
+    <script src="../Vista/js/owl.carousel.min.js"></script>
+    <script src="../Vista/js/baguetteBox.min.js"></script>
+    <script src="../Vista/js/form-validator.min.js"></script>
+    <script src="../Vista/js/contact-form-script.js"></script>
+    <script src="../Vista/js/custom.js"></script>
 </body>
 
 </html>
