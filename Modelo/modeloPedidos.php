@@ -10,6 +10,7 @@ Class Pedidos{
 	private $cliente;
 
 	private $db;
+	private $pedidos;
 
     private $num_productos; //almacena el n�mero de productos almacenados en el carrito
  	private $array_cantidad_prod; //almacena la cantidad comprada para cada producto	
@@ -136,10 +137,10 @@ function getCantidadProd(){
 
 
 
-	function insertPedidos($CIu, $FechaHora, $Metodo, $HoraPref, $DireccionPe ){
+	function insertPedidos($CIu, $FechaHora, $Metodo, $HoraPref, $DireccionPe, $total ){
 		$Estado="Pendiente";
 		
-		$sql="INSERT INTO pedido(numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_Destinatario, direccionpe) VALUES (NULL, '$CIu', '$FechaHora', NULL, '$Metodo', '$HoraPref','$Estado', NULL, '$DireccionPe')";
+		$sql="INSERT INTO pedido(numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_Destinatario, direccionpe, total) VALUES (NULL, '$CIu', '$FechaHora', NULL, '$Metodo', '$HoraPref','$Estado', NULL, '$DireccionPe', '$total')";
 
 		if($this->db->query($sql)){
 			return true;
@@ -297,7 +298,19 @@ function getCantidadProd(){
 	
 	
 	
-	
+	function pedidosCliente($Cedula){
+
+		$sql="SELECT * FROM pedido WHERE ciu='$Cedula'";
+
+		$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+
+				$this->pedidos[]=$filas;
+			}
+
+			return $this->pedidos;
+	}
 	
 	
 	

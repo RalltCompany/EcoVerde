@@ -53,7 +53,7 @@
                             if($_SESSION['TIPO']=="Cliente"){
                                 
                                echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                               ECHO  "<li><a href=Vista/Micuenta.php><i class=fas fa-headset></i> Mi Cuenta</a></li>";
                                echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                             
                             

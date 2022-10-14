@@ -18,6 +18,7 @@ $MetodoPago= $_POST['metodoPago'];
 $RangoHora= $_POST['rangoHora'];
 
 $productos=$_SESSION['ocarrito']->getNum();
+$total=$_SESSION['ocarrito']->ret_val();
 
 
 if(isset($_POST['Finalizar'])){
@@ -25,7 +26,7 @@ if(isset($_POST['Finalizar'])){
     $DireccionPe=$_POST['DireccionPed'];
     
     
-    if($pedido->insertPedidos($CI, $FechaHora, $MetodoPago, $RangoHora, $DireccionPe)){
+    if($pedido->insertPedidos($CI, $FechaHora, $MetodoPago, $RangoHora, $DireccionPe, $total)){
 
        $NumPedido=$pedido->getUltimoPedidoInsertado($CI);
        
