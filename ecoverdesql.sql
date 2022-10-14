@@ -31,6 +31,7 @@ horaPref varchar(50) NOT NULL,
 estado enum("Pendiente", "Armado", "A entregarse", "Ruta", "Entregado", "Cancelado", "No entregado") NOT NULL,
 Nombre_destinatario VARCHAR(30),
 direccionpe VARCHAR(50) NOT NULL,
+total int(10) not null,
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
 )ENGINE=INNODB;
 
