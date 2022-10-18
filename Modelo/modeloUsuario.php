@@ -195,8 +195,7 @@ Class Usuario{
     public function ModificarUsuarios($c, $nombre, $apellido, $celular, $email, $calle, $numero, $esquina, $barrio, $tipo, $ciadmin){
         
 			$sql="UPDATE usuario SET nombre='$nombre', apellido='$apellido', celular='$celular', email='$email', calle='$calle',
-            numero='$numero', esquina='$esquina', barrio='$barrio', tipo='$tipo', ciadmin='$ciadmin' WHERE id='$id'";
-
+            numero='$numero', esquina='$esquina', barrio='$barrio', tipo='$tipo', ciadmin='$ciadmin' WHERE ci='$c'";
 			if($this->db->query($sql)){
 				return true;
 			}else{

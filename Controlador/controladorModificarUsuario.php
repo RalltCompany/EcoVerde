@@ -5,7 +5,6 @@
   
 	
 	$usuario1 = new Usuario();
-    $datos = $usuario1->getUsuario();
     $datosZ = $usuario1->getUsuarioParaModificar($_GET['Cedula']);
 
     require_once("../Vista/vistaModificarUsuarios.php");	
@@ -23,9 +22,14 @@
         $barrioo = $_POST['barrio'];
         $tipoo = $_POST['tipouss'];
         $ciadmin= $_SESSION['CI'];
-		$usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo, $ciadmin);
-		echo "<script>window.location='controladorUsuariosAdmin.php?$ciadmin'</script>";
+
+		if($usuario1->ModificarUsuarios($cedulaa, $nombree, $apellidoo, $celularr, $emaill, $callee, $numeroo, $esquinaa, $barrioo, $tipoo, $ciadmin)){
+            echo "<script>window.location='controladorUsuariosAdmin.php?modificado'</script>";
         echo $_SESSION['CI'];
+        }else{
+            echo "Usuario no modificado";
+        }
+		
 	}	
 
     ?>
