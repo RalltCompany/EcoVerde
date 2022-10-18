@@ -140,7 +140,7 @@ if(!isset($_SESSION['CI'])){
     <div class="opciones">
     <div class="opciones-arriba">
         <a href="../Controlador/controladorProductoAdmin.php"><div class="opciones-divs1"><i class="fa-solid fa-boxes-packing"></i><span class="titulos"><p class="titulos">Productos</p></span></div></a>
-        <a href="vistaPedidos.html"><div class="opciones-divs1"><i class="fa-solid fa-box"></i><p class="titulos">Pedidos</p></div></a>
+        <a href="../Controlador/controladorPedidoAdmin.php"><div class="opciones-divs1"><i class="fa-solid fa-box"></i><p class="titulos">Pedidos</p></div></a>
         <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorUsuariosAdmin.php'><div class='opciones-divs1'><i class='fa-solid fa-user-gear'></i><p class='titulos'>Usuarios</p></div></a>";  } ?>
     </div>
 

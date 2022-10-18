@@ -16,6 +16,19 @@
     font-weight: 700;
 }
 
+.pagAdmin{
+    width: 60% !important;
+}
+
+.price-box-slider .disp{
+    display: inline !important;
+}
+
+.price-box-slider p{
+    display: inline !important;
+}
+
+
 .disponibilidad{
     margin-top: 5px;
     font-size: 13px !important;
@@ -26,6 +39,11 @@
     margin: auto !important;
     border-top: solid 3px black;
 
+}
+
+.fa-clipboard-check{
+    font-size: 25px;
+    color: rgb(24, 82, 24);
 }
 
 .factu{

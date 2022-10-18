@@ -16,20 +16,20 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../Vista/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Vista/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="../Vista/css/styleLogin.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-<link rel="stylesheet" href="css/estilos-menupedidos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/formProductos.css">
+    <link rel="stylesheet" href="../Vista/css/custom.css">
+<link rel="stylesheet" href="../Vista/css/estilos-menupedidos.css">
+    <link rel="stylesheet" href="../Vista/css/style.css">
+    <link rel="stylesheet" href="../Vista/css/formProductos.css">
 
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
 
@@ -40,7 +40,7 @@
 
 </head>
 <?php
-session_start();
+
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -131,7 +131,7 @@ if(!isset($_SESSION['CI'])){
 
     <div class="cuerpo">
 
-        <h2 class="title-product">PEDIDOS</h2>
+        <h2 class="title-product">ACEPTAR O RECHAZAR PEDIDOS</h2>
 
         <div class="contenedor">
     <table class="notas">
@@ -143,77 +143,30 @@ if(!isset($_SESSION['CI'])){
             <th>Metodo de pago</th>
             <th>Nombre destinatario</th>
             <th>Fecha y hora</th>
-            <th>Rango de hora</th>
-            <th>Fecha de entrega</th>
-            <th>Estado</th>
+            <th>Rango de hora preferido</th>
+            <th>Aceptar</th>
+            <th>Rechazar</th>
             
     
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-           
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
-        <tr>
-            <td data-label="titulo">sdfasdsda</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            <td data-label="nombreprog">dffasdf</td>
-            <td data-label="resumen">ASASASAS</td>
-            <td data-label="contenido">sdfgdsgsd</td>
-            
-        </tr>
+        <?php
+
+        foreach( $datos as $dato){
+    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
+                                }
+                                    ?>
     </tbody>
+
+    
 </table><br>
-<h1  class="title-producto">Aceptar o Rechazar PEDIDOS</h1>
-<form action="">
-<input class="acep-pedido" type="text" placeholder="Ingrese ID de pedido"><br>
-<center>
-    <input type="submit" value="Aceptar" class="boton1">
-    <input type="submit" value="Eliminar" class="boton2">
+<?php
 
-</center>
+    $pedidos->mostrarPaginado();
+    ?>
 
-</div>
-</form>
+
 </div>
     
 
@@ -270,21 +223,21 @@ if(!isset($_SESSION['CI'])){
 
 
   <!-- ALL JS FILES -->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../Vista/js/jquery-3.2.1.min.js"></script>
+  <script src="../Vista/js/popper.min.js"></script>
+  <script src="../Vista/js/bootstrap.min.js"></script>
   <!-- ALL PLUGINS -->
-  <script src="js/jquery.superslides.min.js"></script>
-  <script src="js/bootstrap-select.js"></script>
-  <script src="js/inewsticker.js"></script>
-  <script src="js/bootsnav.js."></script>
-  <script src="js/images-loded.min.js"></script>
-  <script src="js/isotope.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/baguetteBox.min.js"></script>
-  <script src="js/form-validator.min.js"></script>
-  <script src="js/contact-form-script.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../Vista/js/jquery.superslides.min.js"></script>
+  <script src="../Vista/js/bootstrap-select.js"></script>
+  <script src="../Vista/js/inewsticker.js"></script>
+  <script src="../Vista/js/bootsnav.js."></script>
+  <script src="../Vista/js/images-loded.min.js"></script>
+  <script src="../Vista/js/isotope.min.js"></script>
+  <script src="../Vista/js/owl.carousel.min.js"></script>
+  <script src="../Vista/js/baguetteBox.min.js"></script>
+  <script src="../Vista/js/form-validator.min.js"></script>
+  <script src="../Vista/js/contact-form-script.js"></script>
+  <script src="../Vista/js/custom.js"></script>
 </body>
 
 </html>
