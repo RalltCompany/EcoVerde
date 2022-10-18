@@ -5,6 +5,7 @@
   
 	
 	$usuario1 = new Usuario();
+    $datos = $usuario1->getUsuario();
     $datosZ = $usuario1->getUsuarioParaModificar($_GET['Cedula']);
 
     require_once("../Vista/vistaModificarUsuarios.php");	

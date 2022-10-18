@@ -194,50 +194,15 @@ Class Usuario{
     
     public function ModificarUsuarios($c, $nombre, $apellido, $celular, $email, $calle, $numero, $esquina, $barrio, $tipo, $ciadmin){
         
-        $sql = "UPDATE usuario SET nombre = '$nombre', ciadmin='$ciadmin'  WHERE CI = '$c'";
-        $sql1 = "UPDATE usuario SET apellido = '$apellido', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql2 = "UPDATE usuario SET celular = '$celular', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql3 = "UPDATE usuario SET email = '$email', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql4 = "UPDATE usuario SET calle = '$calle', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql5 = "UPDATE usuario SET numero = '$numero', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql6 = "UPDATE usuario SET esquina = '$esquina', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql7 = "UPDATE usuario SET barrio = '$barrio', ciadmin='$ciadmin' WHERE CI = '$c'";
-        $sql8 = "UPDATE usuario SET tipo = '$tipo', ciadmin='$ciadmin' WHERE CI = '$c'";
-        if($nombre!=""){
-            $modificar = $this->db->query($sql);
-            
-        }
-        if($apellido!=""){
-            $modificar = $this->db->query($sql1);
-            }
+			$sql="UPDATE usuario SET nombre='$nombre', apellido='$apellido', celular='$celular', email='$email', calle='$calle',
+            numero='$numero', esquina='$esquina', barrio='$barrio', tipo='$tipo', ciadmin='$ciadmin' WHERE id='$id'";
 
-        if($celular!=""){
-            $modificar = $this->db->query($sql2);
-        }
-        
-        if($email!=""){
-            $modificar = $this->db->query($sql3);
-            }
-        
-        if($calle!=""){
-            $modificar = $this->db->query($sql4);
-        }
-        if($numero!=""){
-            $modificar = $this->db->query($sql5);
-            } 
-
-        if($esquina!=""){
-            $modificar = $this->db->query($sql6);
-        }
-        
-        if($barrio!=""){
-            $modificar = $this->db->query($sql7);
-        }
-
-        if($tipo!=""){
-            $modificar = $this->db->query($sql8);
-        }
-    }	
+			if($this->db->query($sql)){
+				return true;
+			}else{
+				return false;
+			}
+		}
 
 
     

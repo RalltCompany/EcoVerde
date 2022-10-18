@@ -121,21 +121,24 @@ if(!isset($_SESSION['CI'])){
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
+                        
                 <input type="number" name="cedu" placeholder="" value="<?php  echo $_GET['Cedula'];  ?>" readonly>
                 </div>
                 <div class="izquierda-divs">
-                    <input type="text" name="nom" placeholder="Nombre">
+                <?php foreach($datos as $dato){?>
+                    <input type="text" name="nom" placeholder="Nombre" value="<?php echo $dato['nombre'];  ?>">
                     </div>
                 <div class="izquierda-divs">
-                <input type="text" name="ape" placeholder="Apellido">
+                <input type="text" name="ape" placeholder="Apellido" value="<?php echo $dato['apellido'];?>">
                 </div>
                 <div class="izquierda-divs">
-                <input type="email" name="em" placeholder="Email">
+                <input type="email" name="em" placeholder="Email" value="<?php echo $dato['email'];?>">
                 </div>
 
 
                 <div class="izquierda-divs">
                     <select name="tipouss" id="" >
+                    <?php echo "<option value='' class=''>".$dato['tipo']."</option>"?>
                         <option value="" class="">Selecciona tipo de usuario</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Gestor">Gestor</option>
@@ -154,21 +157,23 @@ if(!isset($_SESSION['CI'])){
             <div class="derecha">
 
                 <div class="derecha-divs">
-                <input type="text" name="calle" placeholder="Calle">
+                <input type="text" name="calle" placeholder="Calle" value="<?php echo $dato['calle'];  ?>">
                 </div>
                 <div class="derecha-divs">
-                    <input type="text" name="numero" placeholder="Numero">
+                    <input type="text" name="numero" placeholder="Numero"value="<?php echo $dato['numero'];  ?>">
                     </div>
                 
                     <div class="derecha-divs">
-                        <input type="text" name="esquina" placeholder="Esquina">
+                        <input type="text" name="esquina" placeholder="Esquina"value="<?php echo $dato['esquina'];  ?>">
                         </div>
                         <div class="derecha-divs">
-                            <input type="text" name="barrio" placeholder="Barrio">
+                            <input type="text" name="barrio" placeholder="Barrio" value="<?php echo $dato['barrio'];  ?>">
                             </div>
 
                 <div class="derecha-divs">
-            <input type="text" name="celu"  placeholder="Celular">
+            <input type="text" name="celu"  placeholder="Celular"value="<?php echo $dato['celular'];  ?>">
+
+            <?php }?>
             </div>
             </div>
                 </div>
@@ -176,50 +181,6 @@ if(!isset($_SESSION['CI'])){
                 <input type="submit" name="mod" value="Modificar" class="modificar">
             </div>
         </form>
-
-        <div class='contenedor1'>
-        <table class='notas'>
-    
-        <thead>
-                <tr>
-                    <th>Cedula</th>
-                    <th>Cedula del Admin</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Calle</th>
-                    <th>Numero</th>
-                    <th>Esquina</th>
-                    <th>Barrio</th>
-                    <th>Tipo</th>
-                    <th>Estado</th>
-                    </tr>
-        </thead>
-        <?php echo "<tbody>";
-        
-                  foreach($datosZ as $dato) {
-                    echo "<tr>
-                    <td data-label='Cedula'>".$dato["ci"]."</td>
-                    <td data-label='Cedula del Admin'>".$dato['ciadmin']."</td>
-                    <td data-label='Nombre'>".$dato["nombre"]."</td>
-                    <td data-label='Apellido'>".$dato["apellido"]."</td>
-                    <td data-label='Celular'>".$dato["celular"]."</td>
-                    <td data-label='Email'>".$dato["email"]."</td>
-                    <td data-label='Calle'>".$dato["calle"]."</td>
-                    <td data-label='Numero'>".$dato["numero"]."</td>
-                    <td data-label='Esquina'>".$dato["esquina"]."</td>
-                    <td data-label='Barrio'>".$dato["barrio"]."</td>
-                    <td data-label='Tipo'>".$dato["tipo"]."</td>
-                    <td data-label='Estado'>".$dato["estado"]."</td>
-                    </tr>";
-                    }
-                    "</tbody>
-                    </table>"
-                    ; 
-        ?>
-
-    </div>
 
 
 
