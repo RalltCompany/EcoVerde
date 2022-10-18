@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -117,7 +118,7 @@ if(!isset($_SESSION['CI'])){
         <i class="fa-solid fa-user-gear"></i>
         
 
-        <form action="../Controlador/controladorModificarUsuario.php" method="POST" class="form-productos">
+        <form action="" method="POST" class="form-productos">
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
@@ -125,7 +126,7 @@ if(!isset($_SESSION['CI'])){
                 <input type="number" name="cedu" placeholder="" value="<?php  echo $_GET['Cedula'];  ?>" readonly>
                 </div>
                 <div class="izquierda-divs">
-                <?php foreach($datos as $dato){?>
+                <?php foreach($datosZ as $dato){?>
                     <input type="text" name="nom" placeholder="Nombre" value="<?php echo $dato['nombre'];  ?>">
                     </div>
                 <div class="izquierda-divs">
@@ -138,13 +139,33 @@ if(!isset($_SESSION['CI'])){
 
                 <div class="izquierda-divs">
                     <select name="tipouss" id="" >
-                    <?php echo "<option value='' class=''>".$dato['tipo']."</option>"?>
-                        <option value="" class="">Selecciona tipo de usuario</option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Gestor">Gestor</option>
-                        <option value="Reparto">Reparto</option>
-                        <option value="Cliente">Cliente</option>
-                       
+                    <?php if($dato['tipo'] == "Administrador"){
+                      echo " <option value='".$dato['tipo']."' class=''>".$dato['tipo']."</option>
+                      <option value='Gestor'>Gestor</option>
+                      <option value='Reparto'>Reparto</option>
+                      <option value='Cliente'>Cliente</option>
+                      <option value='' class=''>Selecciona tipo de usuario</option>";
+                        
+                    }else if($dato['tipo'] == "Gestor"){
+                        echo "<option value='".$dato['tipo']."' class=''>".$dato['tipo']."</option>
+                      <option value='Administrador'>Administrador</option>
+                      <option value='Reparto'>Reparto</option>
+                      <option value='Cliente'>Cliente</option>
+                      <option value='' class=''>Selecciona tipo de usuario</option>";
+                    }else if($dato['tipo'] == "Reparto"){
+                        echo "<option value='".$dato['tipo']."' class=''>".$dato['tipo']."</option>
+                        <option value='Administrador'>Administrador</option>
+                        <option value='Gestor'>Gestor</option>
+                        <option value='Cliente'>Cliente</option>
+                        <option value='' class=''>Selecciona tipo de usuario</option>";
+                    }else if($dato['tipo'] == "Cliente"){
+                        echo "<option value='".$dato['tipo']."' class=''>".$dato['tipo']."</option>
+                        <option value='Administrador'>Administrador</option>
+                        <option value='Gestor'>Gestor</option>
+                        <option value='Reparto'>Reparto</option>
+                        <option value='' class=''>Selecciona tipo de usuario</option>";
+                    }
+                        ?>
         
                     </select>
                 </div>
@@ -182,11 +203,21 @@ if(!isset($_SESSION['CI'])){
             </div>
         </form>
 
+<?php
 
 
+        if(isset($_GET['modificado'])){
+  echo "<script>
+  Swal.fire({
+    icon: 'success',
+    title: '¡Usuario modificado correctamente!',
+    confirmButtonColor: '#008037', 
+    });
+    </script>";
+            }
 
 
-
+            ?>
 
 
 

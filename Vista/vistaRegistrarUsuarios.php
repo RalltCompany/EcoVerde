@@ -224,7 +224,21 @@ if(!isset($_SESSION['CI'])){
     </div>
     
     
+    <?php
 
+
+if(isset($_GET['registrado'])){
+echo "<script>
+Swal.fire({
+icon: 'success',
+title: '¡Usuario modificado correctamente!',
+confirmButtonColor: '#008037', 
+});
+</script>";
+    }
+
+
+    ?>
 
 
 

@@ -36,7 +36,7 @@
     }else{
     
     $usuario2->RegistrarUsuarios($cedula, $nombre, $apellido, $celular, $email, $clave, $calle, $numero, $esquina, $barrio, $tipo);
-        echo("<meta http-equiv='refresh' content='0.1'>");
+    echo "<script>window.location='controladorRegistrarUsuario.php?registrado'</script>";
     }
     
     
