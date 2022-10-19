@@ -3,9 +3,10 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,6 +45,20 @@
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
+
+
+
+
+if(isset($_GET['Eliminado'])){
+    echo "<script>
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...!',
+                                  text: '¡Su carrito esta vacío!',
+                                  confirmButtonColor: '#008037', 
+                                  });
+                                  </script>";
+ }
 
 ?>
 <header class="main-header">
@@ -154,7 +169,7 @@ if(!isset($_SESSION['CI'])){
         <?php
 
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
+    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
                                 }
                                     ?>
     </tbody>

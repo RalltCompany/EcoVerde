@@ -150,6 +150,31 @@ function getCantidadProd(){
 	}
 
 
+	function RechazarPedido($Numero){
+		
+		
+		$sql="UPDATE pedido SET estado='Rechazado' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	function AceptarPedido($Numero){
+		
+		
+		$sql="UPDATE pedido SET estado='Aceptado' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	//SELECT MAX(numero) FROM pedido WHERE ciu=53235432;
 
@@ -340,7 +365,7 @@ function getCantidadProd(){
 				$inicio = ($pagina - 1) * $cant_reg_paginas;
 			}
 			
-			$sql2 = "SELECT * FROM pedido ORDER BY numero ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+			$sql2 = "SELECT * FROM pedido WHERE estado='Pendiente' ORDER BY numero ASC LIMIT ".$inicio."," . $cant_reg_paginas;
 			$rs = $this->db->query($sql2); 
 			
 			

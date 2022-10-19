@@ -46,6 +46,11 @@
     color: rgb(24, 82, 24);
 }
 
+.fa-rectangle-xmark{
+    font-size: 23px;
+    color: rgb(170, 9, 9);
+}
+
 .factu{
     font-weight: 800 !important;
 }
