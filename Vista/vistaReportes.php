@@ -40,7 +40,7 @@
 
 </head>
 <?php
-session_start();
+
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -302,7 +302,7 @@ if(!isset($_SESSION['CI'])){
 
 </table><br>
 <center>
-    <input type="submit" value="Crear Reporte" class="boton1">
+<a href="../Vista/PHPpdf/mostrarPDFPedidos.php" target="_blank" class="botonReporte"> Crear Reporte</a>
 
 </center>
 <div class="cuerpo">

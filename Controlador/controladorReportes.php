@@ -3,7 +3,7 @@
     require_once("../db/db.php");
 	require_once("../Modelo/modeloUsuario.php");
     require_once("../Modelo/modeloProducto.php");
-	
+	require_once("../Modelo/modeloPedidos.php");
 	$usuario = new Usuario();
     $datosUsuarios = $usuario->getUsuario();
 
