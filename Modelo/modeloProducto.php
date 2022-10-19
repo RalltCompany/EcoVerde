@@ -139,39 +139,13 @@ public function __construct(){
 			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
 				
 				$ruta = $nombreD . '/' . $img_file;
-        $sql = "UPDATE producto SET nombre = '$nombre', ciu='$ciadmin'  WHERE codigo = '$c' AND productoactivo='1'";
-        $sql1 = "UPDATE producto SET precio = '$precio', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
-        $sql2 = "UPDATE producto SET familia = '$familia', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
-        $sql3 = "UPDATE producto SET disponibilidad = '$disponibilidad', ciu='$ciadmin', WHERE codigo='$c' AND productoactivo='1'";
-        $sql4 = "UPDATE producto SET propiedades = '$propiedades', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
-        $sql5 = "UPDATE producto SET mes_de_plantado = '$mesdeplantado', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
-        $sql6 = "UPDATE producto SET imagen='$ruta', ciu='$ciadmin' WHERE codigo = '$c' AND productoactivo='1'";
-
-        if($nombre!=""){
-            $modificar = $this->db->query($sql);
-            
-        }
-        if($precio!=""){
-            $modificar = $this->db->query($sql1);
-            }
-
-        if($familia!=""){
-            $modificar = $this->db->query($sql2);
-        }
-        
-        if($disponibilidad!=""){
-            $modificar = $this->db->query($sql3);
-            }
-        
-        if($propiedades!=""){
-            $modificar = $this->db->query($sql4);
-        }
-        if($mesdeplantado!=""){
-            $modificar = $this->db->query($sql5);
-            } 
-
-        if($ruta!=""){
-            $modificar = $this->db->query($sql6);
+        $sql = "UPDATE producto SET nombre = '$nombre', ciu='$ciadmin', precio= '$precio', familia='$familia', 
+        disponibilidad='$disponibilidad', propiedades='$propiedades', mes_de_plantado='$mesdeplantado'  WHERE codigo = '$c' 
+        AND productoactivo='1'";
+        if($this->db->query($sql)){
+            return true;
+        }else{
+            return false;
         }
         
     }
@@ -180,7 +154,7 @@ public function __construct(){
 }
 
     public function CedulaUs(){
-        $sql = "SELECT * FROM usuario WHERE tipo='Gestor' OR tipo='Administrador' AND clienteactivo='1'";
+        $sql = "SELECT * FROM usuario WHERE (tipo='Gestor' OR tipo='Administrador') AND clienteactivo='1'";
 			$consulta = $this->db->query($sql);
 			
 			while($filas=$consulta->fetch_assoc()){

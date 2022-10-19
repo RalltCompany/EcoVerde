@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -180,7 +181,22 @@ if(!isset($_SESSION['CI'])){
     </div>
     
     
+<?php
 
+
+if(isset($_GET['registrado'])){
+    echo "<script>
+    Swal.fire({
+    icon: 'success',
+    title: '¡Producto registrado correctamente!',
+    confirmButtonColor: '#008037', 
+    });
+    </script>";
+        }
+       
+    
+    
+        ?>
 
 
 

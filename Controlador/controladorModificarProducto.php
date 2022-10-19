@@ -23,7 +23,7 @@
         
         
        if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
-        echo "<script>window.location='../Controlador/controladorProductoAdmin.php?Modificado=1'</script>";
+        echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
         }else{
             echo "no modificado";
         }

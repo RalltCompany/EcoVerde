@@ -167,6 +167,16 @@ confirmButtonColor: '#008037',
 });
 </script>";
     }
+    if(isset($_GET['Cedula'])){
+        echo "<script>
+        Swal.fire({
+        icon: 'info',
+        title: '¡Usuario eliminado correctamente!',
+        html: '<p>El usuario con la cédula: <b>".$_GET['Cedula']."</b> ha sido eliminado con éxito.</p>',
+        confirmButtonColor: '#008037', 
+        });
+        </script>";
+            }
 
 
     ?>

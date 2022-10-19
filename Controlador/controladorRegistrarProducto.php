@@ -19,8 +19,13 @@
         $dispo = $_POST['disponibilidad'];
         $propi = $_POST['propiedades'];
         $mes = $_POST['mesplantado'];
-		$producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images");
-		echo("<meta http-equiv='refresh' content='0.1'>");
+
+		if($producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
+            echo "<script>window.location='controladorRegistrarProducto.php?registrado'</script>";
+        }else{
+            echo "No registrado"
+        }
+
         
         }
 	

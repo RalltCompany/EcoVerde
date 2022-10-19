@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -121,25 +122,25 @@ if(!isset($_SESSION['CI'])){
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                <input type="text" name="nombre" maxlength="30" placeholder="Nombre">
+                <input type="text" name="nombre" maxlength="30" placeholder="Nombre" required>
                 </div>
                 <div class="izquierda-divs">
-                    <input type="text" name="apellido" maxlength="30" placeholder="Apellido">
+                    <input type="text" name="apellido" maxlength="30" placeholder="Apellido" required>
                     </div>
                 <div class="izquierda-divs">
-                <input type="number" name="cedula" minlength="8" maxlength="8"  placeholder="Cédula de identidad"c>
+                <input type="number" name="cedula" minlength="8" maxlength="8"  placeholder="Cédula de identidad" required>
                 </div>
                 <div class="izquierda-divs">
-                <input type="email" name="email" placeholder="Email">
+                <input type="email" name="email" placeholder="Email" required>
                 </div>
 
                 <div class="izquierda-divs">
-                    <input type="password" name="password" minlength="8" id="" placeholder="Contraseña">
+                    <input type="password" name="password" minlength="8" id="" placeholder="Contraseña" required> 
                 </div>
 
 
                 <div class="izquierda-divs">
-                    <select name="tipous" id="" >
+                    <select name="tipous" id="" required>
                         <option value="null" class="">Selecciona tipo de usuario</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Gestor">Gestor</option>
@@ -197,21 +198,21 @@ if(!isset($_SESSION['CI'])){
             <div class="derecha">
 
                 <div class="derecha-divs">
-                <input type="text" name="calle" placeholder="Calle">
+                <input type="text" name="calle" placeholder="Calle" required>
                 </div>
                 <div class="derecha-divs">
-                    <input type="text" name="num" placeholder="Numero">
+                    <input type="text" name="num" placeholder="Numero" required>
                     </div>
                 
                     <div class="derecha-divs">
-                        <input type="text" name="esq" placeholder="Esquina">
+                        <input type="text" name="esq" placeholder="Esquina" required>
                         </div>
                         <div class="derecha-divs">
-                            <input type="text" name="bar" placeholder="Barrio">
+                            <input type="text" name="bar" placeholder="Barrio" required>
                             </div>
 
                 <div class="derecha-divs">
-            <input type="text" name="cel"  placeholder="Celular">
+            <input type="text" name="cel"  placeholder="Celular" required>
             </div>
             </div>
                 </div>
@@ -231,7 +232,7 @@ if(isset($_GET['registrado'])){
 echo "<script>
 Swal.fire({
 icon: 'success',
-title: '¡Usuario modificado correctamente!',
+title: '¡Usuario registrado correctamente!',
 confirmButtonColor: '#008037', 
 });
 </script>";

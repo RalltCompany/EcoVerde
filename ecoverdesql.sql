@@ -43,7 +43,7 @@ precio INT(9) NOT NULL,
 familia VARCHAR(30) NOT NULL,
 disponibilidad INT(10) NOT NULL,
 propiedades VARCHAR(50) NOT NULL,
-mes_de_plantado DATE NOT NULL,
+mes_de_plantado enum("Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Setiembre, Octubre, Noviembre, Diciembre") NOT NULL,
 imagen VARCHAR(50) NOT NULL,
 productoactivo enum("1", "0"),
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
@@ -60,5 +60,42 @@ FOREIGN KEY(numerop) REFERENCES Pedido(numero),
 FOREIGN KEY(codigopro) REFERENCES Producto(codigo)
 )ENGINE=INNODB;
 
+/*Usuarios*/
+INSERT INTO usuario (ci, ciadmin, nombre, apellido, celular, email, contraseña, calle, numero, esquina, barrio, tipo, estado, clienteactivo) VALUES
+(54491536, NULL, 'Andrew', 'Suarez', 097742337, 'asuarez@impulso.edu.uy', '25d55ad283aa400af464c76d713c07ad', 'Ap Saravia', 3785, 'San Martin', 'Casavalle', 'Administrador', 'Aceptado', '1'),
+(54890794, NULL, 'Leonardo', 'Cuña', 096574644, 'lcuna@impulso.edu.uy', '5e8667a439c68f5145dd2fcbecf02209', 'Ap Saravia', 3785, 'San Martin', 'Casavalle', 'Administrador', 'Aceptado', '1'),
+(57346455, NULL, 'Rodrigo', 'Silva', 093087675, 'rdsilva@impulso.edu.uy', '4428c6c474502e61151877825bb41961', 'Leandro Gomez', 3465, 'San Martin', 'Casavalle', 'Gestor', 'Aceptado', '1'),
+(54564657, NULL, 'Lucas', 'Gonzalez', 098776557, 'lucgonzalez@impulso.edu.uy', 'bac76b0feb747e3bde11269cf367c97b', 'Luis Alberto Herrera', 7767, 'Burges', 'Marconi', 'Reparto', 'Aceptado', '1'),
+(58376463, NULL, 'Thiago', 'Arellano', 096874543 , 'tarellano@gmail.com', '95a4f73d9afe838c7c50256c8e72bf2c', 'Propios', 6534, 'Burges', 'Borro', 'Administrador', 'Aceptado', '1');
 
+/*Producto*/
+INSERT INTO producto (codigo, ciu, nombre, precio, familia, disponibilidad, propiedades, mes_de_plantado, imagen, productoactivo) VALUES
+(NULL, 54491536, 'Manzana', 45, 'Frutas', 1700, 'Vitamina C', 'Enero', '../Vista/images/manzana.jpg', '1'),
+(NULL, 54890794, 'Banana', 34, 'Frutas', 1630, 'Potasio', 'Julio', '../Vista/images/banana.jpg', '1'),
+(NULL, 54564657, 'Zapallo', 64, 'Verduras', 1300, 'Fibra y Calcio', 'Noviembre', '../Vista/images/zapallo.jpg;', NULL),
+(NULL, 57346455, 'Berenjena', 56, 'Verduras', 1479, 'Vitaminas y Hierro', 'Abril', '../Vista/images/berenjena.jpg', NULL),
+(NULL, 58376463, 'Naranja', 42, 'Frutas', 2100, 'Vitamina C', 'Junio', '../Vista/images/naranja.jpg', '1');
+
+/*Pedidos*/
+INSERT INTO pedido (numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_destinatario, direccionpe) VALUES
+(NULL, 54491536, '2022-10-14 21:13:27.000000', '2022-10-10', 'Tarjeta de Débito', '12 a 16', 'Armado', 'Johan', 'Aparicio Saravia 3785'),
+(NULL, 54890794, '2022-10-14 16:26:25', '2022-10-01', 'MercadoPago', '08 a 12', 'Ruta', 'Claudia', 'Aparicio Saravia'),
+(NULL, 54564657, '2022-10-14 18:17:12', '2022-08-17', 'Tarjeta de Crédito', '16 a 20', 'Entregado', 'Geovana', 'San Martin Calle 1'),
+(NULL, 57346455, '2022-10-14 20:17:12', '2022-05-20', 'MercadoPago', '08 a 12', 'Armado', 'Martin', 'Instrucciones 6575'),
+(NULL, 58376463, '2022-10-14 09:17:12', '2022-08-17', 'Tarjeta de Débito', '12 a 16', 'Ruta', 'Ihan', 'Gruta de Lourdes 5656');
+
+/*Conforma*/
+INSERT INTO conforma (numerop, codigopro, cantidad) VALUES
+(2, 2, 6), (4, 4, 3), (3, 1, 14), (1, 5, 4),
+(5, 3, 5), (4, 2, 7), (2, 4, 9),
+(3, 5, 17), (1, 1, 12),
+(5, 5, 22);
+
+/*Consultas:*/
+
+/*Cantidad de clientes agrupados por barrio.*/
+SELECT barrio, COUNT(*) FROM usuario GROUP BY barrio;
+
+/*Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.*/
+SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu ASC;
 

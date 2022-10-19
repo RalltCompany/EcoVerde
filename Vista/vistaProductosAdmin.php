@@ -202,7 +202,6 @@ if(!isset($_SESSION['CI'])){
 
 
 
-
     
   <!-- ALL JS FILES -->
   <script src="js/jquery-3.2.1.min.js"></script>
