@@ -11,6 +11,9 @@
 
     $producto=new Producto();
     $datosProductos= $producto->getProducto();
+
+    $pedido=new Pedidos();
+    $datosPedidos=$pedido->getPedidos();
     require_once("../Vista/vistaReportes.php");
 
 	

@@ -65,7 +65,7 @@ if(isset($_GET['Eliminado'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
         <div class="volver">
-            <a href="MenuAdmin.html"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
         </div>
         <div class="container">
             <!-- Start Header Navigation -->

@@ -237,8 +237,8 @@ if(!isset($_SESSION['CI'])){
     <tr>
 
         <th>Numero</th>
+        <th>CI Cliente</th>
         <th>Metodo de pago</th>
-        <th>Nombre destinatario</th>
         <th>Fecha y hora</th>
         <th>Rango de hora</th>
         <th>Fecha de entrega</th>
@@ -250,15 +250,15 @@ if(!isset($_SESSION['CI'])){
 <tbody>
 <?php echo "<tbody>";
         
-        foreach($datosPedidos as $datoPedido {
+        foreach($datosPedidos as $datoPedido) {
           echo "<tr>
           <td data-label='Cedula'>".$datoPedido["numero"]."</td>
-          <td data-label='Nombre'>".$datoPedido["CI Comprador"]."</td>
-          <td data-label='Apellido'>".$datoPedido[""]."</td>
-          <td data-label='Celular'>".$datoPedido["familia"]."</td>
-          <td data-label='Email'>".$datoPedido["propiedades"]."</td>
-          <td data-label='Calle'>".$datoPedido["precio"]."</td>
-          <td data-label='Numero'>".$datoPedido["mes_de_plantado"]."</td>
+          <td data-label='Nombre'>".$datoPedido["ciu"]."</td>
+          <td data-label='Apellido'>".$datoPedido["metodoPago"]."</td>
+          <td data-label='Celular'>".$datoPedido["fechayHora"]."</td>
+          <td data-label='Email'>".$datoPedido["horaPref"]."</td>
+          <td data-label='Calle'>".$datoPedido["fechaentrega"]."</td>
+          <td data-label='Numero'>".$datoPedido["estado"]."</td>
           </tr>";
           }
           "</tbody>"
