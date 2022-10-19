@@ -338,11 +338,29 @@ function getCantidadProd(){
 	}
 	
 	
+	public  function getPedidosaEntregar(){
+			
+		$sql = "SELECT * FROM pedido WHERE estado='A entregarse'";
+		$consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->pedidos[]=$filas;
+        }
+        return $this->pedidos;
 	
+	}
+
+	public  function getPedidos(){
+			
+		$sql = "SELECT * FROM pedido";
+		$consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->pedidos[]=$filas;
+        }
+        return $this->pedidos;
 	
-	
-	
-	
+	}
 	
 	public  function getPedidosAdmin(){
 			
