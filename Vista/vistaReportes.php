@@ -40,7 +40,7 @@
 
 </head>
 <?php
-session_start();
+
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -237,8 +237,8 @@ if(!isset($_SESSION['CI'])){
     <tr>
 
         <th>Numero</th>
+        <th>CI Cliente</th>
         <th>Metodo de pago</th>
-        <th>Nombre destinatario</th>
         <th>Fecha y hora</th>
         <th>Rango de hora</th>
         <th>Fecha de entrega</th>
@@ -248,61 +248,27 @@ if(!isset($_SESSION['CI'])){
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
+<?php echo "<tbody>";
         
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-       
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
+        foreach($datosPedidos as $datoPedido) {
+          echo "<tr>
+          <td data-label='Cedula'>".$datoPedido["numero"]."</td>
+          <td data-label='Nombre'>".$datoPedido["ciu"]."</td>
+          <td data-label='Apellido'>".$datoPedido["metodoPago"]."</td>
+          <td data-label='Celular'>".$datoPedido["fechayHora"]."</td>
+          <td data-label='Email'>".$datoPedido["horaPref"]."</td>
+          <td data-label='Calle'>".$datoPedido["fechaentrega"]."</td>
+          <td data-label='Numero'>".$datoPedido["estado"]."</td>
+          </tr>";
+          }
+          "</tbody>"
+          ; 
+?>
 </tbody>
 
 </table><br>
 <center>
-    <input type="submit" value="Crear Reporte" class="boton1">
+<a href="../Vista/PHPpdf/mostrarPDFPedidos.php" target="_blank" class="botonReporte"> Crear Reporte</a>
 
 </center>
 <div class="cuerpo">

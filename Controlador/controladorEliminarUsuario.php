@@ -2,7 +2,7 @@
 
     require_once("../db/db.php");
 	require_once("../Modelo/modeloUsuario.php");
-  
+	require_once("../Modelo/modeloPedidos.php");
 	require_once("../Modelo/modeloProducto.php");
 
 	$usuario = new Usuario();
@@ -10,6 +10,8 @@
 
 	$producto = new Producto();
     //$datosProd = $producto->getUsuario();
+
+	$pedido= new Pedidos();
 
 	
 
@@ -51,6 +53,32 @@
 		$Codigo=$_GET['ProdEliminar'];
 		if($producto->deleteProducto($Codigo)){
 			header("location:controladorProductoAdmin.php?Eliminado=1&CodEliminado=".$Codigo."");
+		}else{
+			echo "No se pudo Eliminar";
+		}
+		
+
+	}
+
+	if(isset($_GET['NumPedidoRechazar'])){
+
+		$Numero=$_GET['NumPedidoRechazar'];
+		if($pedido->RechazarPedido($Numero)){
+			header("location:controladorPedidoAdmin.php?Eliminado=1&NumEliminado=".$Numero."");
+		}else{
+			echo "No se pudo Eliminar";
+		}
+		
+
+	}
+
+
+
+	if(isset($_GET['NumPedidoAceptar'])){
+
+		$Numero=$_GET['NumPedidoAceptar'];
+		if($pedido->AceptarPedido($Numero)){
+			header("location:controladorPedidoAdmin.php?Eliminado=1&NumEliminado=".$Numero."");
 		}else{
 			echo "No se pudo Eliminar";
 		}
