@@ -248,56 +248,22 @@ if(!isset($_SESSION['CI'])){
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
+<?php echo "<tbody>";
         
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-       
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
+        foreach($datosPedidos as $datoPedido {
+          echo "<tr>
+          <td data-label='Cedula'>".$datoPedido["numero"]."</td>
+          <td data-label='Nombre'>".$datoPedido["CI Comprador"]."</td>
+          <td data-label='Apellido'>".$datoPedido[""]."</td>
+          <td data-label='Celular'>".$datoPedido["familia"]."</td>
+          <td data-label='Email'>".$datoPedido["propiedades"]."</td>
+          <td data-label='Calle'>".$datoPedido["precio"]."</td>
+          <td data-label='Numero'>".$datoPedido["mes_de_plantado"]."</td>
+          </tr>";
+          }
+          "</tbody>"
+          ; 
+?>
 </tbody>
 
 </table><br>
