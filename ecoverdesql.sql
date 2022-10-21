@@ -43,7 +43,7 @@ precio INT(9) NOT NULL,
 familia VARCHAR(30) NOT NULL,
 disponibilidad INT(10) NOT NULL,
 propiedades VARCHAR(50) NOT NULL,
-mes_de_plantado enum("Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Setiembre, Octubre, Noviembre, Diciembre") NOT NULL,
+mes_de_plantado enum('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre') NOT NULL,
 imagen VARCHAR(50) NOT NULL,
 productoactivo enum("1", "0"),
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
