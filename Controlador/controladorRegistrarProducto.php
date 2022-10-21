@@ -23,7 +23,7 @@
 		if($producto->RegistrarProductos($ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
             echo "<script>window.location='controladorRegistrarProducto.php?registrado'</script>";
         }else{
-            echo "No registrado"
+            echo "No registrado";
         }
 
         

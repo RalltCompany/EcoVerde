@@ -21,15 +21,13 @@
         $mes = $_POST['mesplantado'];
       
         
-        
-       if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
-        echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
-        }else{
-            echo "no modificado";
-        }
-		
-		
-        
+        if(isset($_POST['imagen'])){
+            if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
+                echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
+                }else{
+                    echo "No modificado";
+                }
+                } 
         }
 	
 
