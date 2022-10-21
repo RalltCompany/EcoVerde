@@ -120,6 +120,7 @@ if(!isset($_SESSION['CI'])){
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
+                        <?php foreach( )?>
                 <input type="text" name="nombre" placeholder="Nombre del producto">
                 </div>
                 <div class="izquierda-divs">

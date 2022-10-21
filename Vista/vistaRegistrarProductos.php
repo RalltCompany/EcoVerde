@@ -151,10 +151,25 @@ if(!isset($_SESSION['CI'])){
             </div>
 
             <div class="derecha-divs">
-            <input type="date" name="mesplantado" placeholder="Mes de plantado">
+            <select name="mesplantado" id="" aria-placeholder="Codigo">
+              <option value="null">Mes de plantado</option>
+              <option value="Enero">Enero</option>
+              <option value="Febrero">Febrero</option>
+              <option value="Marzo">Marzo</option>
+              <option value="Abril">Abril</option>
+              <option value="Mayo">Mayo</option>
+              <option value="Junio">Junio</option>
+              <option value="Julio">Julio</option>
+              <option value="Agosto">Agosto</option>
+              <option value="Setiembre">Setiembre</option>
+              <option value="Octubre">Octubre</option>
+              <option value="Noviembre">Noviembre</option>
+              <option value="Diciembre">Diciembre</option>
+</select>
         </div>
 
         <div class="derecha-divs">
+            
             <select name="cedula" id="" aria-placeholder="Codigo">
               <option value="null">Cedula del Usuario</option>
               <?php
