@@ -92,7 +92,7 @@
                             $url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
                           
                             
-                            if($url=="localhost/Ecoverde/Controlador/controladorTienda.php"){
+                            if($url=="localhost/Ecoverde/Controlador/controladorTienda.php" || $url=="localhost/Ecoverde/Controlador/ControladorTienda.php"){
                                 header("location:controladorTienda?pagina=1");
                             }
                           

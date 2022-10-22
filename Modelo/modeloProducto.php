@@ -127,21 +127,10 @@ public function __construct(){
 
 
 
-    public function ModificarProducto($c, $ciadmin, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado, $nombreI, $nombreD){
-        $tmp_name = $_FILES[$nombreI]['tmp_name'];
-
-	    if (is_dir($nombreD) && is_uploaded_file($tmp_name)){
-		
-		$img_file = $_FILES[$nombreI]['name'];
-		$img_type = $_FILES[$nombreI]['type'];
-
-		if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg")) || strpos($img_type, "png"))){
-			if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
-				
-				$ruta = $nombreD . '/' . $img_file;
+    public function ModificarProducto($c, $ciadmin, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado){
         $sql = "UPDATE producto SET nombre = '$nombre', ciu='$ciadmin', precio= '$precio', familia='$familia', 
-        disponibilidad='$disponibilidad', propiedades='$propiedades', mes_de_plantado='$mesdeplantado'  WHERE codigo = '$c' 
-        AND productoactivo='1'";
+        disponibilidad='$disponibilidad', propiedades='$propiedades', mes_de_plantado='$mesdeplantado',
+        WHERE codigo = '$c' AND productoactivo='1'";
         if($this->db->query($sql)){
             return true;
         }else{
@@ -149,9 +138,41 @@ public function __construct(){
         }
         
     }
+
+
+
+public function ModificarImagen($c, $nombreI, $nombreD){
+    $tmp_name = $_FILES[$nombreI]['tmp_name'];
+
+    if (is_dir($nombreD) && is_uploaded_file($tmp_name)){
+    
+    $img_file = $_FILES[$nombreI]['name'];
+    $img_type = $_FILES[$nombreI]['type'];
+
+    if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg")) || strpos($img_type, "png"))){
+        if (move_uploaded_file($tmp_name, $nombreD . '/' . $img_file)){
+            
+            $ruta = $nombreD . '/' . $img_file;
+    $sql = "UPDATE producto SET imagen = '$ruta' WHERE codigo = '$c' AND productoactivo='1'";
+    if ($_FILES[$nombreI]['size'] == 0 && $_FILES[$nombreI]['error'] == 0){
+    if($this->db->query($sql)){
+        return true;
+    }else{
+        return false;
+    }
+
+}else{
+    
+    return false;
+} 
+            }
+        }
 }
 }
-}
+
+
+
+
 
     public function CedulaUs(){
         $sql = "SELECT * FROM usuario WHERE (tipo='Gestor' OR tipo='Administrador') AND clienteactivo='1'";
@@ -304,9 +325,19 @@ public function __construct(){
 
 
      }
-     
+     public function getProductoParaModificar($C){
+        $sql = "SELECT * FROM producto WHERE codigo='$C' ORDER BY codigo";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
     }
+     
     
+
+    }
 
 
    

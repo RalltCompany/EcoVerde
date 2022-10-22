@@ -7,6 +7,7 @@
 	$producto = new Producto();
     $datos = $producto->getProducto();
     $cius = $producto->CedulaUs();
+    $datosS = $producto->getProductoParaModificar($_GET['Codigo']);
 
     require_once("../Vista/vistaModificarProductos.php");
 
@@ -20,15 +21,19 @@
         $propi = $_POST['propiedades'];
         $mes = $_POST['mesplantado'];
       
-        
-        if(isset($_POST['imagen'])){
-            if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes, 'imagen', "../Vista/images")){
-                echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
+       
+            
+                if($producto->ModificarImagen($codigo, 'imagen', "../Vista/images")){
+
+                if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes)){
+                    echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
                 }else{
                     echo "No modificado";
                 }
-                } 
-        }
+            } 
+            }
+        
+        
 	
 
 	

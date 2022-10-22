@@ -120,14 +120,14 @@ if(!isset($_SESSION['CI'])){
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                        <?php foreach( )?>
-                <input type="text" name="nombre" placeholder="Nombre del producto">
+                        <?php foreach($datosS as $dato){?>
+                <input type="text" name="nombre" placeholder="Nombre del producto" value="<?php echo $dato['nombre'];?>">
                 </div>
                 <div class="izquierda-divs">
-                <input type="number" name="disponibilidad" placeholder="Disponibilidad en KG">
+                <input type="number" name="disponibilidad" placeholder="Disponibilidad en KG" value="<?php echo $dato['disponibilidad'];?>">
                 </div>
                 <div class="izquierda-divs">
-                <input type="text" name="familia" placeholder="Familia o Categoría">
+                <input type="text" name="familia" placeholder="Familia o Categoría" value="<?php echo $dato['familia'];?>">
                 </div>
 
                 <div class="izquierda-divs">
@@ -144,32 +144,37 @@ if(!isset($_SESSION['CI'])){
             <div class="derecha">
 
                 <div class="derecha-divs">
-                <input type="text" name="propiedades" placeholder="Propiedades">
+                <input type="text" name="propiedades" placeholder="Propiedades" value="<?php echo $dato['propiedades'];?>">
                 </div>
 
                 <div class="derecha-divs">
-            <input type="text" name="precio"  placeholder="Precio en pesos">
+            <input type="text" name="precio"  placeholder="Precio en pesos" value="<?php echo $dato['precio'];?>">
             </div>
 
             <div class="derecha-divs">
-            <input type="date" name="mesplantado" placeholder="Mes de plantado">
+            <select name="mesplantado" id="" aria-placeholder="Codigo">
+            <?php echo "<option value='".$dato['mes_de_plantado']."'>".$dato['mes_de_plantado']."</option>
+              <option value='Enero'>Enero</option>
+              <option value='Febrero'>Febrero</option>
+              <option value='Marzo'>Marzo</option>
+              <option value='Abril'>Abril</option>
+              <option value='Mayo'>Mayo</option>
+              <option value='Junio'>Junio</option>
+              <option value='Julio'>Julio</option>
+              <option value='Agosto'>Agosto</option>
+              <option value='Setiembre'>Setiembre</option>
+              <option value='Octubre'>Octubre</option>
+              <option value='Noviembre'>Noviembre</option>
+              <option value='Diciembre'>Diciembre</option>";?>
+</select>
         </div>
 
         <div class="derecha-divs">
             <select name="cedula" id="" aria-placeholder="Codigo">
-              <option value="null">Cedula del Usuario</option>
-              <?php
-              foreach($cius as $ci){
-                echo "<option value=".$ci["ci"].">".$ci["nombre"]."</option>";
-              }
-
-
-
-
-
-              
-              ?>
+              <option value="<?php echo $_SESSION['CI'] ?>">Cedula del Usuario: <?php echo $_SESSION['CI'] ?></option>
+             
             </select>
+            <?php }?>
         </div>
             </div>
                 </div>
