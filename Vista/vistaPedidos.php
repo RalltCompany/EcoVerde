@@ -168,9 +168,13 @@ if(isset($_GET['Eliminado'])){
     <tbody>
         <?php
 
+ if(isset($datos)){
         foreach( $datos as $dato){
     echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
                                 }
+                            }else{
+                                echo '<tr><td colspan="7">No hay pedidos registrados.</td></tr>';
+                            }
                                     ?>
     </tbody>
 
