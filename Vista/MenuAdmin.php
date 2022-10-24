@@ -73,7 +73,7 @@ if(!isset($_SESSION['CI'])){
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                <h2>Bienvenido <?php echo $_SESSION['NOMBRE']; ?></h2>
+                <h2 class="h2">¡Bienvenido <?php echo $_SESSION['NOMBRE']; ?>!</h2>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -116,11 +116,11 @@ if(!isset($_SESSION['CI'])){
 <?php 
 if(isset($_SESSION['TIPO'])){ 
     if($_SESSION['TIPO']=="Administrador"){
-    echo  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+    echo  "<h4>Menú Administrador</h4>";
 
 
     }else if($_SESSION['TIPO']=="Gestor"){
-       echo  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
+       echo  "<h4>Menú Gestor</h4>";
     }
 }
 

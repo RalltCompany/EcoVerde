@@ -5,6 +5,12 @@ body{
 font-family: Dosis, sans-serif;
 }
 
+.h2{
+    font-size: 50px;
+    text-align: center;
+    color: #008037;
+    margin-top: 15px;
+}
 
 
 .cuerpo{

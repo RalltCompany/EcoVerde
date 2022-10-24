@@ -80,32 +80,12 @@ if(isset($_GET['Eliminado'])){
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.php">Sobre Nosotros</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle-arrow" data-toggle="dropdown">Tienda</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.php">Sidebar Shop</a></li>
-                            <li><a href="shop-detail.php">Shop Detail</a></li>
-                            <li><a href="cart.php">Cart</a></li>
-                            <li><a href="checkout.php">Checkout</a></li>
-                            <li><a href="my-account.php">My Account</a></li>
-                            <li><a href="wishlist.php">Wishlist</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
+                <h2 class="h2">¡Bienvenido <?php echo $_SESSION['NOMBRE']; ?>!</h2>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
-            <div class="attr-nav">
-                <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                   
-                </ul>
-            </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->

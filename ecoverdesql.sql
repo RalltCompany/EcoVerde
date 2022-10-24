@@ -97,5 +97,20 @@ INSERT INTO conforma (numerop, codigopro, cantidad) VALUES
 SELECT barrio, COUNT(*) FROM usuario GROUP BY barrio;
 
 /*Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.*/
-SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu ASC;
+SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu;
+
+/*Cantidad de pedidos agrupados por rango de hora de entrega.*/
+SELECT horaPref, COUNT(*) FROM pedido GROUP BY horaPref;
+
+/*Cliente que realizó el pedido de mayor monto.*/
+SELECT ciu, MAX(total) FROM pedido;
+
+/*Clientes que realizaron pedidos con monto mayor a $1000 en el mes anterior 
+(según el mes en el que estoy debo consultar el mes anterior).*/
+SELECT * FROM pedido WHERE MONTH(fechayhora) = MONTH(DATE_ADD(CURDATE(),INTERVAL -1 MONTH)) AND total > 1000;
+
+/*Monto facturado agrupado por año.*/
+SELECT YEAR(fechayhora),total FROM pedido GROUP BY YEAR(fechayhora);
+
+/*Producto mayor solicitado en xxx mes.*/
 

@@ -249,7 +249,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Controlador/controladorTienda.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>

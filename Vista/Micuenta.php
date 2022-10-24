@@ -56,18 +56,18 @@ if(!isset($_SESSION['CI'])){
                             <?php   
                             
                             if(isset($_SESSION['TIPO'])){ 
-                            if($_SESSION['TIPO']=="Cliente"){
+                                if($_SESSION['TIPO']=="Cliente"){
                                 
-                               echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
-                               echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
-                            
-                            
-                             } else if($_SESSION['TIPO']=="Administrador"){
-
-                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
-                               echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                    echo  "<li><a href='../Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                    ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                                    echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                 
+                                 
+                                  } else if($_SESSION['TIPO']=="Administrador"){
+     
+                                     echo  "<li><a href='../Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                    ECHO  "<li><a href=../Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                                    echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
                             }
