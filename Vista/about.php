@@ -257,19 +257,19 @@
             <div class="row my-5">
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Profesionales</h3>
+                        <center><h3>Profesionales</h3></center>
                         <p> </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Honestos</h3>
+                        <center><h3>Honestos</h3></center>
                         <p> </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Responsables</h3>
+                        <center><h3>Responsables</h3></center>
                         <p></p>
                     </div>
                 </div>
