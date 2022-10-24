@@ -172,20 +172,21 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Vista/about.php">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Controlador/controladorTienda.php">Sidebar Shop</a></li>
-								<li><a href="Vista/shop-detail.php">Shop Detail</a></li>
-                                <li><a href="controladorCarrito.php">Carrito <span class="numCarrito"><?php echo $_SESSION["ocarrito"]->getCantidadProd();   ?><span></a></li>
-                                <li><a href="controladorPedido.php">Pedido</a></li>
-                                <li><a href="Vista/Micuenta.php">Mi cuenta</a></li>
-                                <li><a href="Vista/wishlist.html">Wishlist</a></li>
+								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
+                                <li><a href='../Controlador/controladorPedido.php'>Pedido</a></li>
+                                <li><a href='../Vista/Micuenta.php'>Mi cuenta</a></li>";}  
+                                ?>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../gallery.html">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../contact-us.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/gallery.php">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

@@ -143,27 +143,22 @@ if(!isset($_SESSION['CI'])){
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Vista/about.php">Sobre nosotros</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="../index.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="Controlador/controladorTienda.php">Tienda</a></li>
-								
+								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
                                 <?php 
-
-
-
                                     if(isset($_SESSION['CI'])){ 
-                                echo "<li><a href='Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
-                                <li><a href='Controlador/controladorPedido.php'>Pedido</a></li>
-                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
-                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                echo "<li><a href='../Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
+                                <li><a href='../Controlador/controladorPedido'>Pedido</a></li>
+                                <li><a href='Micuenta.php'>Mi cuenta</a></li>";}  
                                 ?>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="Vista/gallery.php">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Vista/contact-us.php">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
