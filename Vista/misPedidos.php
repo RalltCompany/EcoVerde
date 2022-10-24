@@ -243,12 +243,21 @@ if(!isset($_SESSION['CI'])){
         <div class="container">
             <div class="contpedidos">
 
-            <div class="media mb-2 border-bottom">
-				<div class='media-body titlePedido'> <h4>Numero de pedido: </h4>			
-				<div class='small text-muted detailPed'><span class='mx-2'></span>Cantidad de productos: <span class='mx-2'>|</span>Total a pagar: <span class='mx-2'>|</span>Dirección de entrega: <span class='mx-2'>| Estado: <b>  </b></span></div>
+            <?php
+            if(isset($datos)){ 
+            foreach($datos as $dato){ 
+            echo "<div class='media mb-2 divPedidos'>
+				<div class='media-body infoPedido'> <h4 class='titlePedido'>Numero de pedido: <span class='datoPedido'>".$dato['numero']."</span> </h4>	
+                
+
+				<div class='small text-muted detailPed'> <p class=''>Total a pagar: <span class='datoPedido'>$".$dato['total']."</span> <span class='separador'>|</span> </p> <p class=''>Hora preferida: <span class='datoPedido'>".$dato['horaPref']."</span></span> <span class='separador'>|</span> </p> <p class=''>Dirección de entrega: <span class='datoPedido'>".$dato['direccionpe']."</span> </span> <span class='separador'>|</span></p><p class=''>Estado: <span class='datoPedido'>".$dato['estado']."</span></p></div>
 				</div>
-				</div>
-            
+				</div>";
+            }
+            }else{
+                echo "<h4 class='titlePedido'>No has realizado pedidos aún.</h4>";
+            }
+            ?>
             </div>
         </div>
     </div>
