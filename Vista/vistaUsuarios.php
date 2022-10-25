@@ -158,15 +158,15 @@ if(!isset($_SESSION['CI'])){
         </div>
 
         
-        <?php
-
-                $usuario2->PaginadoUsuarios();
-
-        ?>
+       
 
         </div>
             
+        <?php
 
+$usuario2->PaginadoUsuarios();
+
+?>
         
 
         

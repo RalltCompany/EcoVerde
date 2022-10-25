@@ -150,7 +150,7 @@ if(!isset($_SESSION['CI'])){
                 </tr>";
                 }
                 "</tbody>
-                </table>";
+                ";
                 
                 
 
@@ -181,17 +181,17 @@ if(!isset($_SESSION['CI'])){
                                   }
                      
         ?>
+        </table>
+        </div>
+
+            
+
         </div>
 
 
-
-
-
-
-
-
-
-
+        <?php
+                $producto->PaginadoProducto();
+            ?>
 
 
 

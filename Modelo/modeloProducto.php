@@ -322,9 +322,9 @@ public function ModificarImagen($c, $nombreI, $nombreD){
         }
 
 
-
-
      }
+
+
      public function getProductoParaModificar($C){
         $sql = "SELECT * FROM producto WHERE codigo='$C' ORDER BY codigo";
         $consulta = $this->db->query($sql);
@@ -336,6 +336,94 @@ public function ModificarImagen($c, $nombreI, $nombreD){
     }
      
     
+
+
+    public  function getProductosAdmin(){
+			
+        $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY codigo";
+        $consulta = $this->db->query($sql);
+        $total_registros = mysqli_num_rows($consulta);
+        
+    
+        if ($total_registros > 0) {				
+            $cant_reg_paginas = 10;
+            $pagina = false;
+            if (isset($_GET["pagina"])){
+                $pagina = $_GET["pagina"];
+            }
+            
+            if (!$pagina){
+                $inicio = 0;
+                $pagina = 1;
+            }else{
+                $inicio = ($pagina - 1) * $cant_reg_paginas;
+            }
+            
+            $sql2 = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY codigo ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+            $rs = $this->db->query($sql2); 
+            
+            
+            
+            while ($filas=$rs->fetch_assoc()) {
+                
+                $this->Producto[]=$filas;
+            }
+    
+            return $this->Producto;
+    }
+            
+    }
+
+
+
+
+
+    public function PaginadoProducto(){
+        $sql = "SELECT * FROM producto WHERE productoactivo='1' ORDER BY codigo";
+        $consulta = $this->db->query($sql);
+        $total_registros = mysqli_num_rows($consulta);
+        $url="../Controlador/controladorProductoAdmin.php";
+        echo '<div class="price-box-slider cent pagAdmin"><p>';
+           
+        if ($total_registros > 0) {				
+            $cant_reg_paginas = 10;
+            $pagina = false;
+            if (isset($_GET["pagina"])){
+                $pagina = $_GET["pagina"];
+            }
+            
+            if (!$pagina){
+                $inicio = 0;
+                $pagina = 1;
+            }else{
+                $inicio = ($pagina - 1) * $cant_reg_paginas;
+            }
+    
+            $total_paginas = ceil($total_registros / $cant_reg_paginas);
+    
+            if ($total_paginas >= 1) {
+                if ($pagina != 1) 
+                    echo '<a class="paginado" href="'.$url.'?pagina='.($pagina-1).'"> Anterior </a>';
+                    for ($i=1;$i<=$total_paginas;$i++) {
+                        if ($pagina == $i){
+                            echo '<p class="active disp">'.$i.' -</p>';
+                        }else{
+                            echo '  <a class="paginado" href="'.$url.'?pagina='.$i.'">'.$i.' -</a>  ';
+                        }
+                    }
+                
+                if ($pagina != $total_paginas)
+                    echo '<a class="paginado" href="'.$url.'?pagina='.($pagina+1).'"> Siguiente </a>';
+                
+            }
+            echo '</p></div>';
+                
+            
+            return $pagina;	
+    
+    
+    }
+     }
 
     }
 
