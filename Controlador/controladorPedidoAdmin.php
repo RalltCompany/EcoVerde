@@ -4,7 +4,7 @@ require_once('../Modelo/modeloPedidos.php');
 
 $pedidos=new Pedidos();
 
-$datos=$pedidos->getPedidosAdmin();
+$datos=$pedidos->getPedidosAdmin("Pendiente");
 require_once('../Vista/vistaPedidos.php');
 
 

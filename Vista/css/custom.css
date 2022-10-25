@@ -67,6 +67,11 @@
     color: rgb(24, 82, 24);
 }
 
+.fa-eye{
+    font-size: 25px;
+    color: rgb(18, 93, 231);
+}
+
 .fa-rectangle-xmark{
     font-size: 23px;
     color: rgb(170, 9, 9);
