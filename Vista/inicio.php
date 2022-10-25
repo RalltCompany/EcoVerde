@@ -249,7 +249,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Controlador/controladorTienda.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
@@ -466,8 +466,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Plantaciones</h3>
-                                <p>Nuestras plantaciones son cuidadas con productos y abono de buena calidad, tambien son cosechadas por personas capacitadas y con experiencia en en area.</p>
+                               <center><h3>Plantaciones</h3></center> 
+                                <p></p>
                             </div>
                             <ul class="option-blog">
                               
@@ -484,8 +484,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Plantaciones despues de 2 meses</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                               <center><h3>Plantaciones despues de 2 meses</h3></center>
+                                <p></p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
@@ -501,8 +501,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Cosecha</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            <center><h3>Cosecha</h3></center>
+                                <p></p>
                             </div>
                             <ul class="option-blog">                            
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>

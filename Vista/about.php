@@ -53,23 +53,23 @@
                             if(isset($_SESSION['TIPO'])){ 
                             if($_SESSION['TIPO']=="Cliente"){
                                 
-                               echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
                                ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                               echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                             
                             
                              } else if($_SESSION['TIPO']=="Administrador"){
 
-                                echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                               echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
                             }else if($_SESSION['TIPO']=="Gestor"){
 
-                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
+                               echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
                             }
@@ -257,19 +257,19 @@
             <div class="row my-5">
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Profesionales</h3>
+                        <center><h3>Profesionales</h3></center>
                         <p> </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Honestos</h3>
+                        <center><h3>Honestos</h3></center>
                         <p> </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
-                        <h3>Responsables</h3>
+                        <center><h3>Responsables</h3></center>
                         <p></p>
                     </div>
                 </div>

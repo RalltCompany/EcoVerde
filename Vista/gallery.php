@@ -50,36 +50,36 @@
                             <?php   
                             session_start();
                             if(isset($_SESSION['TIPO'])){ 
-                            if($_SESSION['TIPO']=="Cliente"){
+                                if($_SESSION['TIPO']=="Cliente"){
                                 
-                               echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
-                            
-                            
-                             } else if($_SESSION['TIPO']=="Administrador"){
-
-                                echo  "<li><a href='Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
-
-
-                            }else if($_SESSION['TIPO']=="Gestor"){
-
-                                echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
-                               echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
-
-
-                            }
-                           
-                            
-                            }else{
-
-                                echo "<li><a href=../Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
-
-                                echo "<li><a href=../Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
-                            }
+                                    echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                    ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                                    echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                 
+                                 
+                                  } else if($_SESSION['TIPO']=="Administrador"){
+     
+                                     echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                    ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                                    echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+     
+     
+                                 }else if($_SESSION['TIPO']=="Gestor"){
+     
+                                     echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                    ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
+                                    echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+     
+     
+                                 }
+                                
+                                 
+                                 }else{
+     
+                                     echo "<li><a href=../Controlador/controladorLogin.php><i class=fa fa-user s_color></i> Iniciar Sesión</a></li>";
+     
+                                     echo "<li><a href=../Controlador/controladorRegistrarseCliente.php><i class=fa-solid fa-address-card></i> Registrarse</a></li>";
+                                 }
 
                           
                             ?>
@@ -137,7 +137,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href=".."><img src="images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -145,23 +145,21 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item "><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="../Controlador/controladorTienda.php">Sidebar Shop</a></li>
-								<li><a href="shop-detail.php">Shop Detail</a></li>
+								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
-                                echo "<li><a href='Vista/cart.php'>Carrito</a></li>
-                                <li><a href='Vista/pedido.php'>Pedido</a></li>
-                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
-                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                echo "<li><a href='../Controlador/controladorTienda.php'>Carrito</a></li>
+                                <li><a href='../Controlador/controladorPedido.php'>Pedido</a></li>
+                                <li><a href='Micuenta.php'>Mi cuenta</a></li>";}  
                                 ?>
                             </ul>
                         </li>
-                        <li class="nav-item active"><a class="nav-link" href="gallery.php">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
+                        <li class="nav-item "><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
