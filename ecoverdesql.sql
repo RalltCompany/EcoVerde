@@ -113,4 +113,16 @@ SELECT * FROM pedido WHERE MONTH(fechayhora) = MONTH(DATE_ADD(CURDATE(),INTERVAL
 SELECT YEAR(fechayhora),total FROM pedido GROUP BY YEAR(fechayhora);
 
 /*Producto mayor solicitado en xxx mes.*/
+SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
+FROM conforma AS c
+LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
+GROUP BY d.nombre ORDER BY s DESC LIMIT 1;
+
+/*Producto menor solicitado en xxx mes.*/
+SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
+FROM conforma AS c
+LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
+GROUP BY d.nombre ORDER BY s ASC LIMIT 1;
 
