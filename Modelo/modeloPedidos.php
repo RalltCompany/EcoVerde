@@ -362,9 +362,9 @@ function getCantidadProd(){
 	
 	}
 	
-	public  function getPedidosAdmin(){
+	public  function getPedidosAdmin($Estado){
 			
-		$sql = "SELECT * FROM pedido ORDER BY numero";
+		$sql = "SELECT * FROM pedido WHERE estado='$Estado' ORDER BY numero";
 		$consulta = $this->db->query($sql);
 		$total_registros = mysqli_num_rows($consulta);
 		
@@ -383,7 +383,7 @@ function getCantidadProd(){
 				$inicio = ($pagina - 1) * $cant_reg_paginas;
 			}
 			
-			$sql2 = "SELECT * FROM pedido WHERE estado='Pendiente' ORDER BY numero ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+			$sql2 = "SELECT * FROM pedido WHERE estado='$Estado' ORDER BY numero ASC LIMIT ".$inicio."," . $cant_reg_paginas;
 			$rs = $this->db->query($sql2); 
 			
 			
@@ -450,7 +450,33 @@ function getCantidadProd(){
      }
 	
 	
+	 public  function getProductosInspeccionar($Numero){
+			
+		$sql = "SELECT p.*, d.codigo, d.nombre, c.cantidad FROM pedido AS p
+		LEFT JOIN conforma AS c ON c.numerop = p.numero
+		LEFT JOIN producto AS d ON c.codigopro = d.codigo
+		WHERE p.numero='$Numero'";
+		$consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->pedidos[]=$filas;
+        }
+        return $this->pedidos;
 	
+	}
+
+
+	public  function getPedidoInspeccionar($Numero){
+			
+		$sql = "SELECT * FROM pedido WHERE numero='$Numero'";
+		$consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->pedidos[]=$filas;
+        }
+        return $this->pedidos;
+	
+	}
 	
 	
 	

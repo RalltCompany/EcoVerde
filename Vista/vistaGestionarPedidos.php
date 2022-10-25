@@ -146,7 +146,7 @@ if(isset($_GET['Eliminado'])){
 
     <div class="cuerpo">
 
-        <h2 class="title-product">ACEPTAR O RECHAZAR PEDIDOS</h2>
+        <h2 class="title-product">GESTIONAR PEDIDOS</h2>
         <div class="men">
         <a class="a" href="../Controlador/controladorPedidoAdmin.php">Lista</a>
         <a class="a" href="../Controlador/controladorGestionarPedidos.php">Gestionar</a>
@@ -163,8 +163,8 @@ if(isset($_GET['Eliminado'])){
             <th>Nombre destinatario</th>
             <th>Fecha y hora</th>
             <th>Rango de hora preferido</th>
-            <th>Aceptar</th>
-            <th>Rechazar</th>
+            <th>Detalles y gestión</th>
+            
             
     
         </tr>
@@ -174,7 +174,7 @@ if(isset($_GET['Eliminado'])){
 
  if(isset($datos)){
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
+    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorInspeccionar.php?NumPedido='.$dato['numero'].'"><i class="fa-solid fa-eye"></i></a></td></tr>';
                                 }
                             }else{
                                 echo '<tr><td colspan="7">No hay pedidos registrados.</td></tr>';
