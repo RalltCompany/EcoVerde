@@ -466,8 +466,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Plantaciones</h3>
-                                <p>Nuestras plantaciones son cuidadas con productos y abono de buena calidad, tambien son cosechadas por personas capacitadas y con experiencia en en area.</p>
+                               <center><h3>Plantaciones</h3></center> 
+                                <p></p>
                             </div>
                             <ul class="option-blog">
                               
@@ -484,8 +484,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Plantaciones despues de 2 meses</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                               <center><h3>Plantaciones despues de 2 meses</h3></center>
+                                <p></p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
@@ -501,8 +501,8 @@
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Cosecha</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            <center><h3>Cosecha</h3></center>
+                                <p></p>
                             </div>
                             <ul class="option-blog">                            
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
