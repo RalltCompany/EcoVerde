@@ -143,21 +143,22 @@ if(!isset($_SESSION['CI'])){
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="../index.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.html">Sidebar Shop</a></li>
-								<li><a href="shop-detail.html">Shop Detail</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
+								<li><a href="controladorTienda.php">Tienda</a></li>
+                                <?php 
+                                    if(isset($_SESSION['CI'])){ 
+                                echo "<li><a href='controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
+                                <li><a href='../Controlador/controladorPedido'>Pedido</a></li>
+                                <li><a href='../Vista/Micuenta.php'>Mi cuenta</a></li>";}  
+                                ?>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/gallery.php">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -223,8 +224,8 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-12">
                     <h2>Checkout</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Checkout</li>
+                        <li class="breadcrumb-item"><a href="controladorCarrito.php">Carrito</a></li>
+                        <li class="breadcrumb-item active">Pedido</li>
                     </ul>
                 </div>
             </div>
