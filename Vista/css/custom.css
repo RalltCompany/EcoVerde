@@ -1,13 +1,34 @@
 
 
 
+.infoPedido p{
+    font-size: 20px !important;
+    color: black !important;
+    display: inline;
+}
 
+.datoPedido{
+    color: rgb(69, 69, 69);
+}
+
+.titlePedido{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.divPedidos{
+    border-bottom: 2px solid #008037;
+    padding-top: 20px;
+}
 
 .price-box-slider .paginado{
     font-size: 20px;
     font-weight: 700;
 }
 
+.separador{
+    margin: 0px 10px 0px 10px;
+}
 
 .price-box-slider p{
     display: inline;
@@ -58,3 +79,22 @@
 .linkCarrito{
     font-size: 20px !important;
 }
+
+
+
+
+@media (max-width: 991px) {   
+
+
+    .infoPedido p{
+        
+        display: block;
+    }
+
+
+    .separador{
+        display: none;
+    }
+
+}
+
