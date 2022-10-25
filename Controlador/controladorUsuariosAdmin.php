@@ -5,7 +5,7 @@
 
 	
 	$usuario2 = new Usuario();
-    $datos = $usuario2->getUsuario();
+    $datos = $usuario2->getUsuariosAdmin();
 
     require_once("../Vista/vistaUsuarios.php");
 

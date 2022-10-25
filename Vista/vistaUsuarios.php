@@ -150,11 +150,26 @@ if(!isset($_SESSION['CI'])){
                 </tr>";
                 }
                 "</tbody>
-                </table>";
+                ";
                 
                 
         ?>
+        </table>
         </div>
+
+        
+        <?php
+
+                $usuario2->PaginadoUsuarios();
+
+        ?>
+
+        </div>
+            
+
+        
+
+        
         <?php
 
 
@@ -201,6 +216,12 @@ confirmButtonColor: '#008037',
 
 
     
+
+</body>
+
+</html>
+
+
   <!-- ALL JS FILES -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -217,6 +238,3 @@ confirmButtonColor: '#008037',
   <script src="js/form-validator.min.js"></script>
   <script src="js/contact-form-script.js"></script>
   <script src="js/custom.js"></script>
-</body>
-
-</html>
