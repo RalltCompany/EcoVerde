@@ -32,6 +32,7 @@ estado enum("Pendiente", "Armado", "A entregarse",  "Ruta", "Entregado", "Cancel
 Nombre_destinatario VARCHAR(30),
 direccionpe VARCHAR(50) NOT NULL,
 total int(10) not null,
+cirepartidor INT(8),
 FOREIGN KEY(ciu) REFERENCES Usuario(ci)
 )ENGINE=INNODB;
 
@@ -77,12 +78,12 @@ INSERT INTO producto (codigo, ciu, nombre, precio, familia, disponibilidad, prop
 (NULL, 58376463, 'Naranja', 42, 'Frutas', 2100, 'Vitamina C', 'Junio', '../Vista/images/naranja.jpg', '1');
 
 /*Pedidos*/
-INSERT INTO pedido (numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_destinatario, direccionpe) VALUES
-(NULL, 54491536, '2022-10-14 21:13:27.000000', '2022-10-10', 'Tarjeta de Débito', '12 a 16', 'Armado', 'Johan', 'Aparicio Saravia 3785'),
-(NULL, 54890794, '2022-10-14 16:26:25', '2022-10-01', 'MercadoPago', '08 a 12', 'Ruta', 'Claudia', 'Aparicio Saravia'),
-(NULL, 54564657, '2022-10-14 18:17:12', '2022-08-17', 'Tarjeta de Crédito', '16 a 20', 'Entregado', 'Geovana', 'San Martin Calle 1'),
-(NULL, 57346455, '2022-10-14 20:17:12', '2022-05-20', 'MercadoPago', '08 a 12', 'Armado', 'Martin', 'Instrucciones 6575'),
-(NULL, 58376463, '2022-10-14 09:17:12', '2022-08-17', 'Tarjeta de Débito', '12 a 16', 'Ruta', 'Ihan', 'Gruta de Lourdes 5656');
+INSERT INTO pedido (numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_destinatario, direccionpe, total) VALUES
+(NULL, 54491536, '2022-10-14 21:13:27.000000', '2022-10-10', 'Tarjeta de Débito', '12 a 16', 'Armado', 'Johan', 'Aparicio Saravia 3785', 750),
+(NULL, 54890794, '2022-10-14 16:26:25', '2022-10-01', 'MercadoPago', '08 a 12', 'Ruta', 'Claudia', 'Aparicio Saravia', 1200),
+(NULL, 54564657, '2022-10-14 18:17:12', '2022-08-17', 'Tarjeta de Crédito', '16 a 20', 'Entregado', 'Geovana', 'San Martin Calle 1', 2300),
+(NULL, 57346455, '2022-10-14 20:17:12', '2022-05-20', 'MercadoPago', '08 a 12', 'Armado', 'Martin', 'Instrucciones 6575', 300),
+(NULL, 58376463, '2022-10-14 09:17:12', '2022-08-17', 'Tarjeta de Débito', '12 a 16', 'Ruta', 'Ihan', 'Gruta de Lourdes 5656', 1800);
 
 /*Conforma*/
 INSERT INTO conforma (numerop, codigopro, cantidad) VALUES
@@ -125,4 +126,6 @@ FROM conforma AS c
 LEFT JOIN producto AS d ON c.codigopro = d.codigo 
 LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
 GROUP BY d.nombre ORDER BY s ASC LIMIT 1;
+
+
 

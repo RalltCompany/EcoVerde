@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="Vista/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="Vista/css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="Vista/css/custom.css">
+    <!-- Custom CSS 
+    <link rel="stylesheet" href="Vista/css/custom.css"> -->
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -174,8 +174,7 @@
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
                                 <li><a href='Controlador/controladorPedido.php'>Pedido</a></li>
-                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
-                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>";}  
                                 ?>
                             </ul>
                         </li>

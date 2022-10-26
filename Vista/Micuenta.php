@@ -70,7 +70,21 @@ if(!isset($_SESSION['CI'])){
                                     echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
-                            }
+                                }else if($_SESSION['TIPO']=="Gestor"){
+     
+                                    echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                   ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
+                                   echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+    
+    
+                               }else if($_SESSION['TIPO']=="Reparto"){
+
+                                   echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                  ECHO  "<li><a href=Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
+                                  echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+   
+   
+                               }
                            
                             
                             }else{
