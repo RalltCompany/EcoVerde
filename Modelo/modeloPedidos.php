@@ -188,6 +188,18 @@ function getCantidadProd(){
 		}
 	}
 
+	function PedidoAEntregar($Numero){
+		
+		
+		$sql="UPDATE pedido SET estado='A entregarse' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	//SELECT MAX(numero) FROM pedido WHERE ciu=53235432;
 
 
@@ -382,7 +394,7 @@ function getCantidadProd(){
 		
 
 		if ($total_registros > 0) {				
-			$cant_reg_paginas = 10;
+			$cant_reg_paginas = 2;
 			$pagina = false;
 			if (isset($_GET["pagina"])){
 				$pagina = $_GET["pagina"];
@@ -412,15 +424,22 @@ function getCantidadProd(){
 	
 	
 	
-		public function mostrarPaginado(){
-            $sql = "SELECT * FROM pedido ORDER BY numero";
+		public function mostrarPaginado($Lugar, $Estado){
+            $sql = "SELECT * FROM pedido WHERE estado='$Estado' ORDER BY numero";
 			$consulta = $this->db->query($sql);
             $total_registros = mysqli_num_rows($consulta);
+
+			if($Lugar=="AceptarORechazar"){
             $url="../Controlador/controladorPedidoAdmin.php";
+			}else if($Lugar=="GestionarPedidos"){
+				$url="../Controlador/controladorGestionarPedidos.php";
+			}else if($Lugar=="CambiarPedidos"){
+				$url="../Controlador/controladorCambiarPedidos.php";
+			}
             echo '<div class="price-box-slider cent pagAdmin"><p>';
                
             if ($total_registros > 0) {				
-				$cant_reg_paginas = 10;
+				$cant_reg_paginas = 2;
 				$pagina = false;
 				if (isset($_GET["pagina"])){
 					$pagina = $_GET["pagina"];

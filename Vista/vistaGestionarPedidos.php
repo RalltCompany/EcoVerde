@@ -3,13 +3,13 @@
 <!-- Basic -->
 
 <head>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Site Metas -->
     <title>EcoVerde - Gestión Pedidos</title>
     <meta name="keywords" content="">
@@ -50,14 +50,17 @@ if(!isset($_SESSION['CI'])){
 
 
 if(isset($_GET['armado'])){
-    echo "<script>
-                                Swal.fire({
-                                  icon: 'Success',
-                                  title: '¡Armado!',
-                                  text: '¡El estado del pedido ha cambiado a: Armado!',
-                                  confirmButtonColor: '#008037', 
-                                  });
-                                  </script>";
+    
+        echo "<script>
+        Swal.fire({
+          icon: 'success',
+          title: '¡Gracias!',
+          html: 'Su pedido ha sido registrado correctamente. Puedes hacer un seguimiento en el apartado <b>Mi cuenta</b>. ¡Gracias por elegirnos!',
+          confirmButtonColor: '#008037', 
+          });
+          </script>";
+        
+    
  }
 
 ?>
@@ -80,21 +83,7 @@ if(isset($_GET['armado'])){
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.php">Sobre Nosotros</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle-arrow" data-toggle="dropdown">Tienda</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.php">Sidebar Shop</a></li>
-                            <li><a href="shop-detail.php">Shop Detail</a></li>
-                            <li><a href="cart.php">Cart</a></li>
-                            <li><a href="checkout.php">Checkout</a></li>
-                            <li><a href="my-account.php">My Account</a></li>
-                            <li><a href="wishlist.php">Wishlist</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
+                <h2 class="h2">¡Bienvenido <?php echo $_SESSION['NOMBRE']; ?>!</h2>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -148,8 +137,9 @@ if(isset($_GET['armado'])){
 
         <h2 class="title-product">GESTIONAR PEDIDOS</h2>
         <div class="men">
-        <a class="a" href="../Controlador/controladorPedidoAdmin.php">Lista</a>
-        <a class="a" href="../Controlador/controladorGestionarPedidos.php">Gestionar</a>
+        <a class="a" href="../Controlador/controladorPedidoAdmin.php"> Aceptar o Rechazar  |</a>
+        <a class="a" href="../Controlador/controladorGestionarPedidos.php">|  Gestionar  |</a>
+        <a class="a" href="../Controlador/controladorCambiarPedidos.php">|  Enviar a entrega</a>
         </div>
         <br>
         <div class="contenedor">
@@ -177,7 +167,7 @@ if(isset($_GET['armado'])){
     echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorInspeccionar.php?NumPedido='.$dato['numero'].'"><i class="fa-solid fa-eye"></i></a></td></tr>';
                                 }
                             }else{
-                                echo '<tr><td colspan="7">No hay pedidos registrados.</td></tr>';
+                                echo '<tr><td colspan="6">No hay pedidos registrados.</td></tr>';
                             }
                                     ?>
     </tbody>
@@ -189,7 +179,7 @@ if(isset($_GET['armado'])){
 
 <?php
 
-$pedidos->mostrarPaginado();
+$pedidos->mostrarPaginado("GestionarPedidos", "Aceptado");
 ?>
 
 

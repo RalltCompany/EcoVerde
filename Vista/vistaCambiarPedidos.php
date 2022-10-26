@@ -3,13 +3,13 @@
 <!-- Basic -->
 
 <head>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Site Metas -->
     <title>EcoVerde - Gestión Pedidos</title>
     <meta name="keywords" content="">
@@ -49,15 +49,18 @@ if(!isset($_SESSION['CI'])){
 
 
 
-if(isset($_GET['Eliminado'])){
-    echo "<script>
-                                Swal.fire({
-                                  icon: 'error',
-                                  title: 'Oops...!',
-                                  text: '¡Su carrito esta vacío!',
-                                  confirmButtonColor: '#008037', 
-                                  });
-                                  </script>";
+if(isset($_GET['armado'])){
+    
+        echo "<script>
+        Swal.fire({
+          icon: 'success',
+          title: '¡Gracias!',
+          html: 'Su pedido ha sido registrado correctamente. Puedes hacer un seguimiento en el apartado <b>Mi cuenta</b>. ¡Gracias por elegirnos!',
+          confirmButtonColor: '#008037', 
+          });
+          </script>";
+        
+    
  }
 
 ?>
@@ -86,6 +89,12 @@ if(isset($_GET['Eliminado'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                   
+                </ul>
+            </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -126,7 +135,7 @@ if(isset($_GET['Eliminado'])){
 
     <div class="cuerpo">
 
-        <h2 class="title-product">ACEPTAR O RECHAZAR PEDIDOS</h2>
+        <h2 class="title-product">GESTIONAR PEDIDOS</h2>
         <div class="men">
         <a class="a" href="../Controlador/controladorPedidoAdmin.php"> Aceptar o Rechazar  |</a>
         <a class="a" href="../Controlador/controladorGestionarPedidos.php">|  Gestionar  |</a>
@@ -144,8 +153,8 @@ if(isset($_GET['Eliminado'])){
             <th>Dirección</th>
             <th>Fecha y hora</th>
             <th>Rango de hora preferido</th>
-            <th>Aceptar</th>
-            <th>Rechazar</th>
+            <th>Enviar a entrega</th>
+            
             
     
         </tr>
@@ -155,10 +164,10 @@ if(isset($_GET['Eliminado'])){
 
  if(isset($datos)){
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['direccionpe'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
+    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['direccionpe'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorCambiarPedidos.php?armado='.$dato['numero'].'"><i class="fa-solid fa-truck"></i></a></td></tr>';
                                 }
                             }else{
-                                echo '<tr><td colspan="7">No hay pedidos registrados.</td></tr>';
+                                echo '<tr><td colspan="6">No hay pedidos armados.</td></tr>';
                             }
                                     ?>
     </tbody>
@@ -170,7 +179,7 @@ if(isset($_GET['Eliminado'])){
 
 <?php
 
-$pedidos->mostrarPaginado("AceptarORechazar", "Pendiente");
+$pedidos->mostrarPaginado("CambiarPedidos", "Armado");
 ?>
 
 
