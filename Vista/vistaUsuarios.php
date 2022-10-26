@@ -53,9 +53,7 @@ if(!isset($_SESSION['CI'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
 
-        <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+       
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -75,6 +73,10 @@ if(!isset($_SESSION['CI'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -87,7 +89,7 @@ if(!isset($_SESSION['CI'])){
 <body>
 
 
-    <div class="cuerpo">
+    <div class="cuerpoOtros">
         <h2 class="title-product">Usuarios</h2>
 
         <div class="men">
@@ -99,7 +101,7 @@ if(!isset($_SESSION['CI'])){
         
 
       
-    <div class='contenedor'>
+    <div class='contenedorTabla'>
     <table class='notas'>
     
     <thead>
@@ -126,7 +128,7 @@ if(!isset($_SESSION['CI'])){
                 <td data-label='Email'>".$dato["email"]."</td>
                 <td data-label='Tipo'>".$dato["tipo"]."</td>
                 <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
-                <td data-label='Eliminar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+                <td data-label='Modificar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>

@@ -67,9 +67,7 @@ if(isset($_GET['armado'])){
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
-        <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+        
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -90,10 +88,9 @@ if(isset($_GET['armado'])){
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
-                <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                   
-                </ul>
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        </div>
             </div>
             <!-- End Atribute Navigation -->
         </div>
@@ -164,7 +161,7 @@ if(isset($_GET['armado'])){
 
  if(isset($datos)){
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['direccionpe'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorCambiarPedidos.php?armado='.$dato['numero'].'"><i class="fa-solid fa-truck"></i></a></td></tr>';
+    echo '<tr><td data-label="Numero">'.$dato['numero'].'</td><td data-label="Metodo Pago">'.$dato['metodoPago'].'</td><td data-label="Direccion">'.$dato['direccionpe'].'</td><td data-label="Fecha y hora">'.$dato['fechayHora'].'</td><td data-label="Hora preferida de entrega">'.$dato['horaPref'].'</td><td data-label="Enviar a entrega"><a href="controladorCambiarPedidos.php?armado='.$dato['numero'].'"><i class="fa-solid fa-truck"></i></a></td></tr>';
                                 }
                             }else{
                                 echo '<tr><td colspan="6">No hay pedidos armados.</td></tr>';

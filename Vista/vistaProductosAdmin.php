@@ -53,9 +53,7 @@ if(!isset($_SESSION['CI'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
 
-        <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+        
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -75,6 +73,9 @@ if(!isset($_SESSION['CI'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -87,7 +88,7 @@ if(!isset($_SESSION['CI'])){
 <body>
 
 
-    <div class="cuerpo">
+    <div class="cuerpoOtros">
         <h2 class="title-product">Productos</h2>
 
         <div class="men">
@@ -99,7 +100,7 @@ if(!isset($_SESSION['CI'])){
         
 
       
-    <div class='contenedor'>
+    <div class='contenedorTabla'>
     <table class='notas'>
     
     <thead>

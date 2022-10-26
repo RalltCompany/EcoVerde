@@ -210,7 +210,10 @@ function getCantidadProd(){
 		}else{
 			return false;
 		}
+		
 	}
+
+
 
 	function PedidoEntregado($Numero, $CIR, $Destinatario, $Fecha){
 		

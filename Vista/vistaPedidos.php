@@ -64,9 +64,7 @@ if(isset($_GET['Eliminado'])){
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
-        <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+      
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -86,6 +84,9 @@ if(isset($_GET['Eliminado'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -155,7 +156,7 @@ if(isset($_GET['Eliminado'])){
 
  if(isset($datos)){
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['direccionpe'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
+    echo '<tr><td data-label="Numero">'.$dato['numero'].'</td><td data-label="Metodo Pago">'.$dato['metodoPago'].'</td><td data-label="Direccion">'.$dato['direccionpe'].'</td><td data-label="Fecha y hora">'.$dato['fechayHora'].'</td><td data-label="Hora preferida de entrega">'.$dato['horaPref'].'</td><td data-label="Aceptar"><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td data-label="Rechazar"><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
                                 }
                             }else{
                                 echo '<tr><td colspan="7">No hay pedidos registrados.</td></tr>';

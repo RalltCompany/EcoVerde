@@ -67,9 +67,7 @@ if(isset($_GET['armado'])){
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
-        <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+        
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -90,10 +88,8 @@ if(isset($_GET['armado'])){
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
-                <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                   
-                </ul>
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
             </div>
             <!-- End Atribute Navigation -->
         </div>
@@ -150,7 +146,7 @@ if(isset($_GET['armado'])){
 
             <th>Numero</th>
             <th>Metodo de pago</th>
-            <th>Nombre destinatario</th>
+            <th>Total</th>
             <th>Fecha y hora</th>
             <th>Rango de hora preferido</th>
             <th>Detalles y gestión</th>
@@ -164,7 +160,7 @@ if(isset($_GET['armado'])){
 
  if(isset($datos)){
         foreach( $datos as $dato){
-    echo '<tr><td>'.$dato['numero'].'</td><td>'.$dato['metodoPago'].'</td><td>'.$dato['Nombre_destinatario'].'</td><td>'.$dato['fechayHora'].'</td><td>'.$dato['horaPref'].'</td><td><a href="controladorInspeccionar.php?NumPedido='.$dato['numero'].'"><i class="fa-solid fa-eye"></i></a></td></tr>';
+    echo '<tr><td data-label="Numero">'.$dato['numero'].'</td><td data-label="Metodo Pago">'.$dato['metodoPago'].'</td><td data-label="Total">$'.$dato['total'].'</td><td data-label="Fecha y hora">'.$dato['fechayHora'].'</td><td data-label="Hora preferida de entrega">'.$dato['horaPref'].'</td><td data-label="Visualizar pedido"><a href="controladorInspeccionar.php?NumPedido='.$dato['numero'].'"><i class="fa-solid fa-eye"></i></a></td></tr>';
                                 }
                             }else{
                                 echo '<tr><td colspan="6">No hay pedidos registrados.</td></tr>';

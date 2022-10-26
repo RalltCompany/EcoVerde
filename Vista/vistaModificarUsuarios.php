@@ -51,9 +51,7 @@ if(!isset($_SESSION['CI'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
 
-        <div class="volver">
-            <a href="../Controlador/controladorUsuariosAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+       
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -73,6 +71,9 @@ if(!isset($_SESSION['CI'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="volver">
+            <a href="../Controlador/controladorUsuariosAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
