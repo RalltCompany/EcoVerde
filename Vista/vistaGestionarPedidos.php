@@ -49,12 +49,12 @@ if(!isset($_SESSION['CI'])){
 
 
 
-if(isset($_GET['Eliminado'])){
+if(isset($_GET['armado'])){
     echo "<script>
                                 Swal.fire({
-                                  icon: 'error',
-                                  title: 'Oops...!',
-                                  text: '¡Su carrito esta vacío!',
+                                  icon: 'Success',
+                                  title: '¡Armado!',
+                                  text: '¡El estado del pedido ha cambiado a: Armado!',
                                   confirmButtonColor: '#008037', 
                                   });
                                   </script>";
