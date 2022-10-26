@@ -435,6 +435,8 @@ function getCantidadProd(){
 				$url="../Controlador/controladorGestionarPedidos.php";
 			}else if($Lugar=="CambiarPedidos"){
 				$url="../Controlador/controladorCambiarPedidos.php";
+			}else if($Lugar=="Aentrega"){
+				$url="../Controlador/controladorReparto.php";
 			}
             echo '<div class="price-box-slider cent pagAdmin"><p>';
                
@@ -502,6 +504,20 @@ function getCantidadProd(){
 		$sql = "SELECT u.*, p.* FROM usuario AS u
 		INNER JOIN pedido AS p
 		ON u.ci=p.ciu WHERE u.ci=p.ciu AND p.numero= '$Numero'";
+		$consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->pedidos[]=$filas;
+        }
+        return $this->pedidos;
+	
+	}
+
+	public  function getPedidosEntrega(){
+			
+		$sql = "SELECT u.*, p.* FROM usuario AS u
+		INNER JOIN pedido AS p
+		ON u.ci=p.ciu WHERE u.ci=p.ciu AND p.estado='A entregarse'";
 		$consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){

@@ -5,9 +5,9 @@
 
 	
 	$pedidos = new Pedidos();
-   
+    $datos=$pedidos->getPedidosEntrega();
 
-    require_once("../Vista/vistaReparto.php");
+    require_once("../Vista/menuReparto.php");
 
 
 

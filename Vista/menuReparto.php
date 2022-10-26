@@ -43,7 +43,7 @@
 
 </head>
 <?php
-session_start();
+
 if(!isset($_SESSION['CI'])){
     echo "<script>window.location='errorSession.php'</script>";
 }
@@ -108,12 +108,9 @@ if(!isset($_SESSION['CI'])){
 
 
     <div class="cuerpo">
-        <h2 class="title-product">Pedidos</h2>
+        <h2 class="title-product">Pedidos a entregar</h2>
 
-        <div class="men">
-        <a class="a" href="controladorRegistrarProducto.php">Registrar</a>
-        <a class="a" href="controladorProductoAdmin.php">Buscar</a>
-        </div>
+        
 <br>
 
       
@@ -123,12 +120,11 @@ if(!isset($_SESSION['CI'])){
     <thead>
             <tr>
                 <th>Número</th>
-                <th>Fecha y Hora Pedido</th>
-                <th>Fecha Entrega</th>
-                <th class="celdaEmail">Metodo pago</th>
+                <th>Nombre Usuario</th>
+                <th class="celdaEmail">Direccion</th>
                 <th>Hora a entregar</th>
-                <th>Estado</th>
-                <th>Destinatario</th>
+                <th>Entregar pedido</th>
+               
                 </tr>
     </thead>
     <?php echo "<tbody>";
@@ -136,18 +132,15 @@ if(!isset($_SESSION['CI'])){
               foreach($datos as $dato) {
                 echo "<tr>
                 <td data-label='Cedula'>".$dato["numero"]."</td>
-                <td data-label='Nombre'>".$dato["fechayHora"]."</td>
-                <td data-label='Apellido'>".$dato["fechaentrega"]."</td>
-                <td data-label='Celular'>".$dato["metodoPago"]."</td>
+                <td data-label='Apellido'>".$dato["nombre"]."</td>
+                <td data-label='Celular'>".$dato["direccionpe"]."</td>
                 <td data-label='Email'>".$dato["horaPref"]."</td>
-                <td data-label='Tipo'>".$dato["estado"]."</td>
-                <td data-label='Tipo'>".$dato["Nombre_Destinatario"]."</td>
-                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?ProdEliminar=".$dato["codigo"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
-                <td data-label='Eliminar'><a href=controladorModificarProducto.php?Codigo=".$dato["codigo"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+               
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?PedidoEntregar=".$dato["numero"]."> <i class='fa-solid fa-truck'></i> </a></td>
                 </tr>";
                 }
                 "</tbody>
-                </table>";
+                ";
                 
                 
 
@@ -165,24 +158,18 @@ if(!isset($_SESSION['CI'])){
               });
               </script>";
                       }
-
-                      if(isset($_GET['Modificado'])){
-                        echo "<script>
-                        Swal.fire({
-                          icon: 'success',
-                          title: '¡Producto Modificado!',
-                          html: '<p>El producto ha sido modificado con éxito.</p>',
-                          confirmButtonColor: '#008037', 
-                          });
-                          </script>";
-                                  }
                      
         ?>
+        </table>
+        </div>
+        
         </div>
 
+       
+        <?php
 
-
-
+        $pedidos->mostrarPaginado("Aentrega", "A entregarse");
+        ?>  
 
 
 
