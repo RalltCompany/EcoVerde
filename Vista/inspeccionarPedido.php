@@ -65,7 +65,7 @@ if(isset($_GET['Eliminado'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
         <div class="volver">
-            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+            <a href="../Controlador/controladorGestionarPedidos.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
         </div>
         <div class="container">
             <!-- Start Header Navigation -->
@@ -140,7 +140,18 @@ if(isset($_GET['Eliminado'])){
     <!-- End Navigation -->
 </header>
 
-
+<?php
+if(isset($_GET['armado'])){
+    echo "<script>
+                                Swal.fire({
+                                  icon: 'Success',
+                                  title: '¡Armado!',
+                                  text: '¡Estado de pedido cambiado a: Armado!',
+                                  confirmButtonColor: '#008037', 
+                                  });
+                                  </script>";
+ }
+?>
 <body>
 
 
@@ -170,19 +181,19 @@ if(isset($_GET['Eliminado'])){
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Nombre *</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value=" <?php //echo $dato[''] ?>" readonly>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value=" <?php echo $dato['nombre'] ?>" readonly>
                                     <div class="invalid-feedback"> Valid first name is required. </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">Apellido *</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" readonly>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="<?php echo $dato['apellido'] ?>" readonly>
                                     <div class="invalid-feedback"> Valid last name is required. </div>
                                 </div>
                             </div>
                            
                             <div class="mb-3">
                                 <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email" placeholder="" value=""  readonly>
+                                <input type="email" class="form-control" id="email" placeholder="" value="<?php echo $dato['email'] ?>"  readonly>
                                 <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                             </div>
                             <div class="mb-3">
@@ -250,14 +261,14 @@ if(isset($_GET['Eliminado'])){
                                 <?php    foreach($productos as $producto){         ?>
 
                                 <div class="media mb-2 border-bottom">
-				                <div class='media-body'> <a href='detail.html'> <?php     $producto['nombre']       ?></a>				
-				                <div class='small text-muted factu'><span class='mx-2'></span>ID: <?php     $producto['numero']       ?><span class='mx-2'>|</span>Cantidad: <?php     $producto['cantidad']       ?> [KG]</div>
+				                <div class='media-body'> <a href='detail.html'> <?php  echo   $producto['nombre'];       ?></a>				
+				                <div class='small text-muted factu'><span class='mx-2'></span>ID: <?php  echo   $producto['codigo'];       ?><span class='mx-2'>|</span>Cantidad: <?php   echo  $producto['cantidad'];       ?> [KG]</div>
 				                </div>
 				                </div>
 
-
-                               
                                 <?php     }       ?>
+                               
+                                
                                    
 
                                 </div>
@@ -268,20 +279,14 @@ if(isset($_GET['Eliminado'])){
                                 <div class="title-left">
                                     <h3>Su orden</h3>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="font-weight-bold">Product</div>
-                                    <div class="ml-auto font-weight-bold">Total</div>
-                                </div>
-                                <hr class="my-1">
-                                <div class="d-flex">
-                                    <h4>Sub Total</h4>
-                                    <div class="ml-auto font-weight-bold"> </div>
-                                </div>
+                                
+                              
+                                <?php    foreach($datosPedido as $datoped){        ?>
                             
                                 <hr class="my-1">
                                 <div class="d-flex">
                                     <h4>Iva</h4>
-                                    <div class="ml-auto font-weight-bold"></div>
+                                    <div class="ml-auto font-weight-bold">$<?php  $iva=$datoped['total']*0.22; echo $iva;       ?></div>
                                 </div>
                                 <div class="d-flex">
                                     <h4>Costo de envío</h4>
@@ -290,11 +295,11 @@ if(isset($_GET['Eliminado'])){
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Total + IVA</h5>
-                                    <div class="ml-auto h5"> </div>
+                                    <div class="ml-auto h5">$<?php   echo $datoped['total'];       ?> </div>
                                 </div>
-                                <hr> </div>
+                                <hr> </div><?php     }       ?>
                         </div>
-                        <div class="col-12 d-flex shopping-box"><input type="submit" class="ml-auto btn hvr-hover" value="Finalizar Compra" name="Finalizar"> </div></form>
+                        <div class="col-12 d-flex shopping-box"><input type="submit" class="ml-auto btn hvr-hover" value="Pedido Armado" name="Armado"> </div></form>
                     </div>
                 </div>
             </div>

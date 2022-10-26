@@ -176,6 +176,18 @@ function getCantidadProd(){
 		}
 	}
 
+	function PedidoArmado($Numero, $Direccion){
+		
+		
+		$sql="UPDATE pedido SET estado='Armado', direccionpe='$Direccion' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	//SELECT MAX(numero) FROM pedido WHERE ciu=53235432;
 
 
@@ -468,7 +480,9 @@ function getCantidadProd(){
 
 	public  function getPedidoInspeccionar($Numero){
 			
-		$sql = "SELECT * FROM pedido WHERE numero='$Numero'";
+		$sql = "SELECT u.*, p.* FROM usuario AS u
+		INNER JOIN pedido AS p
+		ON u.ci=p.ciu WHERE u.ci=p.ciu AND p.numero= '$Numero'";
 		$consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){

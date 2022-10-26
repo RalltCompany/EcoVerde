@@ -14,15 +14,15 @@ $pedido=new Pedidos();
 $CI=$_SESSION['CI'];
 $FechaHora= date("d-m-y h:i:s");
 
-$MetodoPago= $_POST['metodoPago'];
-$RangoHora= $_POST['rangoHora'];
+
 
 $productos=$_SESSION['ocarrito']->getNum();
 $total=$_SESSION['ocarrito']->ret_val();
 
 
 if(isset($_POST['Finalizar'])){
-
+    $MetodoPago= $_POST['metodoPago'];
+    $RangoHora= $_POST['rangoHora'];
     $DireccionPe=$_POST['DireccionPed'];
     
     
@@ -32,9 +32,9 @@ if(isset($_POST['Finalizar'])){
        
         
        if($_SESSION['ocarrito']->conformarPedido($NumPedido, $productos)){
-        echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
-       }
         
+       }
+       echo "<script language='javascript'>window.location.href = 'terminar_carrito.php?Pedido'; </script>";
 
         
     }else{
