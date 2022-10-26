@@ -72,6 +72,13 @@
                                echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
 
 
+                            }else if($_SESSION['TIPO']=="Reparto"){
+
+                                echo  "<li><a href=../Vista/micuenta.php><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                               ECHO  "<li><a href=controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
+                               echo  "<li><a href=controladorlogout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+
+
                             }
                            
                             
@@ -171,16 +178,16 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="../index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Vista/about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
+								<li><a href="../Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
-                                <li><a href='../Controlador/controladorPedido.php'>Pedido</a></li>
+                                <li><a href='controladorPedido.php'>Pedido</a></li>
                                 <li><a href='../Vista/Micuenta.php'>Mi cuenta</a></li>";}  
                                 ?>
                             </ul>

@@ -24,14 +24,14 @@
        
             
                 if($producto->ModificarImagen($codigo, 'imagen', "../Vista/images")){
-
-                if($producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes)){
+                    $producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes);
                     echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
                 }else{
-                    echo "No modificado";
+                    $producto->ModificarProducto($codigo, $ciu, $nombre, $precio, $familia, $dispo, $propi, $mes);
+                    echo "<script>window.location='../Controlador/controladorProductoAdmin.php?modificado'</script>";
                 }
             } 
-            }
+            
         
         
 	

@@ -77,14 +77,14 @@ if(!isset($_SESSION['CI'])){
                                    echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
     
     
-                               }else if($_SESSION['TIPO']=="Reparto"){
+                                }else if($_SESSION['TIPO']=="Reparto"){
 
-                                   echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                  ECHO  "<li><a href=Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
-                                  echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
-   
-   
-                               }
+                                    echo  "<li><a href=micuenta.php><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                   ECHO  "<li><a href=../Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
+                                   echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+    
+    
+                                }
                            
                             
                             }else{
@@ -150,7 +150,7 @@ if(!isset($_SESSION['CI'])){
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
+                    <a class="navbar-brand" href="../index.php"><img src="images/logo.png" class="logo-eco" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -158,11 +158,11 @@ if(!isset($_SESSION['CI'])){
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Vista/about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
+								<li><a href="../Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='../Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>

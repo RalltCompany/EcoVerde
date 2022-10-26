@@ -150,7 +150,7 @@ if(!isset($_SESSION['CI'])){
               </script>";
                       }
 
-                      if(isset($_GET['Modificado'])){
+                      if(isset($_GET['modificado'])){
                         echo "<script>
                         Swal.fire({
                           icon: 'success',

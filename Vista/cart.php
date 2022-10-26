@@ -191,7 +191,7 @@ if(!isset($_SESSION['CI'])){
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="controladorTienda.php">Tienda</a></li>
+								<li><a href="controladorTienda.php?pagina=1">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>

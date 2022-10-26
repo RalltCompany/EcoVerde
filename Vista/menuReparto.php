@@ -137,7 +137,7 @@ if(!isset($_SESSION['CI'])){
                 </tr>";
                 }
             }else{
-                    echo "<tr ><td data-label='Alerta' class='alerta' >No hay pedidos para entregar</td></tr>";
+                    echo "<tr ><td data-label='Alerta' class='alerta' colspan='5'>No hay pedidos para entregar</td></tr>";
                 }
                 "</tbody>
                 ";

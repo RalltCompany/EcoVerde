@@ -127,5 +127,11 @@ LEFT JOIN producto AS d ON c.codigopro = d.codigo
 LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
 GROUP BY d.nombre ORDER BY s ASC LIMIT 1;
 
+/*Cantidad de pedidos entregados agrupados por repartidor en xxx mes.*/
+SELECT COUNT(*), u.nombre FROM pedido AS p
+LEFT JOIN usuario AS u ON p.cirepartidor=u.ci 
+WHERE p.estado = "Entregado" GROUP BY p.cirepartidor;
 
+/*Cantidad de pedidos agrupados por mes.*/
+SELECT fechayhora, COUNT(*) FROM pedido GROUP BY MONTH(fechayhora);
 

@@ -73,9 +73,9 @@
      
                                 }else if($_SESSION['TIPO']=="Reparto"){
 
-                                    echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                   ECHO  "<li><a href=Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
-                                   echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                    echo  "<li><a href=micuenta.php><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
+                                   ECHO  "<li><a href=../Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
+                                   echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
     
     
                                 }
@@ -156,7 +156,7 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="../Controlador/controladorTienda.php">Tienda</a></li>
+								<li><a href="../Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='../Controlador/controladorTienda.php'>Carrito</a></li>

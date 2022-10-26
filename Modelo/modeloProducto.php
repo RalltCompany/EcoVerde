@@ -129,8 +129,9 @@ public function __construct(){
 
     public function ModificarProducto($c, $ciadmin, $nombre, $precio, $familia, $disponibilidad, $propiedades, $mesdeplantado){
         $sql = "UPDATE producto SET nombre = '$nombre', ciu='$ciadmin', precio= '$precio', familia='$familia', 
-        disponibilidad='$disponibilidad', propiedades='$propiedades', mes_de_plantado='$mesdeplantado',
+        disponibilidad='$disponibilidad', propiedades='$propiedades', mes_de_plantado='$mesdeplantado'
         WHERE codigo = '$c' AND productoactivo='1'";
+
         if($this->db->query($sql)){
             return true;
         }else{
@@ -154,21 +155,16 @@ public function ModificarImagen($c, $nombreI, $nombreD){
             
             $ruta = $nombreD . '/' . $img_file;
     $sql = "UPDATE producto SET imagen = '$ruta' WHERE codigo = '$c' AND productoactivo='1'";
-    if ($_FILES[$nombreI]['size'] == 0 && $_FILES[$nombreI]['error'] == 0){
     if($this->db->query($sql)){
         return true;
     }else{
         return false;
     }
-
-}else{
-    
-    return false;
 } 
             }
         }
 }
-}
+
 
 
 
