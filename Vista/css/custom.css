@@ -90,8 +90,24 @@
     font-size: 20px !important;
 }
 
+.botonImpo{
+    background-color: #008037;
+    color: #fff;
+    font-weight: 800;
+    transition: .3s;
+    cursor:pointer;
+    border: 2px solid #000000;
+    float: right;
+}
 
+.botonImpo:hover{
+    background-color: #fff;
+    color:#008037;
+}
 
+.alerta{
+    column-span: 5;
+}
 
 @media (max-width: 991px) {   
 
@@ -108,7 +124,21 @@
 
     .cent{
         width: 100% !important;
+        
     }
+
+    .alerta{
+        column-span: 1;
+    }
+
+
+    .title-product{
+        font-size: 30px !important;
+        margin: 3px !important;
+        text-align: center;
+        margin-top: 10px !important;
+    }
+
 
 }
 

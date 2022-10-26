@@ -324,7 +324,7 @@
 }
 
  .main-header{
-    position: static !important;
+   /* position: static !important; */
 }
  .search a{
      color: #008037;

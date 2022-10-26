@@ -264,7 +264,7 @@ if(isset($_GET['armado'])){
                                 </div>
                                 <hr> </div><?php     }       ?>
                         </div>
-                        <div class="col-12 d-flex shopping-box"><input type="submit" class="ml-auto btn hvr-hover" value="Pedido Entregado" name="Entregado"> </div></form>
+                        <input class="botonImpo" type="submit" class="ml-auto btn hvr-hover" value="Pedido Entregado" name="Entregado"></form>
                     </div>
                 </div>
             </div>

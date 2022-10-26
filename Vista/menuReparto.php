@@ -53,9 +53,7 @@ if(!isset($_SESSION['CI'])){
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
 
-        <div class="volver">
-            <a href="../index.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
-        </div>
+        
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -90,10 +88,9 @@ if(!isset($_SESSION['CI'])){
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
-                <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                   
-                </ul>
+                 <div class="volver">
+                    <a href="../index.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+                </div>
             </div>
             <!-- End Atribute Navigation -->
         </div>
@@ -140,7 +137,7 @@ if(!isset($_SESSION['CI'])){
                 </tr>";
                 }
             }else{
-                    echo "<tr><td colspan='5'>No hay pedidos para entregar</td></tr>";
+                    echo "<tr ><td data-label='Alerta' class='alerta' >No hay pedidos para entregar</td></tr>";
                 }
                 "</tbody>
                 ";
