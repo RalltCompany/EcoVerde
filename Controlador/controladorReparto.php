@@ -5,9 +5,13 @@
 
 	
 	$pedidos = new Pedidos();
-    $datos=$pedidos->getPedidosEntrega();
+    $datos=$pedidos->getPedidosRepartidor();
+
+    
+    
 
     require_once("../Vista/menuReparto.php");
+
 
 
 

@@ -107,14 +107,14 @@ if(!isset($_SESSION['CI'])){
 <body>
 
 
-    <div class="cuerpo">
+    <div class="cuerpoOtros">
         <h2 class="title-product">Pedidos a entregar</h2>
 
         
 <br>
 
       
-    <div class='contenedor'>
+    <div class='contenedorTabla'>
     <table class='notas'>
     
     <thead>
@@ -128,7 +128,7 @@ if(!isset($_SESSION['CI'])){
                 </tr>
     </thead>
     <?php echo "<tbody>";
-    
+        if(isset($datos)){
               foreach($datos as $dato) {
                 echo "<tr>
                 <td data-label='Cedula'>".$dato["numero"]."</td>
@@ -136,8 +136,11 @@ if(!isset($_SESSION['CI'])){
                 <td data-label='Celular'>".$dato["direccionpe"]."</td>
                 <td data-label='Email'>".$dato["horaPref"]."</td>
                
-                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?PedidoEntregar=".$dato["numero"]."> <i class='fa-solid fa-truck'></i> </a></td>
+                <td data-label='Eliminar'><a href=controladorEntregarPedido.php?PedidoEntregar=".$dato["numero"]."> <i class='fa-solid fa-truck'></i> </a></td>
                 </tr>";
+                }
+            }else{
+                    echo "<tr><td colspan='5'>No hay pedidos para entregar</td></tr>";
                 }
                 "</tbody>
                 ";

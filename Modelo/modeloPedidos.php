@@ -200,6 +200,30 @@ function getCantidadProd(){
 		}
 	}
 
+	function PedidoEnRuta($Numero){
+		
+		
+		$sql="UPDATE pedido SET estado='Ruta' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function PedidoEntregado($Numero, $CIR, $Destinatario, $Fecha){
+		
+		
+		$sql="UPDATE pedido SET estado='Entregado', cirepartidor='$CIR', Nombre_destinatario='$Destinatario', fechaentrega='$Fecha' WHERE numero='$Numero'";
+
+		if($this->db->query($sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	//SELECT MAX(numero) FROM pedido WHERE ciu=53235432;
 
 
@@ -528,6 +552,50 @@ function getCantidadProd(){
 	}
 	
 	
+
+	public  function getPedidosRepartidor(){
+			
+		$sql = "SELECT * FROM pedido WHERE estado='A entregarse' ORDER BY numero";
+		$consulta = $this->db->query($sql);
+		$total_registros = mysqli_num_rows($consulta);
+		
+
+		if ($total_registros > 0) {				
+			$cant_reg_paginas = 2;
+			$pagina = false;
+			if (isset($_GET["pagina"])){
+				$pagina = $_GET["pagina"];
+			}
+			
+			if (!$pagina){
+				$inicio = 0;
+				$pagina = 1;
+			}else{
+				$inicio = ($pagina - 1) * $cant_reg_paginas;
+			}
+			
+			$sql2 = "SELECT u.*, p.* FROM usuario AS u
+			INNER JOIN pedido AS p
+			ON u.ci=p.ciu WHERE u.ci=p.ciu AND p.estado='A entregarse' ORDER BY p.numero ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+			$rs = $this->db->query($sql2); 
+			
+			
+			
+			while ($filas=$rs->fetch_assoc()) {
+				
+				$this->pedidos[]=$filas;
+			}
+
+			return $this->pedidos;
+	}
+			
+		}
+
+	
+		
+	
+
+
 	
 	//cierro la funci�n elimina_producto
 } //cierro la clase carrito

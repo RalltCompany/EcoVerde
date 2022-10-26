@@ -106,5 +106,9 @@
         display: none;
     }
 
+    .cent{
+        width: 100% !important;
+    }
+
 }
 
