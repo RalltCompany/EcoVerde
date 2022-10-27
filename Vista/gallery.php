@@ -265,9 +265,7 @@
                 <div class="col-lg-3 col-md-6 special-grid bulbs">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
+                            
                             <img src="images/gallery-img-1" class="img-fluid" alt="Image">
                             <div>
                                 <ul>
