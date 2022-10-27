@@ -92,8 +92,8 @@ if(!isset($_SESSION['CI'])){
         <h2 class="title-product">Productos</h2>
 
         <div class="men">
-        <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="controladorUsuariosAdmin.php">Listado</a>
+        <a class="a" href="controladorRegistrarProducto.php">Registrar</a>
+        <a class="a" href="controladorProductoAdmin.php">Listado</a>
         
         </div>
         <br>
