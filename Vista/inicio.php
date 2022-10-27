@@ -563,19 +563,7 @@
 				<hr>
                 <div class="row">
                     
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Acceso rapído</h4>
-                            <ul>
-                                <li><a href="inicio.php">Inicio</a></li>
-                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
-                                <li><a href="">Tienda</a></li>
-                                <li><a href="Vista/gallery.php">Galeria</a></li>
-                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contacto</h4>
