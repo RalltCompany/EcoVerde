@@ -10,7 +10,11 @@
     require_once("../Vista/vistaUsuarios.php");
 
 	
+    if(isset($_GET['Hola'])){
+        $CI=$_GET['Buscar'];
 
+        echo "<script language='javascript'>window.location.href = 'controladorUsuariosAdmin.php?Buscar=".$CI."'; </script>";
+    }
 	
     
     
