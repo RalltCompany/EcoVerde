@@ -159,7 +159,7 @@ if(isset($_GET['Eliminado'])){
     echo '<tr><td data-label="Numero">'.$dato['numero'].'</td><td data-label="Metodo Pago">'.$dato['metodoPago'].'</td><td data-label="Direccion">'.$dato['direccionpe'].'</td><td data-label="Fecha y hora">'.$dato['fechayHora'].'</td><td data-label="Hora preferida de entrega">'.$dato['horaPref'].'</td><td data-label="Aceptar"><a href="controladorEliminarUsuario.php?NumPedidoAceptar='.$dato['numero'].'"><i class="fa-sharp fa-solid fa-clipboard-check"></i></a></td><td data-label="Rechazar"><a href="controladorEliminarUsuario.php?NumPedidoRechazar='.$dato['numero'].'"><i class="fa-solid fa-rectangle-xmark"></i></a></td></tr>';
                                 }
                             }else{
-                                echo '<tr><td class="alerta">No hay pedidos registrados.</td></tr>';
+                                echo '<tr><td class="alerta" colspan="7">No hay pedidos registrados.</td></tr>';
                             }
                                     ?>
     </tbody>
