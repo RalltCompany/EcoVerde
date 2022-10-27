@@ -102,17 +102,17 @@ if(!isset($_SESSION['CI'])){
     <thead>
             <tr>
                 
-                <th>Cantidad de clientes</th>
-                <th>Barrio</th>
+                <th>Cantidad de pedidos</th>
+                <th>Rango de hora</th>
 
                 </tr>
     </thead>
     <?php echo "<tbody>";
     
-              foreach($con1 as $dato) {
+              foreach($con3 as $dato) {
                 echo "<tr>
-                <td data-label='Cantidad de clientes'>".$dato["cantidad"]."</td>
-                <td data-label='Barrio'>".$dato["barrio"]."</td>
+                <td data-label='Cantidad de pedidos'>".$dato["p"]."</td>
+                <td data-label='Rango de hora'>".$dato["horaPref"]."</td>
                 </tr>";
                 }
                 "</tbody>

@@ -593,7 +593,71 @@ function getCantidadProd(){
 	}
 			
 		}
+		
+		public function Consulta2(){
+			$sql = "SELECT ciu, COUNT(*) AS p FROM pedido GROUP BY ciu ORDER BY p DESC;";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
 
+		public function Consulta3(){
+			$sql = "SELECT horaPref, COUNT(*) AS p FROM pedido GROUP BY horaPref;";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta4(){
+			$sql = "SELECT ciu, MAX(total) AS t FROM pedido;";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta5(){
+			$sql = "SELECT * FROM pedido WHERE MONTH(fechayhora) = MONTH(DATE_ADD(CURDATE(),INTERVAL -1 MONTH)) AND total > 1000;";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta6(){
+			$sql = "SELECT YEAR(fechayhora) AS año, SUM(total) AS monto FROM pedido GROUP BY año;";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta7(){
+			$sql = "SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
+			FROM conforma AS c
+			LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
+			GROUP BY d.nombre ORDER BY s DESC LIMIT 1";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+	
 	
 		
 	

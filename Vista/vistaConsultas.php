@@ -29,6 +29,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
+    <link rel="stylesheet" href="../Vista/css/UsuariosAdmin.css">
+
     
     
 
@@ -58,7 +60,7 @@ if(!isset($_SESSION['CI'])){
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-verde bg-verde navbar-default bootsnav">
-        
+
         
         <div class="container">
             <!-- Start Header Navigation -->
@@ -85,34 +87,7 @@ if(!isset($_SESSION['CI'])){
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <div class="side">
-            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-            <li class="cart-box">
-                <ul class="cart-list">
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Delica omtantur </a></h6>
-                        <p>1x - <span class="price">$80.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Omnes ocurreret</a></h6>
-                        <p>1x - <span class="price">$60.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Agam facilisis</a></h6>
-                        <p>1x - <span class="price">$40.00</span></p>
-                    </li>
-                    <li class="total">
-                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                        <span class="float-right"><strong>Total</strong>: $180.00</span>
-                    </li>
-                </ul>
-            </li>
-        </div>
-        <!-- End Side Menu -->
-    </nav>
+       
     <!-- End Navigation -->
 </header>
 
@@ -127,21 +102,21 @@ if(isset($_SESSION['TIPO'])){
 
 <div class="opciones2">
     <div class="opciones-arriba2">
-        <a href="../Controlador/controladorConsultas.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de clientes agrupados por barrio.</p></div></a>
-        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.</p></div></a>
-        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por rango de hora de entrega.</p></div></a>
-        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cliente que realizó el pedido de mayor monto.</p></div></a>
-        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorUsuariosAdmin.php'><div class='consulta-divs1'><p class='tituloss'>Clientes que realizaron pedidos con monto mayor a $1000 en el mes anterior</p></div></a>";  } ?>
+        <a href="../Controlador/controladorConsultas.php?con1"><div class="consulta-divs1"><p class="tituloss">Cantidad de clientes agrupados por barrio.</p></div></a>
+        <a href="../Controlador/controladorConsultas.php?con2"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.</p></div></a>
+        <a href="../Controlador/controladorConsultas.php?con3"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por rango de hora de entrega.</p></div></a>
+        <a href="../Controlador/controladorConsultas.php?con4"><div class="consulta-divs1"><p class="tituloss">Cliente que realizó el pedido de mayor monto.</p></div></a>
+        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorConsultas.php?con5'><div class='consulta-divs1'><p class='tituloss'>Clientes que realizaron pedidos con monto mayor a $1000 en el mes anterior</p></div></a>";  } ?>
     </div>
 
     <div class="opciones-abajo2">
         
         <?php   if($_SESSION['TIPO']=="Administrador"){ 
-            echo "<a href='../Controlador/controladorReportes.php'><div class='consulta-divs2'></i><p class='tituloss'>Monto facturado agrupado por año.</p></div>";
-         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'></i><p class='tituloss'>Producto mayor solicitado en xxx mes.</p></div></a>";
-         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'><p class='tituloss'>Producto menor solicitado en xxx mes.</p></div></a>";
-         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos entregados agrupados por repartidor en xxx mes.</p></div></a>";
-         echo "<a href='vistaConsultas.php'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos agrupados por mes.</p></div></a>";} ?>
+            echo "<a href='../Controlador/controladorConsultas.php?con6'><div class='consulta-divs2'></i><p class='tituloss'>Monto facturado agrupado por año.</p></div>";
+         echo "<a href='../Controlador/controladorConsultas.php?con7'><div class='consulta-divs2'></i><p class='tituloss'>Producto mayor solicitado en xxx mes.</p></div></a>";
+         echo "<a href='../Controlador/controladorConsultas.php?con8'><div class='consulta-divs2'><p class='tituloss'>Producto menor solicitado en xxx mes.</p></div></a>";
+         echo "<a href='../Controlador/controladorConsultas.php?con9'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos entregados agrupados por repartidor en xxx mes.</p></div></a>";
+         echo "<a href='../Controlador/controladorConsultas.php?con10'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos agrupados por mes.</p></div></a>";} ?>
         
     </div>
 </div>

@@ -2,12 +2,44 @@
 
 require_once('../db/db.php');
 require_once('../Modelo/modeloUsuario.php');
+require_once('../Modelo/modeloPedidos.php');
 
 $usu = new Usuario();
-$datos = $usu -> Consulta1();
+$ped = new Pedidos();
 
-require_once('../Vista/consulta1.php');
 
+
+//$con4 = $usu -> Consulta4();
+//$con5 = $usu -> Consulta5();
+//$con6 = $usu -> Consulta6();
+//$con7 = $usu -> Consulta7();
+//$con8 = $usu -> Consulta8();
+//$con9 = $usu -> Consulta9();
+//$con10 = $usu -> Consulta10();
+
+
+if(isset($_GET['con1'])){
+    $con1 = $usu -> Consulta1();
+    require_once('../Vista/consulta1.php');
+}else if(isset($_GET['con2'])){
+    $con2 = $ped -> Consulta2();
+    require_once('../Vista/consulta2.php');
+}else if(isset($_GET['con3'])){
+    $con3 = $ped -> Consulta3();
+    require_once('../Vista/consulta3.php');
+}else if(isset($_GET['con4'])){
+    $con4 = $ped -> Consulta4();
+    require_once('../Vista/consulta4.php');
+}else if(isset($_GET['con5'])){
+    $con5 = $ped -> Consulta5();
+    require_once('../Vista/consulta5.php');
+}else if(isset($_GET['con6'])){
+    $con6 = $ped -> Consulta6();
+    require_once('../Vista/consulta6.php');
+}else if(isset($_GET['con7'])){
+    $con7 = $ped -> Consulta7();
+    require_once('../Vista/consulta7.php');
+}
 
 
 

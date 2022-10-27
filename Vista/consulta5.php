@@ -102,17 +102,33 @@ if(!isset($_SESSION['CI'])){
     <thead>
             <tr>
                 
-                <th>Cantidad de clientes</th>
-                <th>Barrio</th>
+                <th>Número</th>
+                <th>Cedula del cliente</th>
+                <th>Fecha y hora de realizacion de pedido</th>
+                <th>Fecha de entrega</th>
+                <th>Metodo de pago</th>
+                <th>Rango de hora</th>
+                <th>Estado</th>
+                <th>Nombre del destinatario</th>
+                <th>Direccion</th>
+                <th>Monto</th>
 
                 </tr>
     </thead>
     <?php echo "<tbody>";
     
-              foreach($con1 as $dato) {
+              foreach($con5 as $dato) {
                 echo "<tr>
-                <td data-label='Cantidad de clientes'>".$dato["cantidad"]."</td>
-                <td data-label='Barrio'>".$dato["barrio"]."</td>
+                <td data-label='Número'>".$dato["numero"]."</td>
+                <td data-label='Cedula del cliente'>".$dato["ciu"]."</td>
+                <td data-label='Fecha y hora de realizacion de pedido'>".$dato["fechayHora"]."</td>
+                <td data-label='Fecha de entrega'>".$dato["fechaentrega"]."</td>
+                <td data-label='Metodo de pago'>".$dato["metodoPago"]."</td>
+                <td data-label='Rango de hora'>".$dato["horaPref"]."</td>
+                <td data-label='Estado'>".$dato["estado"]."</td>
+                <td data-label='Nombre del destinatario'>".$dato["Nombre_destinatario"]."</td>
+                <td data-label='Direccion'>".$dato["direccionpe"]."</td>
+                <td data-label='Monto'>".$dato["total"]."</td>
                 </tr>";
                 }
                 "</tbody>

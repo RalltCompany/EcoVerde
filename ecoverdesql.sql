@@ -98,20 +98,20 @@ INSERT INTO conforma (numerop, codigopro, cantidad) VALUES
 SELECT barrio, COUNT(*) AS cantidad FROM usuario GROUP BY barrio;
 
 /*Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.*/
-SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu ORDER BY COUNT(*) DESC;
+SELECT ciu, COUNT(*) AS p FROM pedido GROUP BY ciu ORDER BY p DESC;
 
 /*Cantidad de pedidos agrupados por rango de hora de entrega.*/
-SELECT horaPref, COUNT(*) FROM pedido GROUP BY horaPref;
+SELECT horaPref, COUNT(*) AS p FROM pedido GROUP BY horaPref;
 
 /*Cliente que realizó el pedido de mayor monto.*/
-SELECT ciu, MAX(total) FROM pedido;
+SELECT ciu, MAX(total) AS t FROM pedido;
 
 /*Clientes que realizaron pedidos con monto mayor a $1000 en el mes anterior 
 (según el mes en el que estoy debo consultar el mes anterior).*/
 SELECT * FROM pedido WHERE MONTH(fechayhora) = MONTH(DATE_ADD(CURDATE(),INTERVAL -1 MONTH)) AND total > 1000;
 
 /*Monto facturado agrupado por año.*/
-SELECT YEAR(fechayhora),total FROM pedido GROUP BY YEAR(fechayhora);
+SELECT YEAR(fechayhora) AS año, SUM(total) AS monto FROM pedido GROUP BY año;
 
 /*Producto mayor solicitado en xxx mes.*/
 SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
@@ -121,10 +121,10 @@ LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
 GROUP BY d.nombre ORDER BY s DESC LIMIT 1;
 
 /*Producto menor solicitado en xxx mes.*/
-SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
+SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora) AS mes
 FROM conforma AS c
 LEFT JOIN producto AS d ON c.codigopro = d.codigo 
-LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
+LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE p="10"
 GROUP BY d.nombre ORDER BY s ASC LIMIT 1;
 
 /*Cantidad de pedidos entregados agrupados por repartidor en xxx mes.*/

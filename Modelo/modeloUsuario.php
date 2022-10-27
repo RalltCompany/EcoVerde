@@ -430,6 +430,8 @@ public function PaginadoUsuarios(){
         }
         return $this->Usuario;
     }
+
+   
 }
 
 ?>
