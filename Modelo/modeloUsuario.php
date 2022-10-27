@@ -420,6 +420,16 @@ public function PaginadoUsuarios(){
 
 
 }
+
+    public function Consulta1(){
+        $sql = "SELECT barrio, COUNT(*) AS cantidad FROM usuario GROUP BY barrio;";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
+    }
 }
 
 ?>
