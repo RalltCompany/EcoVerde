@@ -289,12 +289,12 @@ function getCantidadProd(){
 			//El siguiente if controla que el producto no haya sido eliminado del carrito
 			if($this->array_id_prod[$i]!=0){
 				echo '<tr>';
-				echo "<td class='name-pr'>" . $this->array_nombre_prod[$i] . "</td>";				
+				echo "<td class='name-pr' data-label='Nombre'>" . $this->array_nombre_prod[$i] . "</td>";				
 				
-				echo "<td class='quantity-box'><input type='number' size='4' readonly value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
-				echo "<td class='price-pr'>$ " . $this->array_precio_prod[$i]. "</td>";
-				echo "<td><a href='eliminar_carrito.php?linea=$i'><i class='fa-solid fa-minus'></i></td>";
-				echo "<td><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."'><i class='fa-regular fa-plus'></i></td>";
+				echo "<td class='quantity-box' data-label='Cantidad'><input type='number' size='4' readonly value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
+				echo "<td class='price-pr' data-label='Precio del producto'>$ " . $this->array_precio_prod[$i]. "</td>";
+				echo "<td data-label='Sacar KG'><a href='eliminar_carrito.php?linea=$i'><i class='fa-solid fa-minus'></i></td>";
+				echo "<td data-label='Sumar KG'><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."'><i class='fa-regular fa-plus'></i></td>";
 				echo '</tr>';
 				$suma += $this->array_precio_prod[$i];
 
@@ -302,11 +302,9 @@ function getCantidadProd(){
 			}
 		}
 		//muestro el total
-		echo "<tr><td colspan='1'><b>TOTAL:</b></td><td> <b>$suma</b></td><td>&nbsp;
-		</td></tr>";
+		echo "<tr><td colspan='1'><b>TOTAL:</b>  $<b>$suma</b></td></tr>";
 		//total m�s IVA
-		echo "<tr><td colspan='1'><b>IVA INCLUIDO(22%):</b></td><td> <b>" . $suma * 1.22 . 
-		"</b></td><td>&nbsp;</td></tr>";
+		echo "<tr><td colspan='1'><b>IVA INCLUIDO(22%):</b> $<b>" . $suma * 1.22 . "</b></td></tr>";
 		echo "</tbody>";
 		$this->subtotal= $suma;
 	 	$this->total_compra = $suma * 1.22;

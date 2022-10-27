@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Ecoverde - Carrito</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../Vista/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../Vista/css/custom.css">
+    <link rel="stylesheet" href="../Vista/css/UsuariosAdmin.css">
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -281,8 +282,8 @@ if(!isset($_SESSION['CI'])){
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="table-main table-responsive">
-                        <table class="table">
+                    <div class="table-main ">
+                        <table class="notas notascart">
                            <?php
 
                             $_SESSION["ocarrito"]->imprime_carrito();
