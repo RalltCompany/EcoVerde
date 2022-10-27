@@ -79,6 +79,9 @@ if(!isset($_SESSION['CI'])){
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
+            <div class="volver">
+            <a href="../Vista/MenuAdmin.php"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -116,29 +119,29 @@ if(!isset($_SESSION['CI'])){
 <?php 
 if(isset($_SESSION['TIPO'])){ 
     if($_SESSION['TIPO']=="Administrador"){
-    echo  "<h4>Menú Administrador</h4>";
-
-
-    }else if($_SESSION['TIPO']=="Gestor"){
-       echo  "<h4>Menú Gestor</h4>";
+    echo  "<h4>Consultas</h4>";
     }
 }
 
 ?>
 
-    <div class="opciones">
-    <div class="opciones-arriba">
-        <a href="../Controlador/controladorProductoAdmin.php"><div class="opciones-divs1"><i class="fa-solid fa-boxes-packing"></i><span class="titulos"><p class="titulos">Productos</p></span></div></a>
-        <a href="../Controlador/controladorPedidoAdmin.php"><div class="opciones-divs1"><i class="fa-solid fa-box"></i><p class="titulos">Pedidos</p></div></a>
-        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorUsuariosAdmin.php'><div class='opciones-divs1'><i class='fa-solid fa-user-gear'></i><p class='titulos'>Usuarios</p></div></a>";  } ?>
+<div class="opciones2">
+    <div class="opciones-arriba2">
+        <a href="../Controlador/controladorConsultas.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de clientes agrupados por barrio.</p></div></a>
+        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.</p></div></a>
+        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cantidad de pedidos agrupados por rango de hora de entrega.</p></div></a>
+        <a href="../Controlador/controladorPedidoAdmin.php"><div class="consulta-divs1"><p class="tituloss">Cliente que realizó el pedido de mayor monto.</p></div></a>
+        <?php   if($_SESSION['TIPO']=="Administrador"){ echo "<a href='../Controlador/controladorUsuariosAdmin.php'><div class='consulta-divs1'><p class='tituloss'>Clientes que realizaron pedidos con monto mayor a $1000 en el mes anterior</p></div></a>";  } ?>
     </div>
 
-    <div class="opciones-abajo">
+    <div class="opciones-abajo2">
         
         <?php   if($_SESSION['TIPO']=="Administrador"){ 
-            echo "<a href='../Controlador/controladorReportes.php'><div class='opciones-divs2'><i class='fa-solid fa-clipboard-list'></i><p class='titulos'>Reportes</p></div>";
-         echo "<a href='../Controlador/controladorClientes.php'><div class='opciones-divs2'><i class='fa-solid fa-people-group'></i><p class='titulos'>Clientes</p></div></a>";
-         echo "<a href='vistaConsultas.php'><div class='opciones-divs2'><i class='fa-solid fa-filter'></i><p class='titulos'>Consultas</p></div></a>";} ?>
+            echo "<a href='../Controlador/controladorReportes.php'><div class='consulta-divs2'></i><p class='tituloss'>Monto facturado agrupado por año.</p></div>";
+         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'></i><p class='tituloss'>Producto mayor solicitado en xxx mes.</p></div></a>";
+         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'><p class='tituloss'>Producto menor solicitado en xxx mes.</p></div></a>";
+         echo "<a href='../Controlador/controladorClientes.php'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos entregados agrupados por repartidor en xxx mes.</p></div></a>";
+         echo "<a href='vistaConsultas.php'><div class='consulta-divs2'><p class='tituloss'>Cantidad de pedidos agrupados por mes.</p></div></a>";} ?>
         
     </div>
 </div>
