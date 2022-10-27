@@ -95,10 +95,10 @@ INSERT INTO conforma (numerop, codigopro, cantidad) VALUES
 /*Consultas:*/
 
 /*Cantidad de clientes agrupados por barrio.*/
-SELECT barrio, COUNT(*) FROM usuario GROUP BY barrio;
+SELECT barrio, COUNT(*) AS cantidad FROM usuario GROUP BY barrio;
 
 /*Cantidad de pedidos agrupados por clientes ordenados de mayor a menor cantidad.*/
-SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu;
+SELECT ciu, COUNT(*) FROM pedido GROUP BY ciu ORDER BY COUNT(*) DESC;
 
 /*Cantidad de pedidos agrupados por rango de hora de entrega.*/
 SELECT horaPref, COUNT(*) FROM pedido GROUP BY horaPref;
