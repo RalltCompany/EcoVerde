@@ -93,7 +93,8 @@ if(!isset($_SESSION['CI'])){
 
         </div>
 <br>
-<div class="izquierda-divs">
+<form action="" method="POST">
+<div class="combo">
 <select name="mes" id="" aria-placeholder="Codigo">
               <option value="null">Mes de plantado</option>
               <option value="01">Enero</option>
@@ -111,9 +112,9 @@ if(!isset($_SESSION['CI'])){
 </select>
 </div>
 <div class="consulta-divs">
-    <form action="">
         <input type="submit" name="filtrar" value="Filtrar" class="registrar">
     </form>
+
 </div>
 
 
@@ -124,27 +125,31 @@ if(!isset($_SESSION['CI'])){
     <thead>
             <tr>
                 
-                <th>Año</th>
-                <th>Monto</th>
+                <th>Producto</th>
+                <th>Cantidad de solicitaciones</th>
+                <th>Número del mes</th>
 
                 </tr>
     </thead>
     <?php echo "<tbody>";
-    
-              foreach($con7 as $dato) {
-                echo "<tr>
-                <td data-label='Año'>".$dato["año"]."</td>
-                <td data-label='Monto'>".$dato["monto"]."</td>
-                </tr>";
+    if(isset($_POST["mes"])){
+                
+                foreach($con7 as $dato) {
+                    echo "<tr>
+                    <td data-label='Producto'>".$dato["d.nombre"]."</td>
+                    <td data-label='Cantidad de solicitaciones'>".$dato["cantidad"]."</td>
+                    <td data-label='Número del mes'>".$dato["MONTH(fechayhora)"]."</td>
+                    </tr></tbody>";
                 }
-                "</tbody>
-                ";
+            }else{
+                echo '<tr><td class="alerta" colspan="3">No se seleccionó un mes.</td></tr>';
+               
+        }    
                 
-                
+               ?>
 
 
-
-
+<?php
                 
         if(isset($_GET['Eliminado'])){
             echo "<script>
@@ -167,6 +172,7 @@ if(!isset($_SESSION['CI'])){
                           });
                           </script>";
                                   }
+                                  
                      
         ?>
         </table>

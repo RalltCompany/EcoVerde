@@ -114,18 +114,16 @@ SELECT * FROM pedido WHERE MONTH(fechayhora) = MONTH(DATE_ADD(CURDATE(),INTERVAL
 SELECT YEAR(fechayhora) AS año, SUM(total) AS monto FROM pedido GROUP BY año;
 
 /*Producto mayor solicitado en xxx mes.*/
-SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
-FROM conforma AS c
-LEFT JOIN producto AS d ON c.codigopro = d.codigo 
-LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
-GROUP BY d.nombre ORDER BY s DESC LIMIT 1;
+SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora)
+FROM conforma AS c LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(fechayhora)="10"
+GROUP BY d.nombre ORDER BY cantidad DESC LIMIT 1;
 
 /*Producto menor solicitado en xxx mes.*/
-SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora) AS mes
-FROM conforma AS c
-LEFT JOIN producto AS d ON c.codigopro = d.codigo 
-LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE p="10"
-GROUP BY d.nombre ORDER BY s ASC LIMIT 1;
+SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora) 
+FROM conforma AS c LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(fechayhora) ="10" 
+GROUP BY d.nombre ORDER BY cantidad ASC LIMIT 1; 
 
 /*Cantidad de pedidos entregados agrupados por repartidor en xxx mes.*/
 SELECT COUNT(*), u.nombre FROM pedido AS p

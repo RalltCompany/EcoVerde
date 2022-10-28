@@ -643,11 +643,10 @@ function getCantidadProd(){
 		}
 
 		public function Consulta7($f){
-			$sql = "SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
-			FROM conforma AS c
-			LEFT JOIN producto AS d ON c.codigopro = d.codigo 
-			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)='$f'
-			GROUP BY d.nombre ORDER BY s DESC LIMIT 1";
+			$sql = "SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora)
+			FROM conforma AS c LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(fechayhora)='$f'
+			GROUP BY d.nombre ORDER BY cantidad DESC LIMIT 1";
 			$consulta = $this->db->query($sql);
 			
 			while($filas=$consulta->fetch_assoc()){
