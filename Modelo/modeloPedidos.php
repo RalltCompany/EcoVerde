@@ -238,6 +238,19 @@ function getCantidadProd(){
 		return $arr[0];
 	}
 
+	function AlertaProducto($Codigo, $Cantidad){
+		$sql="SELECT disponibilidad-$Cantidad from producto WHERE codigo='$Codigo'";
+
+		$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+
+				$this->pedidos[]=$filas;
+			}
+
+		return $this->pedidos;
+	}
+
 
 
 	function conformarPedido($NumeroPedido, $productos){
@@ -294,7 +307,7 @@ function getCantidadProd(){
 				echo "<td class='quantity-box' data-label='Cantidad'><input type='number' size='4' readonly value=". $this->array_cantidad_prod[$i] . " min='0' step='1' class='c-input-text qty text'></td>";
 				echo "<td class='price-pr' data-label='Precio del producto'>$ " . $this->array_precio_prod[$i]. "</td>";
 				echo "<td data-label='Sacar KG'><a href='eliminar_carrito.php?linea=$i'><i class='fa-solid fa-minus'></i></td>";
-				echo "<td data-label='Sumar KG'><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."'><i class='fa-regular fa-plus'></i></td>";
+				echo "<td data-label='Sumar KG'><a href='mete_productoCarrito.php?codigo=".$this->array_id_prod[$i]."&nombre=".$this->array_nombre_prod[$i]."&precio=".$this->array_precio_prod[$i]/$this->array_cantidad_prod[$i]."&Cantidad=".($this->array_cantidad_prod[$i] + 1)."'><i class='fa-regular fa-plus'></i></td>";
 				echo '</tr>';
 				$suma += $this->array_precio_prod[$i];
 
@@ -410,6 +423,8 @@ function getCantidadProd(){
         return $this->pedidos;
 	
 	}
+
+	
 	
 	public  function getPedidosAdmin($Estado){
 			
