@@ -87,6 +87,9 @@ function ret_val(){
     return $this->total_compra;
 }
 
+
+
+
 function getSubtotal(){
     return $this->subtotal;
 }
@@ -134,7 +137,13 @@ function getCantidadProd(){
 	} //cierro la fun
 
 
+	function ret_cantidadProd($id_prod){
+		$pos=array_search($id_prod,$this->array_id_prod); 
 
+		
+		return $this->array_cantidad_prod[$pos];
+	
+	}
 
 
 	function insertPedidos($CIu, $FechaHora, $Metodo, $HoraPref, $DireccionPe, $total ){
