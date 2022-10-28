@@ -141,6 +141,18 @@ public function __construct(){
     }
 
 
+    public function getProductoBuscar($Producto){
+			
+        $sql = "SELECT * FROM producto WHERE productoactivo='1' AND codigo='$Producto' ORDER BY Codigo ";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Producto[]=$filas;
+        }
+        return $this->Producto;
+        
+    }
+
 
 public function ModificarImagen($c, $nombreI, $nombreD){
     $tmp_name = $_FILES[$nombreI]['tmp_name'];
@@ -251,7 +263,7 @@ public function ModificarImagen($c, $nombreI, $nombreD){
 
                                echo " <div class='mask-icon'>";
 
-                               if($disponible){echo "<a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."&pagina=".$_GET['pagina']."'>Añadir al carrito</a>";}
+                               if($disponible){echo "<a class='cart' href='mete_producto.php?codigo=".$row['codigo']."&nombre=".$row['nombre']."&precio=".$row['precio']."&pagina=".$_GET['pagina']."&Cantidad=1'>Añadir al carrito</a>";}
                            echo "</div>
                        </div>
                        <div class='why-text'>";

@@ -125,6 +125,18 @@ if(!isset($_SESSION['CI'])){
                                   </script>";
                                 
                             }
+
+                            if(isset($_GET['Alerta'])){
+                                echo "<script>
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...!',
+                                  text: '¡Parece que no hay tanto stock disponible!',
+                                  confirmButtonColor: '#008037', 
+                                  });
+                                  </script>";
+                                
+                            }
                             ?>
                             
                             

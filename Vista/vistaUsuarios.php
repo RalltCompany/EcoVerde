@@ -156,9 +156,10 @@ if(!isset($_SESSION['CI'])){
             }else{
                 echo "<tbody>";
                 $Encontrado=False;
-              foreach($datos as $dato) {
+                $buscado=$usuario2->getUsuarioBuscar($_GET['Buscar']);
+              foreach($buscado as $dato) {
                     
-                    if($dato['ci']==$_GET['Buscar']){
+                    
 
                 echo "<tr>
                 <td data-label='Cedula'>".$dato["ci"]."</td>
@@ -170,12 +171,7 @@ if(!isset($_SESSION['CI'])){
                 <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
                 <td data-label='Modificar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
-                $Encontrado=True;
-                exit;
-                    }
-
-
-                    
+                  $Encontrado=True;
                 }
 
                 if(!$Encontrado){
@@ -196,8 +192,11 @@ if(!isset($_SESSION['CI'])){
         </div>
             
         <?php
+        if(!isset($_GET['Buscar'])){
+            $usuario2->PaginadoUsuarios();
+        }
 
-$usuario2->PaginadoUsuarios();
+
 
 ?>
         
