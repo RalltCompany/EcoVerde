@@ -644,11 +644,11 @@ function getCantidadProd(){
 			return $this->pedidos;
 		}
 
-		public function Consulta7(){
+		public function Consulta7($f){
 			$sql = "SELECT SUM(cantidad) AS s, d.nombre, p.fechayhora 
 			FROM conforma AS c
 			LEFT JOIN producto AS d ON c.codigopro = d.codigo 
-			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)="10"
+			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(p.fechayhora)='$f'
 			GROUP BY d.nombre ORDER BY s DESC LIMIT 1";
 			$consulta = $this->db->query($sql);
 			

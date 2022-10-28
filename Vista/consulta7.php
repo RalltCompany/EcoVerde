@@ -31,6 +31,7 @@
     
     <link rel="stylesheet" href="../Vista/css/style.css">
     <link rel="stylesheet" href="../Vista/css/UsuariosAdmin.css">
+    <link rel="stylesheet" href="../Vista/css/formProductos.css">
  
 
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
@@ -92,8 +93,29 @@ if(!isset($_SESSION['CI'])){
 
         </div>
 <br>
+<div class="izquierda-divs">
+<select name="mes" id="" aria-placeholder="Codigo">
+              <option value="null">Mes de plantado</option>
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Setiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+</select>
+</div>
+<div class="consulta-divs">
+    <form action="">
+        <input type="submit" name="filtrar" value="Filtrar" class="registrar">
+    </form>
+</div>
 
-        
 
       
     <div class='contenedorTabla'>

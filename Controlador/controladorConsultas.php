@@ -8,16 +8,6 @@ $usu = new Usuario();
 $ped = new Pedidos();
 
 
-
-//$con4 = $usu -> Consulta4();
-//$con5 = $usu -> Consulta5();
-//$con6 = $usu -> Consulta6();
-//$con7 = $usu -> Consulta7();
-//$con8 = $usu -> Consulta8();
-//$con9 = $usu -> Consulta9();
-//$con10 = $usu -> Consulta10();
-
-
 if(isset($_GET['con1'])){
     $con1 = $usu -> Consulta1();
     require_once('../Vista/consulta1.php');
@@ -37,8 +27,12 @@ if(isset($_GET['con1'])){
     $con6 = $ped -> Consulta6();
     require_once('../Vista/consulta6.php');
 }else if(isset($_GET['con7'])){
-    $con7 = $ped -> Consulta7();
+    if(isset($_POST['filtrar'])){
+    $mes = $_POST['mes'];
+    $con7 = $ped -> Consulta7($mes);
+}
     require_once('../Vista/consulta7.php');
+
 }
 
 
