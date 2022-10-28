@@ -99,7 +99,7 @@ if(!isset($_SESSION['CI'])){
         <br>
         <div class="men">
             <form action="">
-        <input type="text" placeholder="Filtrar por Numero" name="cedula" id="cedula">
+        <input type="text" placeholder="Filtrar por Codigo" name="cedula" id="cedula">
         <a class="a" href="javascript:funcion()"><i class="fa-solid fa-magnifying-glass"></i></a>
         </form>
 
@@ -155,9 +155,11 @@ if(!isset($_SESSION['CI'])){
             }else{
                 echo "<tbody>";
                 $Encontrado=False;
-              foreach($datos as $dato) {
+                $producto = new Producto();
+                $buscado=$producto->getProductoBuscar($_GET['Buscar']);
+              foreach($buscado as $dato) {
                     
-                    if($dato['codigo']==$_GET['Buscar']){
+                    
 
                         echo "<tr>
                         <td data-label='Cedula'>".$dato["codigo"]."</td>
@@ -169,9 +171,9 @@ if(!isset($_SESSION['CI'])){
                         <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?ProdEliminar=".$dato["codigo"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
                         <td data-label='Eliminar'><a href=controladorModificarProducto.php?Codigo=".$dato["codigo"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                         </tr>";
+
                 $Encontrado=True;
-                exit;
-                    }
+                
 
 
                     
@@ -223,7 +225,9 @@ if(!isset($_SESSION['CI'])){
 
 
         <?php
+         if(!isset($_GET['Buscar'])){
                 $producto->PaginadoProducto();
+         }
             ?>
 
 

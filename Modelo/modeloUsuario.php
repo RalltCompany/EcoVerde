@@ -120,7 +120,7 @@ Class Usuario{
 
     public function getUsuarioBuscar($Cedula){
 			
-        $sql = "SELECT * FROM usuario WHERE ci='$Cedula', estado='Aceptado' AND clienteactivo='1' ORDER BY ci ";
+        $sql = "SELECT * FROM usuario WHERE ci='$Cedula' AND estado='Aceptado' AND clienteactivo='1' ORDER BY ci ";
         $consulta = $this->db->query($sql);
         
         while($filas=$consulta->fetch_assoc()){
@@ -350,7 +350,7 @@ public  function getUsuariosAdmin(){
     
 
     if ($total_registros > 0) {				
-        $cant_reg_paginas = 10;
+        $cant_reg_paginas = 50;
         $pagina = false;
         if (isset($_GET["pagina"])){
             $pagina = $_GET["pagina"];
@@ -388,7 +388,7 @@ public function PaginadoUsuarios(){
     echo '<div class="price-box-slider cent pagAdmin"><p>';
        
     if ($total_registros > 0) {				
-        $cant_reg_paginas = 10;
+        $cant_reg_paginas = 50;
         $pagina = false;
         if (isset($_GET["pagina"])){
             $pagina = $_GET["pagina"];

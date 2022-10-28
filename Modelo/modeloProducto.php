@@ -141,6 +141,18 @@ public function __construct(){
     }
 
 
+    public function getProductoBuscar($Producto){
+			
+        $sql = "SELECT * FROM producto WHERE productoactivo='1' AND codigo='$Producto' ORDER BY Codigo ";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Producto[]=$filas;
+        }
+        return $this->Producto;
+        
+    }
+
 
 public function ModificarImagen($c, $nombreI, $nombreD){
     $tmp_name = $_FILES[$nombreI]['tmp_name'];
