@@ -28,16 +28,20 @@ if(isset($_GET['con1'])){
     require_once('../Vista/consulta6.php');
 }else if(isset($_GET['con7'])){
     require_once('../Vista/consulta7.php');
-    if(isset($_POST['filtrar'])){
-    $mes = $_POST['mes'];
-    $con7=$ped->Consulta7($mes);
-    if($ped->Consulta7($mes)){
+    //if(isset($_POST['filtrar'])){
+    //$mes = $_POST['mes'];
+    if($con7=$ped->Consulta7($mes)){
+        echo "<script>window.location='controladorConsultas.php?con7&mes=".$mes."'</script>";
+    }
+
+   /* if($con7=$ped->Consulta7($mes)){
     echo "<script>window.location='controladorConsultas.php?con7'</script>";
 }else{
     echo "no encontrado";
 }
+}*/
 }
-}
+
 
 
 ?>
