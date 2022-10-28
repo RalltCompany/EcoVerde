@@ -135,8 +135,7 @@ if(!isset($_SESSION['CI'])){
     $Filtrado=false;
     echo "<tbody>";
    
-                if(isset( $_GET['filtrar'])){
-                $_SESSION['mes'] = $_GET['mes'];
+                if(isset( $_SESSION['mes'])){
                 $mes=  $_SESSION['mes'];
 
                 if(isset($con7)){ 
@@ -151,11 +150,11 @@ if(!isset($_SESSION['CI'])){
 
                 
                 }else{
-                    echo '<tr><td class="alerta" colspan="3">No hay pedidos registrados.</td></tr>';
+                    echo '<tr><td class="alerta" colspan="3">No se seleccionó mes/No hay pedidos en ese mes.</td></tr>';
                 }
 
   
-               //
+               
           }
                 
                ?>

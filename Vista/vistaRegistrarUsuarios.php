@@ -94,7 +94,7 @@ if(!isset($_SESSION['CI'])){
 
         <div class="men">
         <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="controladorUsuariosAdmin.php">Buscar</a>
+        <a class="a" href="controladorUsuariosAdmin.php">Listado</a>
         </div>
 <br>
         <i class="fa-solid fa-user-gear"></i>

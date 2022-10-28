@@ -92,7 +92,7 @@ if(!isset($_SESSION['CI'])){
 
         <div class="men">
         <a class="a" href="../Controlador/controladorRegistrarProducto.php">Registrar</a>
-        <a class="a" href="../Controlador/controladorProductoAdmin.php">Buscar</a>
+        <a class="a" href="../Controlador/controladorProductoAdmin.php">Listado</a>
         </div>
 
         <br>

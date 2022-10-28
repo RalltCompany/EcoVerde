@@ -108,15 +108,18 @@ if(!isset($_SESSION['CI'])){
                 </tr>
     </thead>
     <?php echo "<tbody>";
-    
+    if(isset($con6)){ 
               foreach($con6 as $dato) {
                 echo "<tr>
                 <td data-label='Año'>".$dato["año"]."</td>
                 <td data-label='Monto'>".$dato["monto"]."</td>
-                </tr>";
-                }
-                "</tbody>
+                </tr></tbody>
                 ";
+                }
+                
+            }else{
+                echo '<tr><td class="alerta" colspan="10">No hay pedidos registrados.</td></tr>';
+            }
                 
                 
 

@@ -98,48 +98,40 @@ if(!isset($_SESSION['CI'])){
       
     <div class='contenedorTabla'>
     <table class='notas'>
-    
     <thead>
             <tr>
                 
-                <th>Número</th>
-                <th>Cedula del cliente</th>
-                <th>Fecha y hora de realizacion de pedido</th>
-                <th>Fecha de entrega</th>
-                <th>Metodo de pago</th>
-                <th>Rango de hora</th>
-                <th>Estado</th>
-                <th>Nombre del destinatario</th>
-                <th>Direccion</th>
-                <th>Monto</th>
+                <th>Cantidad de pedidos</th>
+                <th>Número del mes</th>
 
                 </tr>
     </thead>
-    <?php echo "<tbody>";
-    if(isset($con5)){
-              foreach($con5 as $dato) {
-                echo "<tr>
-                <td data-label='Número'>".$dato["numero"]."</td>
-                <td data-label='Cedula del cliente'>".$dato["ciu"]."</td>
-                <td data-label='Fecha y hora de realizacion de pedido'>".$dato["fechayHora"]."</td>
-                <td data-label='Fecha de entrega'>".$dato["fechaentrega"]."</td>
-                <td data-label='Metodo de pago'>".$dato["metodoPago"]."</td>
-                <td data-label='Rango de hora'>".$dato["horaPref"]."</td>
-                <td data-label='Estado'>".$dato["estado"]."</td>
-                <td data-label='Nombre del destinatario'>".$dato["Nombre_destinatario"]."</td>
-                <td data-label='Direccion'>".$dato["direccionpe"]."</td>
-                <td data-label='Monto'>".$dato["total"]."</td>
-                </tr></tbody>
-                ";
+    <?php
+    $Filtrado=false;
+    echo "<tbody>";
+
+                if(isset($con10)){ 
+
+                    foreach($con10 as $dato) {
+                        echo "<tr>
+                        <td data-label='Cantidad de pedidos'>".$dato["pedentregados"]."</td>
+                        <td data-label='Número del mes'>".$dato["mes"]."</td>
+                        </tr></tbody>";
+                    }
+
+                
+                }else{
+                    echo '<tr><td class="alerta" colspan="2">No hay registros.</td></tr>';
                 }
+
+  
+               
+        
                 
-            }else{
-                echo '<tr><td class="alerta" colspan="10">No hay pedidos registrados.</td></tr>';
-            }
-                
-           
+               ?>
 
 
+<?php
                 
         if(isset($_GET['Eliminado'])){
             echo "<script>
@@ -162,6 +154,7 @@ if(!isset($_SESSION['CI'])){
                           });
                           </script>";
                                   }
+                                  
                      
         ?>
         </table>

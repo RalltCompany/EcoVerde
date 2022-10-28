@@ -157,7 +157,7 @@ if(!isset($_SESSION['CI'])){
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='../Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
                                 <li><a href='../Controlador/controladorPedido.php'>Pedido</a></li>
-                                <li><a href='-../Vista/Micuenta.php'>Mi cuenta</a></li>;}  
+                                <li><a href='-../Vista/Micuenta.php'>Mi cuenta</a></li>";}  
                                 ?>
                             </ul>
                         </li>
@@ -228,7 +228,6 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-12">
                     <h2>Mis pedidos</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Tienda</a></li>
                         <li class="breadcrumb-item active">Mi cuenta</li>
                     </ul>
                 </div>

@@ -679,6 +679,41 @@ function getCantidadProd(){
 			}
 			return $this->pedidos;
 		}
+
+		public function Consulta8($f){
+			$sql = "SELECT SUM(cantidad) AS cantidad, d.nombre, MONTH(fechayhora)
+			FROM conforma AS c LEFT JOIN producto AS d ON c.codigopro = d.codigo 
+			LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(fechayhora)='$f'
+			GROUP BY d.nombre ORDER BY cantidad ASC LIMIT 1";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta9($f){
+			$sql = "SELECT COUNT(*) AS pedentregados, u.nombre FROM pedido AS p
+			LEFT JOIN usuario AS u ON p.cirepartidor=u.ci 
+			WHERE p.estado = 'Entregado' AND MONTH(fechayhora) ='$f' GROUP BY p.cirepartidor";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
+
+		public function Consulta10(){
+			$sql = "SELECT MONTH(fechayhora) AS mes, COUNT(*) AS pedentregados FROM pedido GROUP BY MONTH(fechayhora)";
+			$consulta = $this->db->query($sql);
+			
+			while($filas=$consulta->fetch_assoc()){
+				$this->pedidos[]=$filas;
+			}
+			return $this->pedidos;
+		}
 	
 	
 		

@@ -78,7 +78,7 @@ INSERT INTO producto (codigo, ciu, nombre, precio, familia, disponibilidad, prop
 (NULL, 58376463, 'Naranja', 42, 'Frutas', 2100, 'Vitamina C', 'Junio', '../Vista/images/naranja.jpg', '1');
 
 /*Pedidos*/
-INSERT INTO pedido (numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_destinatario, direccionpe, total) VALUES
+INSERT INTO pedido (numero, ciu, fechayHora, fechaentrega, metodoPago, horaPref, estado, Nombre_destinatario, direccionpe, total, cirepartidor) VALUES
 (NULL, 54491536, '2022-10-14 21:13:27.000000', '2022-10-10', 'Tarjeta de Débito', '12 a 16', 'Armado', 'Johan', 'Aparicio Saravia 3785', 750),
 (NULL, 54890794, '2022-10-14 16:26:25', '2022-10-01', 'MercadoPago', '08 a 12', 'Ruta', 'Claudia', 'Aparicio Saravia', 1200),
 (NULL, 54564657, '2022-10-14 18:17:12', '2022-08-17', 'Tarjeta de Crédito', '16 a 20', 'Entregado', 'Geovana', 'San Martin Calle 1', 2300),
@@ -126,10 +126,10 @@ LEFT JOIN pedido AS p ON c.numerop = p.numero WHERE MONTH(fechayhora) ="10"
 GROUP BY d.nombre ORDER BY cantidad ASC LIMIT 1; 
 
 /*Cantidad de pedidos entregados agrupados por repartidor en xxx mes.*/
-SELECT COUNT(*), u.nombre FROM pedido AS p
+SELECT COUNT(*) AS  pedentregados, u.nombre FROM pedido AS p
 LEFT JOIN usuario AS u ON p.cirepartidor=u.ci 
-WHERE p.estado = "Entregado" GROUP BY p.cirepartidor;
+WHERE p.estado = "Entregado" AND MONTH(fechayhora) ="10" GROUP BY p.cirepartidor;
 
 /*Cantidad de pedidos agrupados por mes.*/
-SELECT fechayhora, COUNT(*) FROM pedido GROUP BY MONTH(fechayhora);
+SELECT MONTH(fechayhora), COUNT(*) AS pedentregados FROM pedido GROUP BY MONTH(fechayhora);
 

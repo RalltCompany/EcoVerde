@@ -108,15 +108,19 @@ if(!isset($_SESSION['CI'])){
                 </tr>
     </thead>
     <?php echo "<tbody>";
-    
-              foreach($con1 as $dato) {
-                echo "<tr>
-                <td data-label='Cantidad de clientes'>".$dato["cantidad"]."</td>
-                <td data-label='Barrio'>".$dato["barrio"]."</td>
-                </tr>";
-                }
-                "</tbody>
-                ";
+    if(isset($con1)){ 
+        foreach($con1 as $dato) {
+            echo "<tr>
+            <td data-label='Cantidad de clientes'>".$dato["cantidad"]."</td>
+            <td data-label='Barrio'>".$dato["barrio"]."</td>
+            </tr></tbody>
+            ";
+            }
+    }else{
+        echo '<tr><td class="alerta" colspan="10">No hay registros.</td></tr>';
+    }
+              
+                
                 
                 
 

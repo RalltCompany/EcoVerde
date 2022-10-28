@@ -108,16 +108,19 @@ if(!isset($_SESSION['CI'])){
                 </tr>
     </thead>
     <?php echo "<tbody>";
-    
+      if(isset($con3)){ 
               foreach($con3 as $dato) {
                 echo "<tr>
                 <td data-label='Cantidad de pedidos'>".$dato["p"]."</td>
                 <td data-label='Rango de hora'>".$dato["horaPref"]."</td>
-                </tr>";
-                }
-                "</tbody>
+                </tr></tbody>
                 ";
-                
+                }
+               
+                    
+            }else{
+                echo '<tr><td class="alerta" colspan="10">No hay registros.</td></tr>';
+            }
                 
 
 
