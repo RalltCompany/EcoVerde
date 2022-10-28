@@ -253,71 +253,7 @@ if(!isset($_SESSION['CI'])){
 <a href="../Vista/PHPpdf/mostrarPDFPedidos.php" target="_blank" class="botonReporte"> Crear Reporte</a>
 
 </center>
-<div class="cuerpo">
 
-    <h3 class="title-sub">CLIENTES</h3>
-
-    <div class="contenedor">
-<table class="notas">
-
-<thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Cédula</th>
-        <th>Email</th>
-        <th>Dirección</th>
-        
-
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-       
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-    <tr>
-        <td data-label="titulo">sdfasdsda</td>
-        <td data-label="nombreprog">dffasdf</td>
-        <td data-label="resumen">ASASASAS</td>
-        <td data-label="contenido">sdfgdsgsd</td>
-        
-    </tr>
-</tbody>
-</table><br>
-
-
-<form action="">
-
-<center>
-    <input type="submit" value="Crear Reporte" class="boton1">
-
-</center>
-
-</div>
 </form>
 </div>
     

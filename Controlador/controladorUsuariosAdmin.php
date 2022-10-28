@@ -13,7 +13,7 @@
     if(isset($_GET['Hola'])){
         $CI=$_GET['Buscar'];
 
-        echo "<script language='javascript'>window.location.href = 'controladorUsuariosAdmin.php?Buscar=".$CI."'; </script>";
+        $buscado=$usuario2->getUsuarioBuscar($CI);
     }
 	
     

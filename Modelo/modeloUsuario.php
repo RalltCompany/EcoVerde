@@ -117,6 +117,19 @@ Class Usuario{
         
     }
 
+
+    public function getUsuarioBuscar($Cedula){
+			
+        $sql = "SELECT * FROM usuario WHERE ci='$Cedula', estado='Aceptado' AND clienteactivo='1' ORDER BY ci ";
+        $consulta = $this->db->query($sql);
+        
+        while($filas=$consulta->fetch_assoc()){
+            $this->Usuario[]=$filas;
+        }
+        return $this->Usuario;
+        
+    }
+
     public function getUsuariosPendientes(){
 			
         $sql = "SELECT * FROM usuario WHERE estado='Pendiente' AND tipo='Cliente' AND clienteactivo='1' ORDER BY ci";
