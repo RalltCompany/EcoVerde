@@ -260,7 +260,7 @@
                         <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Controlador/controladorTienda.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                         <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Bienvenido a <br> EcoVerde</strong></h1>
                             <p class="m-b-40">Tu lugar de confianza en cuanto a los productos <br> más frescos del mercado y a un solo click de distancia.</p>
-                            <p><a class="btn hvr-hover" href="Vista/shop.php">Comprar Ahora</a></p>
+                            <p><a class="btn hvr-hover" href="Controlador/controladorTienda.php">Comprar Ahora</a></p>
                         </div>
                     </div>
                 </div>
@@ -563,19 +563,7 @@
 				<hr>
                 <div class="row">
                     
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Acceso rapído</h4>
-                            <ul>
-                                <li><a href="inicio.php">Inicio</a></li>
-                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
-                                <li><a href="">Tienda</a></li>
-                                <li><a href="Vista/gallery.php">Galeria</a></li>
-                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contacto</h4>

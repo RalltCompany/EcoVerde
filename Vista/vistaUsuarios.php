@@ -94,7 +94,26 @@ if(!isset($_SESSION['CI'])){
 
         <div class="men">
         <a class="a" href="controladorRegistrarUsuario.php">Registrar</a>
-        <a class="a" href="controladorUsuariosAdmin.php">Buscar</a>
+        <a class="a" href="controladorUsuariosAdmin.php">Listado</a>
+        
+        </div>
+        <br>
+        <div class="men">
+            <form action="">
+        <input type="text" placeholder="Filtrar por CI" name="cedula" id="cedula">
+        <a class="a" href="javascript:funcion()"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </form>
+
+        <script language="JavaScript">
+
+            function funcion(){
+                var cedula=document.getElementById("cedula").value;
+                
+                window.location.href = 'controladorUsuariosAdmin.php?Buscar='+cedula+'&Hola';
+            }
+
+        </script>
+
         </div>
 <br>
         <i class="fa-solid fa-user-gear"></i>
@@ -117,8 +136,10 @@ if(!isset($_SESSION['CI'])){
                 <th></th>
                 </tr>
     </thead>
-    <?php echo "<tbody>";
-    
+    <?php 
+    if(!isset($_GET['Buscar'])){ 
+    echo "<tbody>";
+                
               foreach($datos as $dato) {
                 echo "<tr>
                 <td data-label='Cedula'>".$dato["ci"]."</td>
@@ -131,9 +152,39 @@ if(!isset($_SESSION['CI'])){
                 <td data-label='Modificar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
                 </tr>";
                 }
-                "</tbody>
-                ";
-                
+                "</tbody>";
+            }else{
+                echo "<tbody>";
+                $Encontrado=False;
+              foreach($datos as $dato) {
+                    
+                    if($dato['ci']==$_GET['Buscar']){
+
+                echo "<tr>
+                <td data-label='Cedula'>".$dato["ci"]."</td>
+                <td data-label='Nombre'>".$dato["nombre"]."</td>
+                <td data-label='Apellido'>".$dato["apellido"]."</td>
+                <td data-label='Celular'>".$dato["celular"]."</td>
+                <td data-label='Email'>".$dato["email"]."</td>
+                <td data-label='Tipo'>".$dato["tipo"]."</td>
+                <td data-label='Eliminar'><a href=controladorEliminarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-xmark'></i> </a></td>
+                <td data-label='Modificar'><a href=controladorModificarUsuario.php?Cedula=".$dato["ci"]."> <i class='fa-solid fa-user-pen'></i> </a></td>
+                </tr>";
+                $Encontrado=True;
+                exit;
+                    }
+
+
+                    
+                }
+
+                if(!$Encontrado){
+                    echo "<tr>
+                    <td data-label='Alerta' colspan='8'>No se encontró.</td>
+                    <tr>";
+                }
+                "</tbody>";
+            }    
                 
         ?>
         </table>

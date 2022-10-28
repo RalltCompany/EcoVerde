@@ -152,7 +152,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
@@ -165,7 +165,7 @@
                                 ?>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="gallery.php">Galería</a></li>
                         <li class="nav-item "><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
@@ -265,17 +265,13 @@
                 <div class="col-lg-3 col-md-6 special-grid bulbs">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
+                            
                             <img src="images/gallery-img-1" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                   
+                                 </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -285,11 +281,8 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-02 (2)" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
                             </div>
                         </div>                        
@@ -300,11 +293,8 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-03.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>                                
                             </div>
                         </div>
@@ -315,11 +305,8 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">                            
                             <img src="images/gallery-img-04.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>                                
                             </div>
                         </div>                        
@@ -329,7 +316,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-05.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -344,7 +331,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">                            
                             <img src="images/gallery-img-06.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -359,7 +346,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-07.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -374,7 +361,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">                            
                             <img src="images/gallery-img-08.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -389,7 +376,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">                            
                             <img src="images/gallery-img-09.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div >
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -404,7 +391,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-10.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div >
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -419,7 +406,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">                           
                             <img src="images/gallery-img-11.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div >
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -434,7 +421,7 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="images/gallery-img-12.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                            <div>
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
@@ -492,19 +479,7 @@
 				<hr>
                 <div class="row">
                     
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Acceso rapído</h4>
-                            <ul>
-                                <li><a href="inicio.php">Inicio</a></li>
-                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
-                                <li><a href="">Tienda</a></li>
-                                <li><a href="Vista/gallery.php">Galeria</a></li>
-                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contacto</h4>

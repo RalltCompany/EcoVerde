@@ -23,6 +23,12 @@
 		echo("<meta http-equiv='refresh' content='0.1'>");
         
         }
+
+        if(isset($_GET['Hola'])){
+            $Numero=$_GET['Buscar'];
+    
+            echo "<script language='javascript'>window.location.href = 'controladorProductoAdmin.php?Buscar=".$Numero."'; </script>";
+        }
 	
 
 	

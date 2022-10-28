@@ -152,7 +152,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about.php">Sobre nosotros</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
@@ -166,7 +166,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
-                        <li class="nav-item "><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="contact-us.php">Contáctanos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -346,19 +346,7 @@
 				<hr>
                 <div class="row">
                     
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Acceso rapído</h4>
-                            <ul>
-                                <li><a href="inicio.php">Inicio</a></li>
-                                <li><a href="Vista/about.php">Sobre nosotros</a></li>
-                                <li><a href="">Tienda</a></li>
-                                <li><a href="Vista/gallery.php">Galeria</a></li>
-                                <li><a href="Vista/contact-us.php">Contáctanos</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contacto</h4>
