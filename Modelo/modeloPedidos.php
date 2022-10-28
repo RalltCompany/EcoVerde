@@ -138,6 +138,7 @@ function getCantidadProd(){
 
 
 	function ret_cantidadProd($id_prod){
+		
 		$pos=array_search($id_prod,$this->array_id_prod); 
 
 		
