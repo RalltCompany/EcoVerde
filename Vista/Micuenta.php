@@ -162,7 +162,7 @@ if(!isset($_SESSION['CI'])){
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li class="nav-item active"><a href="Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
+								<li class="nav-item active"><a href="../Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
                                 <?php 
                                     if(isset($_SESSION['CI'])){ 
                                 echo "<li><a href='../Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
@@ -238,7 +238,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-12">
                     <h2>Mi cuenta</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Tienda</a></li>
+
                         <li class="breadcrumb-item active">Mi cuenta</li>
                     </ul>
                 </div>
@@ -253,9 +253,12 @@ if(!isset($_SESSION['CI'])){
             <div class="my-account-page">
                 <div class="row">
                     <div class="col-lg-4 col-md-12">
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-12">
                         <div class="account-box">
                             <div class="service-box">
-                                <div class="service-icon">
+                            <div class="service-icon">
                                     <a href="../Controlador/controladorMiCuenta.php"> <i class="fa-solid fa-box"></i></a>
                                 </div>
                                 <div class="service-desc">
@@ -265,32 +268,9 @@ if(!isset($_SESSION['CI'])){
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa-solid fa-user-shield"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Perfil &amp; seguridad</h4>
-                                    <p>Ver mi información, cambiar contraseña, etc</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa-solid fa-location-dot"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Dirección</h4>
-                                    <p>Cambiar dirección de entrega de mis pedidos.</p>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     
                
@@ -307,7 +287,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-01.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+               
                     </div>
                 </div>
             </div>
@@ -315,7 +295,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-02.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+        
                     </div>
                 </div>
             </div>
@@ -323,7 +303,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-03.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+            
                     </div>
                 </div>
             </div>
@@ -331,7 +311,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-04.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+               
                     </div>
                 </div>
             </div>
@@ -339,7 +319,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    
                     </div>
                 </div>
             </div>
@@ -347,7 +327,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-06.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                
                     </div>
                 </div>
             </div>
@@ -355,7 +335,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-07.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+           
                     </div>
                 </div>
             </div>
@@ -363,7 +343,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-08.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+          
                     </div>
                 </div>
             </div>
@@ -371,7 +351,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-09.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+            
                     </div>
                 </div>
             </div>
@@ -379,7 +359,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+
                     </div>
                 </div>
             </div>

@@ -102,13 +102,13 @@ if(!isset($_SESSION['CI'])){
             <div class="contenedor-flex">
                 <div class="izquierda">
                     <div class="izquierda-divs">
-                <input type="text" name="nombre" placeholder="Nombre del producto">
+                <input type="text" name="nombre" minlength="2" maxlength="20"  placeholder="Nombre del producto">
                 </div>
                 <div class="izquierda-divs">
-                <input type="number" name="disponibilidad" placeholder="Disponibilidad en KG">
+                <input type="number" name="disponibilidad"  placeholder="Disponibilidad en KG">
                 </div>
                 <div class="izquierda-divs">
-                <input type="text" name="familia" placeholder="Familia o Categoría">
+                <input type="text" name="familia" minlength="2" maxlength="20" placeholder="Familia o Categoría">
                 </div>
 
                 <div class="izquierda-divs">
@@ -125,11 +125,11 @@ if(!isset($_SESSION['CI'])){
             <div class="derecha">
 
                 <div class="derecha-divs">
-                <input type="text" name="propiedades" placeholder="Propiedades">
+                <input type="text" name="propiedades" minlength="2" maxlength="20" placeholder="Propiedades">
                 </div>
 
                 <div class="derecha-divs">
-            <input type="text" name="precio"  placeholder="Precio en pesos">
+            <input type="text" name="precio" minlength="1" maxlength="6"  placeholder="Precio en pesos">
             </div>
 
             <div class="derecha-divs">
@@ -152,7 +152,7 @@ if(!isset($_SESSION['CI'])){
 
         <div class="derecha-divs">
             
-            <select name="cedula" id="" aria-placeholder="Codigo">
+            <select name="cedula" minlength="8" maxlength="8" id="" aria-placeholder="Codigo">
               <option value="null">Cedula del Usuario</option>
               <?php
               foreach($cius as $ci){

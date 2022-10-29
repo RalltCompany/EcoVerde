@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Ecoverde - Pedido</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,7 +49,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					
                     <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    <p>Contactanos: <a href="#"> 22260722</a></p>
                     </div>
                     <div class="our-link">
                         <ul>

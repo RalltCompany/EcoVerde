@@ -55,10 +55,10 @@
         <div class="contenedor-flex">
             <div class="izquierda">
                 <div class="izquierda-divs">
-            <input type="text" name="nombre" maxlength="30" placeholder="Nombre" required>
+            <input type="text" name="nombre" maxlength="20" placeholder="Nombre" required>
             </div>
             <div class="izquierda-divs">
-                <input type="text" name="apellido"  maxlength="30"  placeholder="Apellido" required>
+                <input type="text" name="apellido"  maxlength="20"  placeholder="Apellido" required>
                 </div>
             <div class="izquierda-divs">
             <input type="text" name="cedula" minlength="8" maxlength="8" placeholder="Cédula de identidad" required>
@@ -67,7 +67,7 @@
             
            
             <div class="izquierda-divs">
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="email" name="email"minlength="4" maxlength="50"  placeholder="Email" required>
             </div>
 
     
@@ -79,7 +79,7 @@
             
             
                     <div class="izquierda-divs">
-                <input type="password" name="passwordVal" id="passwordVal" required placeholder="Confirmar contraseña">
+                <input type="password" name="passwordVal" minlength="8" id="passwordVal" required placeholder="Confirmar contraseña">
             </div>
             
             </div>
@@ -131,21 +131,21 @@
         <div class="derecha">
 
             <div class="derecha-divs">
-            <input type="text" name="calle"  maxlength="30"  placeholder="Calle" required>
+            <input type="text" name="calle"  maxlength="20"  placeholder="Calle" required>
             </div>
             <div class="derecha-divs">
-                <input type="text" name="numero"  maxlength="30" placeholder="Numero de puerta" required>
+                <input type="text" name="numero"  minlength="1" maxlength="6" placeholder="Numero de puerta" required>
                 </div>
             
                 <div class="derecha-divs">
                     <input type="text" name="esquina"  maxlength="30"  placeholder="Esquina" required>
                     </div>
                     <div class="derecha-divs">
-                        <input type="text" name="barrio"  maxlength="30"  placeholder="Barrio" required>
+                        <input type="text" name="barrio"  maxlength="20"  placeholder="Barrio" required>
                         </div>
 
             <div class="derecha-divs">
-        <input type="text" name="celular"  placeholder="Celular" required>
+        <input type="text" name="celular" minlength="9" maxlength="9"  placeholder="Celular" required>
         </div>
 
         
