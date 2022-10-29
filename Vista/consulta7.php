@@ -135,17 +135,17 @@ if(!isset($_SESSION['CI'])){
     $Filtrado=false;
     echo "<tbody>";
    
-                if(isset( $_SESSION['mes'])){
+                if(isset( $_GET['filtrar'])){
                 $_SESSION['mes'] = $_GET['mes'];
                 $mes=  $_SESSION['mes'];
 
                 if(isset($con7)){ 
-                    
+
                     foreach($con7 as $dato) {
                         echo "<tr>
-                        <td data-label='Producto'>".$dato["d.nombre"]."</td>
+                        <td data-label='Producto'>".$dato["nombre"]."</td>
                         <td data-label='Cantidad de solicitaciones'>".$dato["cantidad"]."</td>
-                        
+                        <td data-label='Número del mes'>".$mes."</td>
                         </tr></tbody>";
                     }
 
@@ -155,7 +155,7 @@ if(!isset($_SESSION['CI'])){
                 }
 
   
-               //<td data-label='Número del mes'>".$mes."</td>
+               //
           }
                 
                ?>

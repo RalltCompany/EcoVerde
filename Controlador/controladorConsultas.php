@@ -30,20 +30,14 @@ if(isset($_GET['con1'])){
 
   
        
-    
-    
-
-    
     if(isset($_POST['filtrar'])){
-        
+
     $_SESSION['mes'] = $_POST['mes'];
     $mes= $_POST['mes'];
     
-    if($con7=$ped->Consulta7($mes)){
-
-        echo "<script>window.location='controladorConsultas.php?con7&mes=".$mes."&filtrar'</script>";
-
-    }
+    
+        $con7=$ped->Consulta7($mes);
+      
     
 
    /* if($con7=$ped->Consulta7($mes)){
