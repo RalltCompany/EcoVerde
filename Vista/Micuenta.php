@@ -16,8 +16,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/logo.ico" type="../image/logo.icon">
+    <link rel="logo.icon" href="../images/logo.icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -59,8 +59,8 @@ if(!isset($_SESSION['CI'])){
                                 if($_SESSION['TIPO']=="Cliente"){
                                 
                                     echo  "<li><a href='../Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                    ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
-                                    echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                    ECHO  "<li><a href=../Vista/Micuenta.php><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                                    echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                                  
                                  
                                   } else if($_SESSION['TIPO']=="Administrador"){
@@ -107,29 +107,29 @@ if(!isset($_SESSION['CI'])){
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                            <li>
+                                    <i class="fab fa-opencart"></i> 20% de descueto con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 10%! compra de vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                    <i class="fab fa-opencart"></i> 20% de descuento con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                             </ul>
                         </div>

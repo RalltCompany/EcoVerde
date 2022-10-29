@@ -17,8 +17,9 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo.ico" type="image/logo.icon">
-    <link rel="logo.icon" href="images/logo.icon">
+    <link rel="shortcut icon" href="../images/logo.ico" type="../image/logo.icon">
+    <link rel="logo.icon" href="../images/logo.icon">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
     <!-- Site CSS -->
@@ -50,7 +51,7 @@ if(!isset($_SESSION['CI'])){
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					
                     <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    <p>Contactanos: <a href="#"> 22260722</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
@@ -60,29 +61,29 @@ if(!isset($_SESSION['CI'])){
                                 if($_SESSION['TIPO']=="Cliente"){
                                 
                                     echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                    ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                                    ECHO  "<li><a href=../Vista/Micuenta.php><i class=fas fa-headset></i> Mi Perfil</a></li>";
                                     echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                                  
                                  
                                   } else if($_SESSION['TIPO']=="Administrador"){
      
                                      echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                    ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
+                                    ECHO  "<li><a href=../Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Administrador</a></li>";
                                     echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
      
      
                                  }else if($_SESSION['TIPO']=="Gestor"){
      
                                      echo  "<li><a href='micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                    ECHO  "<li><a href=MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
+                                    ECHO  "<li><a href=../Vista/MenuAdmin.php><i class=fas fa-headset></i> Menú Gestor</a></li>";
                                     echo  "<li><a href=../Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
      
      
                                 }else if($_SESSION['TIPO']=="Reparto"){
 
                                     echo  "<li><a href=#><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                                   ECHO  "<li><a href=Controlador/controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
-                                   echo  "<li><a href=Controlador/logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
+                                   ECHO  "<li><a href=controladorReparto.php><i class=fas fa-headset></i> Menú Reparto</a></li>";
+                                   echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
     
     
                                 }
@@ -148,29 +149,29 @@ if(!isset($_SESSION['CI'])){
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                            <li>
+                                    <i class="fab fa-opencart"></i> 20% de descueto con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 10%! compra de vegetales
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                    <i class="fab fa-opencart"></i> 50% - 80%  descuento en vegetales
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                    <i class="fab fa-opencart"></i> 20% de descuento con el codigo 3Ad-5Up
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                    <i class="fab fa-opencart"></i> 50%! Compra ahora 
                                 </li>
                             </ul>
                         </div>
