@@ -16,8 +16,8 @@
     <meta name="author" content="">
     <script src="https://kit.fontawesome.com/861b0d1a7d.js" crossorigin="anonymous"></script>
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/logo.ico" type="../image/logo.icon">
+    <link rel="logo.icon" href="../images/logo.icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../Vista/css/bootstrap.min.css">
@@ -54,7 +54,7 @@
                             if($_SESSION['TIPO']=="Cliente"){
                                 
                                echo  "<li><a href='../Vista/micuenta.php'><i class=fa fa-user s_color></i> Bienvenido/a ".$_SESSION['NOMBRE']."</a></li>";
-                               ECHO  "<li><a href=#><i class=fas fa-headset></i> Mi Perfil</a></li>";
+                               ECHO "<li><a href=../Vista/Micuenta.php><i class=fas fa-headset></i> Mi Perfil</a></li>";
                                echo  "<li><a href=logout.php><i class=fa fa-user s_color></i> Cerrar Sesión</a></li>";
                             
                             
