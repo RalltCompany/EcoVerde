@@ -444,7 +444,7 @@ function getCantidadProd(){
 		
 
 		if ($total_registros > 0) {				
-			$cant_reg_paginas = 2;
+			$cant_reg_paginas = 10;
 			$pagina = false;
 			if (isset($_GET["pagina"])){
 				$pagina = $_GET["pagina"];
@@ -491,7 +491,7 @@ function getCantidadProd(){
             echo '<div class="price-box-slider cent pagAdmin"><p>';
                
             if ($total_registros > 0) {				
-				$cant_reg_paginas = 2;
+				$cant_reg_paginas = 10;
 				$pagina = false;
 				if (isset($_GET["pagina"])){
 					$pagina = $_GET["pagina"];
@@ -587,7 +587,7 @@ function getCantidadProd(){
 		
 
 		if ($total_registros > 0) {				
-			$cant_reg_paginas = 2;
+			$cant_reg_paginas = 10;
 			$pagina = false;
 			if (isset($_GET["pagina"])){
 				$pagina = $_GET["pagina"];
