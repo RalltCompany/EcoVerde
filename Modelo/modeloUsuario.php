@@ -344,7 +344,7 @@ Class Usuario{
 
 public  function getUsuariosAdmin(){
 			
-    $sql = "SELECT * FROM usuario ORDER BY ci";
+    $sql = "SELECT * FROM usuario WHERE clienteactivo='1' AND estado='Aceptado' ORDER BY ci";
     $consulta = $this->db->query($sql);
     $total_registros = mysqli_num_rows($consulta);
     
@@ -363,7 +363,7 @@ public  function getUsuariosAdmin(){
             $inicio = ($pagina - 1) * $cant_reg_paginas;
         }
         
-        $sql2 = "SELECT * FROM usuario WHERE clienteactivo='1' ORDER BY ci ASC LIMIT ".$inicio."," . $cant_reg_paginas;
+        $sql2 = "SELECT * FROM usuario WHERE clienteactivo='1' AND estado='Aceptado' ORDER BY ci ASC LIMIT ".$inicio."," . $cant_reg_paginas;
         $rs = $this->db->query($sql2); 
         
         
@@ -381,7 +381,7 @@ public  function getUsuariosAdmin(){
 
 
 public function PaginadoUsuarios(){
-    $sql = "SELECT * FROM usuario WHERE clienteactivo='1' ORDER BY ci";
+    $sql = "SELECT * FROM usuario WHERE clienteactivo='1' AND estado='Aceptado' ORDER BY ci";
     $consulta = $this->db->query($sql);
     $total_registros = mysqli_num_rows($consulta);
     $url="../Controlador/controladorUsuariosAdmin.php";
