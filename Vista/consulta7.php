@@ -131,25 +131,32 @@ if(!isset($_SESSION['CI'])){
 
                 </tr>
     </thead>
-    <?php echo "<tbody>";
+    <?php
+    $Filtrado=false;
+    echo "<tbody>";
    
-                if(isset($_POST['filtrar'])){
-                    $mes = $_GET['mes'];
-//echo $mes;
+                if(isset( $_SESSION['mes'])){
+                $_SESSION['mes'] = $_GET['mes'];
+                $mes=  $_SESSION['mes'];
+
+                if(isset($con7)){ 
+                    
                     foreach($con7 as $dato) {
                         echo "<tr>
                         <td data-label='Producto'>".$dato["d.nombre"]."</td>
                         <td data-label='Cantidad de solicitaciones'>".$dato["cantidad"]."</td>
-                        <td data-label='Número del mes'>".$mes."</td>
+                        
                         </tr></tbody>";
                     }
+
+                
                 }else{
                     echo '<tr><td class="alerta" colspan="3">No hay pedidos registrados.</td></tr>';
                 }
 
   
-               
-         
+               //<td data-label='Número del mes'>".$mes."</td>
+          }
                 
                ?>
 
