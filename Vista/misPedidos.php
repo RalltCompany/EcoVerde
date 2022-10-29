@@ -148,17 +148,16 @@ if(!isset($_SESSION['CI'])){
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li class="nav-item active"><a href="Controlador/controladorTienda.php?pagina=1">Tienda</a></li>
+								<li class="nav-item active"><a href="controladorTienda.php?pagina=1">Tienda</a></li>
 								
                                 <?php 
 
 
 
                                     if(isset($_SESSION['CI'])){ 
-                                echo "<li><a href='Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
-                                <li><a href='Controlador/controladorPedido.php'>Pedido</a></li>
-                                <li><a href='Vista/Micuenta.php'>Mi cuenta</a></li>
-                                <li><a href='Vista/wishlist.php'>Lista de deseos</a></li>";}  
+                                echo "<li><a href='../Controlador/controladorCarrito.php'>Carrito <span class='numCarrito'>".$_SESSION['ocarrito']->getCantidadProd()."<span></a></li>
+                                <li><a href='../Controlador/controladorPedido.php'>Pedido</a></li>
+                                <li><a href='-../Vista/Micuenta.php'>Mi cuenta</a></li>;}  
                                 ?>
                             </ul>
                         </li>

@@ -232,7 +232,7 @@ public function ModificarImagen($c, $nombreI, $nombreD){
 			
 
 			if ($total_registros > 0) {				
-				$cant_reg_paginas = 3;
+				$cant_reg_paginas = 9;
 				$pagina = false;
 				if (isset($_GET["pagina"])){
 					$pagina = $_GET["pagina"];
@@ -293,7 +293,7 @@ public function ModificarImagen($c, $nombreI, $nombreD){
             echo '<p>';
                
             if ($total_registros > 0) {				
-				$cant_reg_paginas = 3;
+				$cant_reg_paginas = 9;
 				$pagina = false;
 				if (isset($_GET["pagina"])){
 					$pagina = $_GET["pagina"];

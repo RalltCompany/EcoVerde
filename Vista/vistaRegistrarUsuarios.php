@@ -113,7 +113,7 @@ if(!isset($_SESSION['CI'])){
                 <input type="number" name="cedula" minlength="8" maxlength="8"  placeholder="Cédula de identidad" required>
                 </div>
                 <div class="izquierda-divs">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" minlength="1" maxlength="30" placeholder="Email" required>
                 </div>
 
                 <div class="izquierda-divs">
@@ -180,21 +180,21 @@ if(!isset($_SESSION['CI'])){
             <div class="derecha">
 
                 <div class="derecha-divs">
-                <input type="text" name="calle" placeholder="Calle" required>
+                <input type="text" name="calle"minlength="2" maxlength="20" placeholder="Calle" required>
                 </div>
                 <div class="derecha-divs">
-                    <input type="text" name="num" placeholder="Numero" required>
+                    <input type="text" name="num" minlength="1" maxlength="5" placeholder="Numero" required>
                     </div>
                 
                     <div class="derecha-divs">
-                        <input type="text" name="esq" placeholder="Esquina" required>
+                        <input type="text" name="esq" minlength="1" maxlength="30" placeholder="Esquina" required>
                         </div>
                         <div class="derecha-divs">
-                            <input type="text" name="bar" placeholder="Barrio" required>
+                            <input type="text" name="bar" minlength="1" maxlength="15" placeholder="Barrio" required>
                             </div>
 
                 <div class="derecha-divs">
-            <input type="text" name="cel"  placeholder="Celular" required>
+            <input type="text" name="cel" minlength="9" maxlength="9"  placeholder="Celular" required>
             </div>
             </div>
                 </div>
